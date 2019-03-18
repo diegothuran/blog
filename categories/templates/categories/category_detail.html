@@ -1,0 +1,88 @@
+ {% extends 'base_layout.html' %}
+
+
+<meta charset="UTF-8">
+
+{% block content %}
+	<br/>
+	<div class="row">
+	
+		<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+			<div class="sidebar-sticky">
+				<ul class="nav flex-column">
+					<li class="nav-item">
+						<a href="#" onClick="posts()"> Postagens </a>
+					</li>
+					<li class="nav-item">
+						<a href="#" onClick="myCanvas2({{ labels_category_timeline }}, {{ data_category_timeline }})"> Timeline </a>
+					</li>
+					<li class="nav-item">
+						<a href="#" onClick="myCanvas3({{ labels_category_relation }}, {{ data_category_relation }})">Relacionamentos </a>
+					</li> 		
+					<li class="nav-item">
+						<a href="#" onClick="myCanvas4({{ labels_category_sites }}, {{ data_category_sites }})">Fontes</a>
+					</li> 
+					<li class="nav-item">
+						<a href="#" onClick="myCanvas5({{ word_cloud }})">Wordcloud</a>
+					</li> 		
+				</ul>
+			</div>
+				
+		</nav>
+	
+		<div class="col-md-8 blog-main">
+		<div class="text-center">
+			<h2 class="pb-2 mb-4 font-italic border-bottom">{{ category }}</h2>
+			
+			<div id="articles_list" > 	
+				{% for article in articles %}
+						<div class="col-md-12">
+							<div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+								<div class="col p-4 d-flex flex-column position-static">
+									<h3><a href="{% url 'articles:detail' slug=article.slug %}">{{article.title}}</a> </h3>
+									<p> {{article.snippet}} </p>
+									<!--  <p class="author"> added by {{ article.author.username }} - {{article.date}} </p> -->
+									<p class="blog-post-meta"> Postado por: {{ article.author.username }} - {{article.date}} </p>
+									<a href="{% url 'articles:detail' slug=article.slug %}" class="stretched-link"> Leia mais</a>
+								</div>
+												
+								{% if article.thumb %}
+									<div>
+										<img class="img-fluid" width="250" height="250" src="{{ article.thumb.url }}"/>
+									</div>
+								{% endif %}
+							</div>
+						</div>
+				{% endfor %}
+			</div>
+			
+			<div id="chartContainer"></div>
+			<!--  
+			<div id="teste_site"><h1>Relevâncias: </h1></div>
+
+			<canvas id="myChart" width="500" height="1500"></canvas>
+			
+			<div id="teste_categoria"><h1>Categoria: Osmar Terra </h1></div>
+			  
+			<canvas id="category_timeline" width="1500" height="500"></canvas>
+			
+			<canvas id="category_relation" width="200" height="200"></canvas>
+			
+			<canvas id="category_sites" width="500" height="1500"></canvas>
+			
+			<div id="teste_site"><h1>Site: www.terra.com.br </h1></div>
+			
+			<canvas id="category_set" width="200" height="200"></canvas>
+			
+			
+			
+			
+			<div id="wc"><h1> WordCloud: Osmar Terra </h1></div>
+			<canvas id="word_cloud" class="word_cloud" width="600" height="600"></canvas>
+			
+			-->
+		</div>	
+		</div>
+	</div>
+	<br/>
+{% endblock %}

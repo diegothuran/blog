@@ -1,0 +1,33 @@
+ {% extends 'base_layout.html' %}
+
+<meta charset="UTF-8">
+{% block content %}
+	<br/>
+	<div class="row">
+		<div class="col-md-8 blog-main">
+		<div class="text-center">
+			{% if article.thumb %}
+				<div>
+					<img class="img-fluid" width="500" height="500" src="{{ article.thumb.url }}"/>
+				</div>
+			{% endif %}
+			<br/>					
+			{% for category in article.categories.all %}
+			<a href="{% url 'categories:detail' slug=category.title %}">
+				<h4> <span class="badge badge-secondary">{{ category.title }}</span> </h4>
+			</a>
+			{% endfor %}
+			<h2 class="pb-2 mb-4 font-italic border-bottom">{{ article.title }}</h2>
+			
+			<p class="blog-post-meta"> Postado por: {{ article.author.username }} - {{article.date}} </p>
+			
+			<p>{{ article.body }}</p>
+			
+			<p>{{ article.body }}</p>
+			
+			<p>{{ article.link }}</p>
+		</div>	
+		</div>
+	</div>
+	<br/>
+{% endblock %}

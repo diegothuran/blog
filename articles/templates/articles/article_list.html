@@ -1,0 +1,29 @@
+{% extends 'base_layout.html' %}
+
+<meta charset="UTF-8">
+{% block content %}
+	<br/>
+	
+	<h2 class="pb-2 mb-4 font-italic border-bottom">Últimas notícias</h1>
+		{% for article in articles %}
+			<div class="row"> 	
+				<div class="col-md-8">
+					<div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+						<div class="col p-4 d-flex flex-column position-static">
+							<h3><a href="{% url 'articles:detail' slug=article.slug %}">{{article.title}}</a> </h3>
+							<p> {{article.snippet}} </p>
+							<!--  <p class="author"> added by {{ article.author.username }} - {{article.date}} </p> -->
+							<p class="blog-post-meta"> Postado por: {{ article.author.username }} - {{article.date}} </p>
+							<a href="{% url 'articles:detail' slug=article.slug %}" class="stretched-link"> Leia mais</a>
+						</div>
+										
+						{% if article.thumb %}
+							<div>
+								<img class="img-fluid" width="250" height="250" src="{{ article.thumb.url }}"/>
+							</div>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+{% endblock %}

@@ -1,0 +1,34 @@
+nav li{
+	display: inline-block;
+	margin-left: 20px;
+}
+
+.site-form input, .site-form textarea{
+	display: block;
+	padding: 10px; 
+}  
+
+.helptext, .helptext ul, .helptext li , .site-form li{
+	color: #bbb;
+}
+
+.errorlist li{
+	padding: 10px;
+	list-style-type: none;
+	border: 1px solid #ff5722;
+	color:#ff5722;
+	margin: 10px 0; 
+}
+
+.errorlist{
+	padding: 0;
+}
+
+.site-form input[type="text"],.site-form input[type="email"],.site-form input[type="password"]{
+	width: 100%;
+}
+
+.blog-post-meta {
+    margin-bottom: 1.25rem;
+    color: #999;
+}
