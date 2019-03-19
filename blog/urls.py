@@ -29,6 +29,7 @@ urlpatterns = [
     path('usuarios/', include('accounts.urls')),
     path('categorias/', include('categories.urls')),
     path('about/', views.about),
+    path('rest/', article_views.ArticleList.as_view(), name='rest'),
 #     path('', views.homepage),
     path('', article_views.article_list, name='home'),
 ]

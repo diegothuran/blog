@@ -1,17 +1,22 @@
 from django.shortcuts import render, redirect
-from .models import Article
+from . import models
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from . import forms
+from rest_framework import generics
+from . import serializers
+
 
 # Create your views here.
 def article_list(request):
-    articles = Article.objects.all().order_by('date') 
+    articles = models.Article.objects.all().order_by('date')
     return render(request, 'articles/article_list.html', {'articles':articles})
 
+
 def article_detail(request, slug):
-    article = Article.objects.get(slug=slug)
+    article = models.Article.objects.get(slug=slug)
     return render(request, 'articles/article_detail.html', {'article': article})
+
 
 # @login_required(login_url="/usuarios/login/")
 @login_required(login_url="/accounts/login/")
@@ -26,4 +31,10 @@ def article_create(request):
             return redirect('articles:list')
     else:
         form = forms.CreateArticle()
-    return render(request, 'articles/article_create.html', {'form':form})
+    return render(request, 'articles/article_create.html', {'form': form})
+
+
+class ArticleList(generics.ListCreateAPIView):
+    queryset = models.Article.objects.all()
+    serializer_class = serializers.ArticleSerializer
+
