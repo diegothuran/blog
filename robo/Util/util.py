@@ -309,3 +309,14 @@ def slugify_title(title):
     slug = slugify(title)
     return slug
 
+def categoria_to_sigla(categoria):
+    categorias = [ 'Acre', 'Alagoas', 'Amapá', 'Amazonas', 'Bahia', 'Ceará', 'Distrito Federal', 'Espírito Santo', 
+                  'Goiás', 'Maranhão', 'Mato Grosso', 'Mato Grosso do Sul', 'Minas Gerais', 'Pará', 'Paraíba', 'Paraná', 
+                  'Pernambuco', 'Piauí', 'Rio de Janeiro', 'Rio Grande do Norte', 'Rio Grande do Sul', 'Rondônia', 'Roraima', 
+                  'Santa Catarina', 'São Paulo', 'Sergipe', 'Tocantins']
+    
+    siglas = ['ac', 'al', 'ap', 'am', 'ba', 'ce', 'df', 'es', 'go', 'ma', 'mt', 'ms', 'mg', 'pa','pb', 'pr', 
+                  'pe', 'pi', 'rj', 'rn', 'rs', 'ro', 'rr', 'sc', 'sp', 'se','to']
+    
+    idx = categorias.index(categoria)
+    return siglas[idx]

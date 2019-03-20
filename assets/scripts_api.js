@@ -83,7 +83,8 @@ function myCanvas2(labels_category_timeline, data_category_timeline){
         
 	        title: {
 	            display: true,
-	            text: 'Timeline das notícias relacionadas a categoria: Osmar Terra.',
+//	            text: 'Timeline das notícias relacionadas a categoria: Osmar Terra.',
+	            text: 'Timeline das notícias relacionadas a categoria selecionada',
 	            fontSize: 16
 	        },
 	        
@@ -94,7 +95,8 @@ function myCanvas2(labels_category_timeline, data_category_timeline){
 	        tooltips: {
 	            callbacks: {
 	                label: function(tooltipItem) {
-	                    return Number(tooltipItem.yLabel) + " notícia(s) obtida(s) na data " + tooltipItem.xLabel + " contêm a categoria Osmar Terra"
+//	                    return Number(tooltipItem.yLabel) + " notícia(s) obtida(s) na data " + tooltipItem.xLabel + " contêm a categoria Osmar Terra"
+	                    return Number(tooltipItem.yLabel) + " notícia(s) obtida(s) na data " + tooltipItem.xLabel + " contêm a categoria selecionada"
 	                }
 	            }
 	        }
@@ -156,7 +158,8 @@ function myCanvas3(labels_category_relation, data_category_relation){
             
             title: {
                 display: true,
-                text: 'Relacionamento entre categorias considerando a categoria base: Osmar Terra.',
+//                text: 'Relacionamento entre categorias considerando a categoria base: Osmar Terra.',
+                text: 'Relacionamento entre as demais categorias e a categoria selecionada',
                 fontSize: 16
             },
             
@@ -167,7 +170,9 @@ function myCanvas3(labels_category_relation, data_category_relation){
             tooltips: {
                 callbacks: {
                     label: function(tooltipItem) {
-                        return Number(tooltipItem.xLabel) + "% das notícias que contêm a categoria " + "Osmar Terra" + " também contêm a categoria " 
+//                        return Number(tooltipItem.xLabel) + "% das notícias que contêm a categoria " + "Osmar Terra" + " também contêm a categoria " 
+//                        + tooltipItem.yLabel
+                        return Number(tooltipItem.xLabel) + "% das notícias que contêm a categoria selecionada também contêm a categoria " 
                         + tooltipItem.yLabel
                     }
                 }
@@ -182,7 +187,7 @@ function myCanvas4(labels_category_sites, data_category_sites){
 	chartContainer.style.display = "block";
 	
 	document.getElementById("chartContainer").innerHTML = '&nbsp;';
-	document.getElementById("chartContainer").innerHTML = '<canvas id="myCanvas" width="500" height="1500"></canvas>';
+	document.getElementById("chartContainer").innerHTML = '<canvas id="myCanvas" width="500" height="2000"></canvas>';
 	var ctx = document.getElementById("myCanvas").getContext("2d");
 	
     var randomColors = [];
@@ -229,7 +234,8 @@ function myCanvas4(labels_category_sites, data_category_sites){
             
             title: {
                 display: true,
-                text: 'Segmentação das fontes de informação considerando a categoria: Osmar Terra.',
+//                text: 'Segmentação das fontes de informação considerando a categoria: Osmar Terra.',
+                text: 'Segmentação das fontes de informação considerando a categoria selecionada',
                 fontSize: 16
             },
             
@@ -240,7 +246,9 @@ function myCanvas4(labels_category_sites, data_category_sites){
             tooltips: {
                 callbacks: {
                     label: function(tooltipItem) {
-                        return Number(tooltipItem.xLabel) + " notícias que contêm a categoria " + "Osmar Terra" + " foram obtidas do site " 
+//                        return Number(tooltipItem.xLabel) + " notícias que contêm a categoria " + "Osmar Terra" + " foram obtidas do site " 
+//                        + tooltipItem.yLabel
+                        return Number(tooltipItem.xLabel) + " notícias que contêm a categoria selecionada foram obtidas do site " 
                         + tooltipItem.yLabel
                     }
                 }
