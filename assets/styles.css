@@ -32,3 +32,14 @@ nav li{
     margin-bottom: 1.25rem;
     color: #999;
 }
+
+#sidebar-category .nav-link{
+    font-weight: 500; 
+    color: #333;
+}
+
+span.badge.badge-secondary{
+	display: inline-block;
+	width: 250px;
+	
+}

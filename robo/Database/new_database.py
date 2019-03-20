@@ -2,11 +2,11 @@
 # -*- coding: utf-8 -*-
 import sys
 sys.path.insert(0, '../../src')
-from Model import News
-from Database import connection
+from robo.Model import News
+from robo.Database import connection
 import datetime
 from dateutil import parser
-import postagem.Util as Util
+from robo.Util import util
 
 
 def save_news(news=News):
@@ -19,7 +19,7 @@ def save_news(news=News):
 #         str_now = now.date().isoformat()
         str_now = datetime.datetime.now().strftime("%Y-%m-%d")
         
-        cats = Util.join_categories(news.categories[0])
+        cats = util.join_categories(news.categories[0])
         add_news = ("INSERT INTO noticias "
                     "(id, abstract, noticia, public_date, image, titulo, link, cheated_at, categories) "
                         "VALUES (NULL, %s, %s, %s, %s, %s, %s, %s, %s)", (news.abstract[0], news.news[0],

@@ -30,3 +30,4 @@ soupsieve==1.8
 tornado==6.0.1
 urllib3==1.24.1
 wordcloud==1.5.0
+python-slugify==3.0.0

@@ -12,20 +12,22 @@
 				</div>
 			{% endif %}
 			<br/>					
-			{% for category in article.categories.all %}
-			<a href="{% url 'categories:detail' slug=category.title %}">
-				<h4> <span class="badge badge-secondary">{{ category.title }}</span> </h4>
-			</a>
-			{% endfor %}
+			<div>
+				{% for category in article.categories.all %}
+				<a href="{% url 'categories:detail' slug=category.slug %}">
+					<span class="badge badge-secondary">{{ category.title }}</span>
+				</a>
+				{% endfor %}
+			</div>
 			<h2 class="pb-2 mb-4 font-italic border-bottom">{{ article.title }}</h2>
 			
 			<p class="blog-post-meta"> Postado por: {{ article.author.username }} - {{article.date}} </p>
 			
 			<p>{{ article.body }}</p>
 			
-			<p>{{ article.body }}</p>
+			<p></p>
 			
-			<p>{{ article.link }}</p>
+			<p>Leia a íntegra em: <a href='{{ article.link }}'>{{ article.link }}</a>
 		</div>	
 		</div>
 	</div>

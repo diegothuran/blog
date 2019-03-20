@@ -1,11 +1,21 @@
-# coding: utf-8
+#!/usr/local/bin/python
+# -*- coding: utf-8 -*-
+import urllib3
+import tldextract
+import os
+import wget
+import requests
+import shutil
+import re
 
 import sys
 from numpy import nan
+import string 
+
+from slugify import slugify
+
 sys.path.insert(0, '../../src')
 
-import requests
-import string 
 
 def remove_punctuation(input_text):
     """
@@ -245,3 +255,57 @@ def get_sharedcount_info(tracked_url):
         return fb_comment, fb_share, fb_reaction, fb_total
     except:
         return 0, 0, 0, 0
+
+
+
+def download_image(url, path_to_save_image):
+    http = urllib3.PoolManager()
+    r = http.request('GET', url, preload_content=False)
+
+    with open(path_to_save_image, 'wb') as out:
+        while True:
+            data = r.read(15)
+            if not data:
+                break
+            out.write(data)
+
+    r.release_conn()
+
+def extract_domain(link):
+    ext = tldextract.extract(link)
+    return ext.domain
+
+def download_and_move_image(path_to_image):
+    root_path = os.getcwd()
+    try:
+        file_name = wget.download(path_to_image)
+        print(file_name)
+        dst = os.path.join(os.getcwd(), 'images', file_name)
+        print(dst)
+        shutil.move(os.path.join(root_path, file_name), dst)
+    except Exception as e:
+        print(e)
+        dst = '0'
+    return dst
+
+def clean_join_strings(list_of_strings):
+    """
+        Método para transformar tokens em uma única sentença
+    :param list_of_strings: Lista com os tokens
+    :return: sentença formada pela união dos tokens
+    """
+    return "".join(list_of_strings)
+
+
+def join_categories(categories):
+    str_categories = ', '.join(str(c) for c in categories)
+    return str_categories
+
+def categories_db_to_categories(categories_db):
+    categories = categories_db.split(', ')
+    return categories
+
+def slugify_title(title):
+    slug = slugify(title)
+    return slug
+

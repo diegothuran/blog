@@ -8,22 +8,22 @@
 	<div class="row">
 	
 		<nav class="col-md-2 d-none d-md-block bg-light sidebar">
-			<div class="sidebar-sticky">
+			<div class="sidebar-sticky" id="sidebar-category">
 				<ul class="nav flex-column">
 					<li class="nav-item">
-						<a href="#" onClick="posts()"> Postagens </a>
+						<a class="nav-link" href="#" onClick="posts()"> Postagens </a>
 					</li>
 					<li class="nav-item">
-						<a href="#" onClick="myCanvas2({{ labels_category_timeline }}, {{ data_category_timeline }})"> Timeline </a>
+						<a class="nav-link" href="#" onClick="myCanvas2({{ labels_category_timeline }}, {{ data_category_timeline }})"> Timeline </a>
 					</li>
 					<li class="nav-item">
-						<a href="#" onClick="myCanvas3({{ labels_category_relation }}, {{ data_category_relation }})">Relacionamentos </a>
+						<a class="nav-link" href="#" onClick="myCanvas3({{ labels_category_relation }}, {{ data_category_relation }})">Relacionamentos </a>
 					</li> 		
 					<li class="nav-item">
-						<a href="#" onClick="myCanvas4({{ labels_category_sites }}, {{ data_category_sites }})">Fontes</a>
+						<a class="nav-link" href="#" onClick="myCanvas4({{ labels_category_sites }}, {{ data_category_sites }})">Fontes</a>
 					</li> 
 					<li class="nav-item">
-						<a href="#" onClick="myCanvas5({{ word_cloud }})">Wordcloud</a>
+						<a class="nav-link" href="#" onClick="myCanvas5({{ word_cloud }})">Wordcloud</a>
 					</li> 		
 				</ul>
 			</div>
@@ -32,7 +32,7 @@
 	
 		<div class="col-md-8 blog-main">
 		<div class="text-center">
-			<h2 class="pb-2 mb-4 font-italic border-bottom">{{ category }}</h2>
+			<h2 class="pb-2 mb-4 font-italic border-bottom">{{ category.title }}</h2>
 			
 			<div id="articles_list" > 	
 				{% for article in articles %}

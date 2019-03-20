@@ -23,6 +23,8 @@ app_name = 'categories'
 # categorias[0].article_set.all()
 # cat = categorias[0]
 # cat.parent
+# category = Category.objects.get(slug='cat')
+# category.id
 
 # from articles.models import Article
 # articles = Article.objects.all()

@@ -9,7 +9,7 @@ from . import serializers
 
 # Create your views here.
 def article_list(request):
-    articles = models.Article.objects.all().order_by('date')
+    articles = models.Article.objects.all().order_by('-date')
     return render(request, 'articles/article_list.html', {'articles':articles})
 
 
