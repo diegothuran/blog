@@ -28,9 +28,11 @@
 			    <div class="collapse navbar-collapse" id="navbarCollapse">
 			      <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
 			      	{% if user.is_authenticated %}
+	  				<!--  
 	  				<li>
 	  					<a href="{% url 'articles:create'%}" class="nav-link">Create new article</a>
 	  				</li>
+	  				-->
 	  				<li>
 		  				<form action="{% url 'accounts:logout'%}" method="post">
 		  				{% csrf_token %}

@@ -12,10 +12,10 @@
 				</div>
 			{% endif %}
 			<br/>					
-			<div>
+			<div id="div_categorias">
 				{% for category in article.categories.all %}
-				<a href="{% url 'categories:detail' slug=category.slug %}">
-					<span class="badge badge-secondary">{{ category.title }}</span>
+				<a class='' href="{% url 'categories:detail' slug=category.slug %}">
+					<span class="badge badge-secondary"><h6>{{ category.title }}</h6></span>
 				</a>
 				{% endfor %}
 			</div>

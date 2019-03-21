@@ -226,11 +226,6 @@ word_cloud = [
 # Create your views here.
 def category_detail(request, slug):
     requested_categories = []
-#     if('and' not in slug):
-#         category = Category.objects.get(slug=slug)
-#         categories.append(category)
-#         articles = Article.objects.all().filter(categories=category.id).order_by('-date')
-#     else:
     slugs = slug.split('-and-')
     articles = Article.objects.all()
     for i in range(len(slugs)): 
