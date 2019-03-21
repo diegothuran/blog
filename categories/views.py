@@ -1,12 +1,15 @@
 #!/usr/local/bin/python
 # -*- coding: utf-8 -*-
 
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response, redirect, reverse
 from category.models import Category
 
 from robo.teste import teste_db
 from robo.Util import util
 from articles.models import Article
+
+from . import forms
+from django.template.context import RequestContext
 
 # from category.models import Category
 # categorias = Category.objects.all()
@@ -256,3 +259,43 @@ def category_detail(request, slug):
                    'labels_category_relation': labels_category_relation, 'data_category_relation': data_category_relation,
                    'labels_category_sites': labels_category_sites, 'data_category_sites': data_category_sites,
                    'articles': articles, 'titulo': titulo})
+    
+# def category_list(request):
+#     if(request.method == "POST"):
+#         form = forms.MultipleChoiceForm()
+#         if(form.is_valid()):
+#             #save article to db
+#             instance = form.save(commit=False)
+#             instance.author = request.user
+#             instance.save()
+#             return redirect('articles:list')
+#     else:
+#         form = forms.MultipleChoiceForm()
+#     return render(request, 'categories/category_list.html', {'form': form})
+
+# def category_create(request):
+# #     articles = models.Article.objects.all().order_by('-date')
+#     form = forms.MultipleChoiceForm()
+#     return render(request, 'categories/category_create.html', {'form': form})
+
+def category_filter(request):
+    if request.method == 'POST':
+        form = forms.MultipleChoiceForm(request.POST)
+        if form.is_valid():
+            # picked = slug das escolhas selecionadas
+            picked = form.cleaned_data.get('picked')
+            
+            params = ''
+            for i in range(len(picked)):
+                if(i==0):
+                    params = picked[i]
+                else:
+                    novo_slug = '-and-' + picked[i] 
+                    params = params + novo_slug
+            print(params)
+        return redirect(reverse('categories:detail', args = (params,)))    
+    else:
+        form = forms.MultipleChoiceForm()
+    return render(request, 'categories/category_filter.html', {'form': form})
+#     return render_to_response('categories/category_filter.html', {'form':form },
+#         context_instance=RequestContext(request))

@@ -27,6 +27,9 @@
 			    </button>
 			    <div class="collapse navbar-collapse" id="navbarCollapse">
 			      <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+			      <li>
+	  					<a href="{% url 'categories:filter'%}" class="nav-link">Filtrar categorias</a>
+	  				</li>
 			      	{% if user.is_authenticated %}
 	  				<!--  
 	  				<li>
