@@ -309,14 +309,56 @@ def slugify_title(title):
     slug = slugify(title)
     return slug
 
-def categoria_to_sigla(categoria):
+# def categoria_to_sigla(requested_categories):
+#     categorias = [ 'Acre', 'Alagoas', 'Amapá', 'Amazonas', 'Bahia', 'Ceará', 'Distrito Federal', 'Espírito Santo', 
+#                   'Goiás', 'Maranhão', 'Mato Grosso', 'Mato Grosso do Sul', 'Minas Gerais', 'Pará', 'Paraíba', 'Paraná', 
+#                   'Pernambuco', 'Piauí', 'Rio de Janeiro', 'Rio Grande do Norte', 'Rio Grande do Sul', 'Rondônia', 'Roraima', 
+#                   'Santa Catarina', 'São Paulo', 'Sergipe', 'Tocantins']
+#     
+#     siglas = ['ac', 'al', 'ap', 'am', 'ba', 'ce', 'df', 'es', 'go', 'ma', 'mt', 'ms', 'mg', 'pa','pb', 'pr', 
+#                   'pe', 'pi', 'rj', 'rn', 'rs', 'ro', 'rr', 'sc', 'sp', 'se','to']
+#     retorno = []
+#     for cat in requested_categories:
+#         idx = categorias.index(cat)
+#         retorno.append(siglas[idx])
+#     return retorno
+# 
+# # categoria_to_sigla('Acre')
+
+
+def categoria_to_sigla(requested_categories):
     categorias = [ 'Acre', 'Alagoas', 'Amapá', 'Amazonas', 'Bahia', 'Ceará', 'Distrito Federal', 'Espírito Santo', 
                   'Goiás', 'Maranhão', 'Mato Grosso', 'Mato Grosso do Sul', 'Minas Gerais', 'Pará', 'Paraíba', 'Paraná', 
                   'Pernambuco', 'Piauí', 'Rio de Janeiro', 'Rio Grande do Norte', 'Rio Grande do Sul', 'Rondônia', 'Roraima', 
-                  'Santa Catarina', 'São Paulo', 'Sergipe', 'Tocantins']
+                  'Santa Catarina', 'São Paulo', 'Sergipe', 'Tocantins',
+                  'bolsonaro', 'onyx lorenzoni',  'paulo guedes',  'augusto heleno',  'marcos pontes',  'sérgio moro', 
+                  'hamilton mourão', 'joaquim levy', 'mansueto almeida', 'fernando azevedo e silva', 'ernesto araújo',  
+                  'roberto campos neto', 'tereza cristina', 'andré luiz de almeida mendonça', 'carlos von doellinger', 
+                  'érika marena', 'luiz mandetta', 'maurício valeixo', 'pedro guimarães', 'ricardo vélez rodríguez', 
+                  'roberto castello branco', 'rubem novaes', 'wagner rosário', 'bento costa lima leite de albuquerque junior', 
+                  'marcelo álvaro antônio', 'osmar terra', 'gustavo henrique rigodanzo canuto', 'tarcísio gomes de freitas', 
+                  'carlos alberto dos santos cruz', 'gustavo bebianno']
     
     siglas = ['ac', 'al', 'ap', 'am', 'ba', 'ce', 'df', 'es', 'go', 'ma', 'mt', 'ms', 'mg', 'pa','pb', 'pr', 
-                  'pe', 'pi', 'rj', 'rn', 'rs', 'ro', 'rr', 'sc', 'sp', 'se','to']
+                  'pe', 'pi', 'rj', 'rn', 'rs', 'ro', 'rr', 'sc', 'sp', 'se','to',
+                  'bolsonaro', 'onyx lorenzoni',  'paulo guedes',  'augusto heleno',  'marcos pontes',  'sérgio moro', 
+                  'hamilton mourão', 'joaquim levy', 'mansueto almeida', 'fernando azevedo e silva', 'ernesto araújo',  
+                  'roberto campos neto', 'tereza cristina', 'andré luiz de almeida mendonça', 'carlos von doellinger', 
+                  'érika marena', 'luiz mandetta', 'maurício valeixo', 'pedro guimarães', 'ricardo vélez rodríguez', 
+                  'roberto castello branco', 'rubem novaes', 'wagner rosário', 'bento costa lima leite de albuquerque junior', 
+                  'marcelo álvaro antônio', 'osmar terra', 'gustavo henrique rigodanzo canuto', 'tarcísio gomes de freitas', 
+                  'carlos alberto dos santos cruz', 'gustavo bebianno']
     
-    idx = categorias.index(categoria)
-    return siglas[idx]
+    retorno = []
+    for i in range(len(requested_categories)):
+        idx = categorias.index(requested_categories[i].title)
+        retorno.append(siglas[idx])
+        if(i==0):
+            titulo = requested_categories[i].title
+        else:
+            novo_nome = ' e ' + requested_categories[i].title
+            titulo += novo_nome
+    return retorno, titulo
+
+
+    

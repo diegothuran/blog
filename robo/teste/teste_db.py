@@ -83,9 +83,9 @@ INDEX_CATEGORIES = {
                     'to' : 0
                     }
 
-def get_relacionamento_categorias(categoria):
-    #     categoria = 'osmar terra'
-    cats = relevancia_site_table.select_categories(categoria)
+def get_relacionamento_categorias(categorias):
+    # cats = todas as categorias das noticias que tem que a(s) categoria(s) do parametro
+    cats = relevancia_site_table.select_categories(categorias)
     nb_noticias = len(cats)
     related_cats = INDEX_CATEGORIES.copy()
     for row in cats:
@@ -107,19 +107,23 @@ def get_relacionamento_categorias(categoria):
         related_cats[key] = str_valor
     
     # removendo do dict a categoria passada nos parametros
-    related_cats.pop(categoria)
+    for cat in categorias:
+        related_cats.pop(cat)
 #     print(related_cats)
 #     print(related_cats.keys())
 #     print(related_cats.values())
     
     return list(related_cats.keys()), list(related_cats.values())
 
-def get_fontes_informacao_categoria(categoria):
+# get_relacionamento_categorias(['osmar terra', 'rs', 'ms'])
+# get_relacionamento_categorias(['osmar terra'])
+
+def get_fontes_informacao_categoria(categorias):
     sites = {}
     for page in load_pages.PAGES:
         sites[page.NAME] = 0
 
-    fontes_informacao = relevancia_site_table.select_news_source_categories(categoria)
+    fontes_informacao = relevancia_site_table.select_news_source_categories(categorias)
     todos_sites = sites.copy()
     for fonte in fontes_informacao:
         try:
@@ -147,7 +151,7 @@ def get_fontes_informacao_categoria(categoria):
     return list(todos_sites.keys()), list(todos_sites.values())
 
 
-def get_categoria_timeline(categoria, dias_anteriores):
+def get_categoria_timeline(categorias, dias_anteriores):
     date_now = datetime.datetime.now()   
 #     str_now = date_now.strftime('%Y-%m-%d %H:%M:%S')
     str_now = date_now.strftime('%Y-%m-%d')
@@ -162,7 +166,7 @@ def get_categoria_timeline(categoria, dias_anteriores):
         temp += 1
     datas.reverse()
     # consulta ao banco
-    datas_categoria = relevancia_site_table.get_interval_category(categoria, datas[0], datas[-1])
+    datas_categoria = relevancia_site_table.get_interval_category(categorias, datas[0], datas[-1])
     # criando o dict
     dict_datas = { i : 0 for i in datas}
     # preenchendo o dict 
@@ -184,6 +188,8 @@ def get_categoria_timeline(categoria, dias_anteriores):
 #     print(datas_formatadas.values())
     
     return list(datas_formatadas.keys()), list(datas_formatadas.values())
+
+# get_categoria_timeline(['osmar terra', 'rs'], 30)
 
 def get_timeline(dias_anteriores):
     date_now = datetime.datetime.now()   

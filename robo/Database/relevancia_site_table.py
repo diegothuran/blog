@@ -153,13 +153,33 @@ def select_site(site):
     cursor.close()
     cnx.close()
     
-def select_categories(categorie):
+def select_categories(categories):
     cnx = connection.connection()     
     cursor = cnx.cursor()
         
-    query = ("SELECT categories FROM pessoas WHERE categories LIKE %s")
-    formated_string = '%' + categorie + '%'
-    request_site = (formated_string, )    
+    if(len(categories) == 1):
+        query = ("SELECT categories FROM pessoas WHERE categories LIKE %s")
+        formated_string = '%' + categories[0] + '%'
+        request_site = (formated_string, )    
+    else:
+        formated_strings = ()
+        for i in range(len(categories)):
+            formated_string = ('%' + categories[i] + '%', )
+            formated_strings = formated_strings + formated_string
+            if(i == 0):
+                query_condition = 'categories LIKE %s '
+            else:
+                query_condition += ' AND categories LIKE %s ' 
+        query = ("SELECT categories FROM pessoas WHERE " + query_condition)
+        request_site = formated_strings
+        
+#     query = ("SELECT categories FROM pessoas WHERE categories LIKE %s AND categories LIKE %s")
+#     formated_string = '%' + categories[0] + '%'
+#     formated_string2 = '%' + categories[1] + '%'
+#     request_site = (formated_string, formated_string2)
+    
+#     print(query)
+#     print(request_site)
     
     cursor.execute(query, request_site)
     rows = cursor.fetchall()
@@ -171,13 +191,12 @@ def select_categories(categorie):
     cnx.close()
     return rows
 
-def select_text_categories(categorie):
+def select_text_categories(category):
     cnx = connection.connection()     
     cursor = cnx.cursor()
 
-    
     query = ("SELECT abstract FROM pessoas WHERE categories LIKE %s")
-    formated_string = '%' + categorie + '%'
+    formated_string = '%' + category + '%'
     request_site = (formated_string, )    
     
     cursor.execute(query, request_site)
@@ -191,14 +210,29 @@ def select_text_categories(categorie):
     
     return rows
 
-def select_news_source_categories(categorie):
+def select_news_source_categories(categories):
     cnx = connection.connection()     
     cursor = cnx.cursor()
 
+    if(len(categories) == 1):
+        query = ("SELECT site FROM pessoas WHERE categories LIKE %s")
+        formated_string = '%' + categories[0] + '%'
+        request_site = (formated_string, )    
+    else:
+        formated_strings = ()
+        for i in range(len(categories)):
+            formated_string = ('%' + categories[i] + '%', )
+            formated_strings = formated_strings + formated_string
+            if(i == 0):
+                query_condition = 'categories LIKE %s '
+            else:
+                query_condition += ' AND categories LIKE %s ' 
+        query = ("SELECT site FROM pessoas WHERE " + query_condition)
+        request_site = formated_strings
     
-    query = ("SELECT site FROM pessoas WHERE categories LIKE %s")
-    formated_string = '%' + categorie + '%'
-    request_site = (formated_string, )    
+#     query = ("SELECT site FROM pessoas WHERE categories LIKE %s")
+#     formated_string = '%' + category + '%'
+#     request_site = (formated_string, )    
     
     cursor.execute(query, request_site)
     rows = cursor.fetchall()
@@ -276,24 +310,42 @@ def get_interval(data_inicial, data_final):
     
     return rows
     
-def get_interval_category(category, data_inicial, data_final):
+def get_interval_category(categories, data_inicial, data_final):
     cnx = connection.connection()
     cursor = cnx.cursor()
     
-    query = ("SELECT public_date FROM pessoas "
-             "WHERE categories LIKE %s AND public_date BETWEEN %s AND %s")
+    if(len(categories) == 1):
+        query = ("SELECT public_date FROM pessoas WHERE categories LIKE %s AND public_date BETWEEN %s AND %s")
+        formated_string = '%' + categories[0] + '%'
+        request_site = (formated_string, data_inicial, data_final, )      
+    else:
+        formated_strings = ()
+        for i in range(len(categories)):
+            formated_string = ('%' + categories[i] + '%', )
+            formated_strings = formated_strings + formated_string
+            if(i == 0):
+                query_condition = 'categories LIKE %s '
+            else:
+                query_condition += ' AND categories LIKE %s ' 
+        query = ("SELECT public_date FROM pessoas WHERE " + query_condition + "AND public_date BETWEEN %s AND %s")
+        request_site = formated_strings + (data_inicial,) + (data_final,)
+        
+    print(query)
+    print(request_site)
     
-#     query = ("SELECT * FROM pessoas "
+#     query = ("SELECT public_date FROM pessoas "
 #              "WHERE categories LIKE %s AND public_date BETWEEN %s AND %s")
-    
-#     str_data_inicial = data_inicial.strftime("%Y-%m-%d")
-#     str_data_final = data_final.strftime("%Y-%m-%d")
-    request_site = (category, data_inicial, data_final, )    
+#     
+# #     query = ("SELECT * FROM pessoas "
+# #              "WHERE categories LIKE %s AND public_date BETWEEN %s AND %s")
+#     
+# #     str_data_inicial = data_inicial.strftime("%Y-%m-%d")
+# #     str_data_final = data_final.strftime("%Y-%m-%d")
+#     request_site = (category, data_inicial, data_final, )    
+
     cursor.execute(query, request_site)
-    
     rows = cursor.fetchall()
-#     print(len(rows))
-#     print('aqui')
+
     for i in rows:
         print(i)
     

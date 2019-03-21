@@ -41,5 +41,5 @@ nav li{
 span.badge.badge-secondary{
 	display: inline-block;
 	width: 250px;
-	
+	text-decoration: none;
 }
