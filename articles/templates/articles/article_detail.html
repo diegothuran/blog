@@ -5,7 +5,7 @@
 	<br/>
 	<div class="row">
 		<div class="col-md-8 blog-main">
-		<div class="text-center">
+		
 			{% if article.thumb %}
 				<div>
 					<img class="img-fluid" width="500" height="500" src="{{ article.thumb.url }}"/>
@@ -19,16 +19,22 @@
 				</a>
 				{% endfor %}
 			</div>
-			<h2 class="pb-2 mb-4 font-italic border-bottom">{{ article.title }}</h2>
+			<br/>	
+			<div class="text-center">
+				<h2 class="pb-2 mb-4 font-italic border-bottom">{{ article.title }}</h2>
+			</div>
+			<div class="blog-post">
 			
-			<p class="blog-post-meta"> Postado por: {{ article.author.username }} - {{article.date}} </p>
-			
-			<p>{{ article.body }}</p>
-			
-			<p></p>
-			
-			<p>Leia a íntegra em: <a href='{{ article.link }}'>{{ article.link }}</a>
-		</div>	
+				<p class="blog-post-meta"> Postado por: {{ article.author.username }} - {{article.date}} </p>
+				<p>
+				
+				{% autoescape off %}{{ article.body }}{% endautoescape %}
+				
+				<p>
+				
+				<p>Leia a íntegra em: <a href='{{ article.link }}'>{{ article.link }}</a>
+			</div>
+		
 		</div>
 	</div>
 	<br/>

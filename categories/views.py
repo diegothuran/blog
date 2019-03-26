@@ -283,14 +283,14 @@ def category_filter(request):
         form = forms.MultipleChoiceForm(request.POST)
         if form.is_valid():
             # picked = slug das escolhas selecionadas
-            picked = form.cleaned_data.get('picked')
+            categorias = form.cleaned_data.get('categorias')
             
             params = ''
-            for i in range(len(picked)):
+            for i in range(len(categorias)):
                 if(i==0):
-                    params = picked[i]
+                    params = categorias[i]
                 else:
-                    novo_slug = '-and-' + picked[i] 
+                    novo_slug = '-and-' + categorias[i] 
                     params = params + novo_slug
             print(params)
         return redirect(reverse('categories:detail', args = (params,)))    
