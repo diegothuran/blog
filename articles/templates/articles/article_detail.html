@@ -27,9 +27,7 @@
 			
 				<p class="blog-post-meta"> Postado por: {{ article.author.username }} - {{article.date}} </p>
 				<p>
-				
-				{% autoescape off %}{{ article.body }}{% endautoescape %}
-				
+					{% autoescape off %}{{ article.body }}{% endautoescape %}
 				<p>
 				
 				<p>Leia a íntegra em: <a href='{{ article.link }}'>{{ article.link }}</a>

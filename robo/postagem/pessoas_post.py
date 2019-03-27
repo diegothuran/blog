@@ -93,7 +93,7 @@ def post_news(df):
         date_df = str(row['date'])
         #date_df = datetime.datetime.strptime(row['date'], '%a, %d %b %Y %H:%M:%S %z').strftime("%Y-%m-%d %H:%M:%S")
         
-        if(date_df < date_now):
+        if(date_df > date_now):
             date = date_df
         else:
             date = date_now
@@ -109,7 +109,7 @@ def post_news(df):
         # texto_sumarizado: por enquanto apenas em seguranca
         news = row['abstract']
         reduced_news = util.get_reduced_news(news)
-        content = reduced_news
+        content = reduced_news + '...'
         
         #testes para o novo formato
 #         tupla = relevancia_site_table.select(row['site'])

@@ -11,6 +11,8 @@ from articles.models import Article
 from . import forms
 from django.template.context import RequestContext
 
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
 # from category.models import Category
 # categorias = Category.objects.all()
 # categorias[0].article_set.all()
@@ -230,13 +232,23 @@ word_cloud = [
 def category_detail(request, slug):
     requested_categories = []
     slugs = slug.split('-and-')
-    articles = Article.objects.all()
+    article_list = Article.objects.all()
     for i in range(len(slugs)): 
         category = Category.objects.get(slug=slugs[i])
         requested_categories.append(category)
-        articles = articles.filter(categories=category.id).order_by('-date')
+        article_list = article_list.filter(categories=category.id).order_by('-date')
     
-    
+    #pagination
+    page = request.GET.get('page', 1)
+
+    paginator = Paginator(article_list, 10)
+    try:
+        articles = paginator.page(page)
+    except PageNotAnInteger:
+        articles = paginator.page(1)
+    except EmptyPage:
+        articles = paginator.page(paginator.num_pages)
+        
 #     labels_category_timeline = ['19-12-2018', '20-12-2018', '21-12-2018', '22-12-2018', '23-12-2018', '24-12-2018', '25-12-2018', '26-12-2018', '27-12-2018', '28-12-2018', '29-12-2018', '30-12-2018', '31-12-2018', '01-01-2019', '02-01-2019', '03-01-2019', '04-01-2019', '05-01-2019', '06-01-2019', '07-01-2019', '08-01-2019', '09-01-2019', '10-01-2019', '11-01-2019', '12-01-2019', '13-01-2019', '14-01-2019', '15-01-2019', '16-01-2019', '17-01-2019', '18-01-2019']
 #     data_category_timeline = [1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
     
