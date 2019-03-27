@@ -327,17 +327,20 @@ def slugify_title(title):
 
 
 def categoria_to_sigla(requested_categories):
+    '''
+    chamado no categories.views 
+    '''
     categorias = [ 'Acre', 'Alagoas', 'Amapá', 'Amazonas', 'Bahia', 'Ceará', 'Distrito Federal', 'Espírito Santo', 
                   'Goiás', 'Maranhão', 'Mato Grosso', 'Mato Grosso do Sul', 'Minas Gerais', 'Pará', 'Paraíba', 'Paraná', 
                   'Pernambuco', 'Piauí', 'Rio de Janeiro', 'Rio Grande do Norte', 'Rio Grande do Sul', 'Rondônia', 'Roraima', 
                   'Santa Catarina', 'São Paulo', 'Sergipe', 'Tocantins',
-                  'bolsonaro', 'onyx lorenzoni',  'paulo guedes',  'augusto heleno',  'marcos pontes',  'sérgio moro', 
-                  'hamilton mourão', 'joaquim levy', 'mansueto almeida', 'fernando azevedo e silva', 'ernesto araújo',  
-                  'roberto campos neto', 'tereza cristina', 'andré luiz de almeida mendonça', 'carlos von doellinger', 
-                  'érika marena', 'luiz mandetta', 'maurício valeixo', 'pedro guimarães', 'ricardo vélez rodríguez', 
-                  'roberto castello branco', 'rubem novaes', 'wagner rosário', 'bento costa lima leite de albuquerque junior', 
-                  'marcelo álvaro antônio', 'osmar terra', 'gustavo henrique rigodanzo canuto', 'tarcísio gomes de freitas', 
-                  'carlos alberto dos santos cruz', 'gustavo bebianno']
+                  'Bolsonaro', 'Onyx Lorenzoni',  'Paulo Guedes',  'Augusto Heleno',  'Marcos Pontes',  'Sérgio Moro', 
+                  'Hamilton Mourão', 'Joaquim Levy', 'Mansueto almeida', 'Fernando Azevedo e Silva', 'Ernesto Araújo',  
+                  'Roberto Campos Neto', 'Tereza Cristina', 'André Luiz de Almeida Mendonça', 'Carlos Von Doellinger', 
+                  'Érika Marena', 'Luiz Mandetta', 'Maurício Valeixo', 'Pedro Guimarães', 'Ricardo Vélez Rodríguez', 
+                  'Roberto Castello Branco', 'Rubem Novaes', 'Wagner Rosário', 'Bento Costa Lima Leite de Albuquerque Junior', 
+                  'Marcelo Álvaro Antônio', 'Osmar Terra', 'Gustavo Henrique Rigodanzo Canuto', 'Tarcísio Gomes de Freitas', 
+                  'Carlos Alberto dos Santos Cruz', 'Gustavo Bebianno']
     
     siglas = ['ac', 'al', 'ap', 'am', 'ba', 'ce', 'df', 'es', 'go', 'ma', 'mt', 'ms', 'mg', 'pa','pb', 'pr', 
                   'pe', 'pi', 'rj', 'rn', 'rs', 'ro', 'rr', 'sc', 'sp', 'se','to',
