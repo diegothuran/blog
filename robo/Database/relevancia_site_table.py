@@ -4,14 +4,12 @@ import sys
 sys.path.insert(0, '../../src')
 from robo.Model import Relevancia_Site
 from robo.Database import connection
-import datetime
-from dateutil import parser
+
+
 # import robo.postagem.Util as Util
 
-from pandas import DataFrame
 
-
-def save(relevancia_site = Relevancia_Site):
+def save(relevancia_site =Relevancia_Site):
     cnx = connection.connection()
 
     try:
@@ -38,7 +36,7 @@ def select(site):
     cnx.close()
     return result
 
-def check(relevancia_site = Relevancia_Site):
+def check(relevancia_site =Relevancia_Site):
     cnx = connection.connection()
      
     cursor = cnx.cursor()
@@ -56,7 +54,7 @@ def check(relevancia_site = Relevancia_Site):
     cnx.close()
     return site_in_db
 
-def update(relevancia_site = Relevancia_Site):
+def update(relevancia_site =Relevancia_Site):
     cnx = connection.connection()
      
     cursor = cnx.cursor()
@@ -67,7 +65,7 @@ def update(relevancia_site = Relevancia_Site):
     
     cnx.close()
     
-def update_com_relevancia_inicial(relevancia_site = Relevancia_Site):
+def update_com_relevancia_inicial(relevancia_site =Relevancia_Site):
     cnx = connection.connection()
      
     cursor = cnx.cursor()

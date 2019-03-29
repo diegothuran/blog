@@ -1,7 +1,7 @@
 #!/usr/local/bin/python
 # -*- coding: utf-8 -*-
 
-from django.shortcuts import render, render_to_response, redirect, reverse
+from django.shortcuts import render, redirect, reverse
 from category.models import Category
 
 from robo.teste import teste_db
@@ -9,7 +9,6 @@ from robo.Util import util
 from articles.models import Article
 
 from . import forms
-from django.template.context import RequestContext
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 

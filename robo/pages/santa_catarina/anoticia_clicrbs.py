@@ -4,7 +4,7 @@ import sys
 sys.path.insert(0, '../../src')
 from bs4 import BeautifulSoup
 import requests
-from robo.pages.util.constantes import PAGE_LIMIT
+from robo.pages import PAGE_LIMIT
 
 #pegou o rank do clicrbs
 GLOBAL_RANK = 4526

@@ -10,7 +10,7 @@ from dateutil import parser
 from robo.Util import util
 
 
-def save_news(news = News):
+def save_news(news =News):
     cnx = connection.connection()
 
     try:
@@ -34,7 +34,7 @@ def save_news(news = News):
     cnx.close()
 
 
-def select_news(news = News):
+def select_news(news =News):
     cnx = connection.connection()
     try:
         cursor = cnx.cursor()
@@ -48,7 +48,7 @@ def select_news(news = News):
     except Exception as e:
         print(e)
 
-def check_news(news = News):
+def check_news(news =News):
     cnx = connection.connection()
     
     cursor = cnx.cursor()

@@ -11,12 +11,12 @@ import numpy as np
 url = 'http://127.0.0.1:8000/rest/'
  
 payload = {
-        "title": "postagem via api2",
-        "slug": "postagem-via-api2",
+        "title": "postagem via api2a",
+        "slug": "postagem-via-api2a",
         "body": "Primeiro post via API2.",
         "abstract": "",
         "date": "2019-03-12T00:57:00Z",
-        "thumb": "",
+        "thumb": "/home/diego/Imagens/FCpVtilX_400x400.jpg",
         "link": "",
         "author": str(1),
         "categories": [1]

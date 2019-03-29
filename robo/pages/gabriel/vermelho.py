@@ -5,7 +5,7 @@ sys.path.insert(0, '../../src')
 
 from bs4 import BeautifulSoup
 import requests
-from robo.pages.util.constantes import PAGE_LIMIT
+from robo.pages import PAGE_LIMIT
 
 GLOBAL_RANK = 83470
 RANK_BRAZIL = 2512

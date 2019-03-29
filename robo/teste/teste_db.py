@@ -3,18 +3,10 @@
 import sys
 sys.path.insert(0, '../../src')
 
-from robo.Model import News
-from robo.Database import connection, relevancia_site_table
+from robo.Database import relevancia_site_table
 import datetime
-from dateutil import parser
 # import postagem.Util as Util
-from robo.Model.Relevancia_Site import Relevancia_Site 
-import numpy as np
-import pandas as pd
 
-import matplotlib.pyplot as plt
-
-from robo.Util import util
 from robo.pages.util import load_pages
 import wordcloud
 import nltk

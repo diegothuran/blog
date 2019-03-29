@@ -4,18 +4,15 @@ import sys
 sys.path.insert(0, '../../src')
 
 import pandas as pd
-import urllib
 import datetime
 
 from newsplease import NewsPlease
-from bs4 import BeautifulSoup
 
 from robo.Model.News import News
-from robo.Util.util import download_and_move_image
+from robo.Util import download_and_move_image
 
-from robo.Database import pessoas_table
 from robo.lexical_analyzer_package import pessoas_lexical
-from robo.postagem import pessoas_post 
+from robo.postagem import pessoas_post
 
 
 def news_from_link(ref_link):

@@ -6,8 +6,6 @@ sys.path.insert(0, '../../src')
 
 from robo.lexical_analyzer_package import base_lexical_analyzer
 
-import nltk
-
 # import pandas as pd
 # import string 
 # import numpy as np

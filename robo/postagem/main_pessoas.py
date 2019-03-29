@@ -6,7 +6,6 @@ sys.path.insert(0, '../../src')
 from robo.postagem import util_pessoas
 from robo.pages.util import load_pages
 
-
 """ post """
 while(True):
     for page in load_pages.PAGES:

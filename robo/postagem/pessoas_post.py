@@ -2,10 +2,8 @@
 # -*- coding: utf-8 -*-
 
 import requests
-import json
 # import base64
 import datetime
-import numpy as np
 
 from robo.Util import util
 # from robo.Database import relevancia_site_table
@@ -143,7 +141,7 @@ def post_news(df):
                 "body": content,
                 "abstract": "",
                 "date": date,
-                "thumb": "",
+                "thumb": row["image"],
                 "link": link,
                 "author": str(1),
                 "categories": categories
