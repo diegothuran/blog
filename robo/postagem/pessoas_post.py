@@ -143,7 +143,7 @@ def post_news(df):
                 "body": content,
                 "abstract": "",
                 "date": date,
-                "thumb": "",
+                "thumb": row['image'],
                 "link": link,
                 "author": str(1),
                 "categories": categories

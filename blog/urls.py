@@ -23,16 +23,15 @@ from articles import views as article_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-#     path('articles/', include('articles.urls')),
-#     path('accounts/', include('accounts.urls')),
     path('artigos/', include('articles.urls')),
     path('usuarios/', include('accounts.urls')),
     path('categorias/', include('categories.urls')),
     path('about/', views.about),
     path('rest/', article_views.ArticleList.as_view(), name='rest'),
-#     path('', views.homepage),
     path('', article_views.article_list, name='home'),
 ]
 
-urlpatterns += staticfiles_urlpatterns()
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+#urlpatterns += staticfiles_urlpatterns()
+#urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

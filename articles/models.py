@@ -24,7 +24,7 @@ class Article(models.Model):
     abstract = models.TextField(blank=True)
 #     date = models.DateTimeField(auto_now_add=True)
     date = models.DateTimeField()
-    thumb = models.ImageField(default="", blank=True)
+    thumb = models.TextField(blank=True)
     author = models.ForeignKey(User, default=None, on_delete=models.PROTECT)
     link = models.CharField(max_length=250, blank=True)
     

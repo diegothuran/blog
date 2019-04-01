@@ -276,13 +276,15 @@ def extract_domain(link):
     return ext.domain
 
 def download_and_move_image(path_to_image):
-    root_path = os.getcwd()
+    root_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    root_path = root_path.replace('/robo', '/media')
     try:
         file_name = wget.download(path_to_image)
         print(file_name)
-        dst = os.path.join(os.getcwd(), 'images', file_name)
+        dst = os.path.join(root_path, 'images', file_name)
         print(dst)
-        shutil.move(os.path.join(root_path, file_name), dst)
+        shutil.move(os.path.join(os.getcwd(), file_name), dst)
+        dst = '/media/images/' + file_name
     except Exception as e:
         print(e)
         dst = '0'
