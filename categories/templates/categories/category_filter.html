@@ -5,16 +5,18 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="{% static 'styles.css' %}">
 {% block content %}
-	<div class="categories-div">
-		<!--  <h2>Filtrar categorias: </h2> -->
-		<br>
-		<h2 class="font-italic">Filtrar categorias:</h2>
-		
-		<form class="categories-form" action="{% url 'categories:filter'%}" method="post" enctype="multipart/form-data">
-		{% csrf_token %}
-		{{ form.as_p }}
-		<button id="filtrar-categoria" class="btn btn-outline-primary my-2 my-sm-0" type="submit"> Filtrar </button>
-		</form>
+	<div class="container">
+		<div class="categories-div">
+			<!--  <h2>Filtrar categorias: </h2> -->
+			<br>
+			<h2 class="font-italic">Filtrar categorias:</h2>
+			
+			<form class="categories-form" action="{% url 'categories:filter'%}" method="post" enctype="multipart/form-data">
+			{% csrf_token %}
+			{{ form.as_p }}
+			<button id="filtrar-categoria" class="btn btn-outline-primary my-2 my-sm-0" type="submit"> Filtrar </button>
+			</form>
+		</div>
+		<br/>
 	</div>
-	<br/>
 {% endblock %}
