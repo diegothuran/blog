@@ -3,10 +3,11 @@
 import sys
 sys.path.insert(0, '../../src')
 
-from pages.util import load_pages
 
-from Model.Relevancia_Site import Relevancia_Site
-from Database import relevancia_site_table
+from robo.pages.util import load_pages
+
+from robo.Model.Relevancia_Site import Relevancia_Site
+from robo.Database import relevancia_site_table
 
 from sklearn.preprocessing import MinMaxScaler
 import numpy as np

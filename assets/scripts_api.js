@@ -7,6 +7,10 @@ function getRandomColor() {
 return color;
 }
 
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip(); 
+});
+
 var articles_list = document.getElementById("articles_list");
 var chartContainer = document.getElementById("chartContainer");
 

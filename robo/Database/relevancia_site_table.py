@@ -98,7 +98,7 @@ def select_form_date(request_date):
     cnx.close()
     return len(rows)
     
-def select_site_in_link(site):
+def select_info_in_link(site):
     cnx = connection.connection()
      
     cursor = cnx.cursor()
@@ -120,7 +120,26 @@ def select_site_in_link(site):
     
     cursor.close()
     cnx.close()
+
+def select_site_in_link(link):
+    cnx = connection.connection()
+    cursor = cnx.cursor()    
     
+    query = ("SELECT site FROM pessoas WHERE link LIKE %s")
+    formated_string = '%' + link + '%'
+    request_site = (formated_string, )    
+    
+    
+    cursor.execute(query, request_site)
+    rows = cursor.fetchall()
+#     print(len(rows))
+    for row in rows:
+        print(row)
+    
+    cursor.close()
+    cnx.close()
+    return rows
+
 def update_site(site):
     cnx = connection.connection()
     cursor = cnx.cursor()

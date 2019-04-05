@@ -1,7 +1,22 @@
  {% extends 'base_layout.html' %}
 
+{% block title %}{{ article.title }}{% endblock %}
+
+{% block scripts %}
+<script>
+</script>
+{% endblock %}
+
+
 <meta charset="UTF-8">
+<script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5ca4b2762c4f3b001126ed56&product=inline-share-buttons"></script>
+<script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5ca4b2762c4f3b001126ed56&product=custom-share-buttons"></script>
+
+
 {% block content %}
+
+
+	
 	<br/>
 	<div class="row">
 		<div class="col-md-8 blog-main">
@@ -15,25 +30,162 @@
 			<div id="div_categorias">
 				{% for category in article.categories.all %}
 				<a class='' href="{% url 'categories:detail' slug=category.slug %}">
-					<span class="badge badge-secondary"><h6>{{ category.title }}</h6></span>
+					<span class="badge badge-pill badge-secondary" style="font-size: 16px;"> {{ category.title }} </span>
 				</a>
 				{% endfor %}
 			</div>
 			<br/>	
 			<div class="text-center">
-				<h2 class="pb-2 mb-4 font-italic border-bottom">{{ article.title }}</h2>
+				<h2 class="pb-2 mb-2 font-italic border-bottom">{{ article.title }}</h2>
 			</div>
-			<div class="blog-post">
 			
-				<p class="blog-post-meta"> Postado por: {{ article.author.username }} - {{article.date}} </p>
+			<div class="row">
+				<div class="text-left col-md-6 themed-grid-col">
+					<span class="blog-post-meta"> Postado por: {{ article.author.username }} - {{article.date}} </span>
+				</div>
+				<div class="text-right col-md-6 themed-grid-col border-left">
+					<span  class="blog-post-meta" data-toggle="tooltip" data-placement="bottom" 
+					title="Nosso índice de relevância representa uma média da popularidade do site fonte da notícia acessada 
+					e é definido pelo Rank Alexa. Na prática, quanto mais próximo de 10.00 for a relevância, maior o número 
+					de usuários que visitaram o site fonte dessa notícia. Valores próximos a 0.00 representam um menor número 
+					de acesos à informação. Quando '--', não foi possível calcular a relevância."> Relevância = </span>
+					<span class="badge badge-pill badge-primary" style="font-size: 16px;" data-toggle="tooltip" 
+					data-placement="bottom" title="Nosso índice de relevância representa uma média da popularidade do site 
+					fonte da notícia acessada e é definido pelo Rank Alexa. Na prática, quanto mais próximo de 10.00 for a 
+					relevância, maior o número de usuários que visitaram o site fonte dessa notícia. Valores próximos a 0.00 
+					representam um menor número de acesos à informação. Quando '--', não foi possível calcular a relevância. "> {{ relevancia }} </span>
+				</div>	
+			</div>
+			<h2 class="pb-2 mb-4 font-italic border-bottom"></h2>
+			
+			
+			<div class="blog-post">	
 				<p>
 					{% autoescape off %}{{ article.body }}{% endautoescape %}
 				<p>
 				
 				<p>Leia a íntegra em: <a href='{{ article.link }}'>{{ article.link }}</a>
 			</div>
-		
+			<h2 class="pb-2 mb-4 font-italic border-bottom"></h2>
+			
+			<div class="row mb-2">
+				<div class="col-md-7 text-right border-right">
+					<div class="st-total">
+						<span class="st-label">{{ nb_shares }}</span>
+						<span class="st-shares">Compartilhamentos</span>
+					</div >
+				</div>
+				<div class="col-md-5">
+					<div class="sharethis-inline-share-buttons" data-text="{{ article.title }}" data-url="{{ article.link }}" data-title="{{ article.title }}"></div>
+				</div>
+				
+				
+				<!--<div class="text-right col-md-6 themed-grid-col">
+					<div class="st-total">
+						<span class="st-label">{{ nb_shares }}</span>
+						<span class="st-shares">part</span>
+					</div>
+					 AddToAny BEGIN 
+					<div class=" a2a_kit a2a_kit_size_32 a2a_default_style">
+						<a class="a2a_dd" href="https://www.addtoany.com/share"></a> 
+						<a class="a2a_button_facebook a2a_counter" ></a> 
+						<a class="a2a_button_facebook" ></a>
+						<a class="a2a_button_twitter"></a>
+						<a class="a2a_button_pinterest"></a>
+						<a class="a2a_button_linkedin"></a>
+						<a class="a2a_button_email"></a>
+						<a class="a2a_button_whatsapp"></a>
+					</div>
+					<script>
+						var a2a_config = a2a_config || {};
+						a2a_config.locale = "pt-BR";
+						
+					</script>
+					<script async src="https://static.addtoany.com/menu/page.js"></script>
+					 AddToAny END 
+				</div>-->
+			</div>
+			<br>
+			
+			<div class="row mb-2">
+			{% if next %}
+			<div class="col-md-6">
+				<div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+					<div class="col p-4 d-flex flex-column position-static">
+						{% if next.thumb %}
+							<div>
+								<img class="img-fluid" width="250" height="250" src="{{ next.thumb }}"/>
+							</div>
+						{% endif %}
+						<h4><a href="{% url 'articles:detail' slug=next.slug %}">{{next.title}}</a> </h4>
+						<p class="blog-post-meta"> Postado por: {{ next.author.username }} - {{next.date}} </p>
+						<div class="u-floatLeft">
+							<a href="{% url 'articles:detail' slug=next.slug %}" class="readMoreLink primaryColor metaFont"> Leia mais ></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+					
+			{% if previous %}
+			<div class="col-md-6">
+				<div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+					<div class="col p-4 d-flex flex-column position-static">
+						{% if previous.thumb %}
+							<div>
+								<img class="img-fluid" width="250" height="250" src="{{ previous.thumb }}"/>
+							</div>
+						{% endif %}
+						<h4><a href="{% url 'articles:detail' slug=previous.slug %}">{{previous.title}}</a> </h4>
+						<p class="blog-post-meta"> Postado por: {{ previous.author.username }} - {{previous.date}} </p>
+						<div class="u-floatLeft">
+							<a href="{% url 'articles:detail' slug=previous.slug %}" class="readMoreLink primaryColor metaFont"> Leia mais ></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+			</div>
+			
+			
 		</div>
+		
+		<aside class="col-md-4 blog-sidebar">
+	      <div class="p-4 mb-3 bg-light rounded">
+	        <h4 class="font-italic">About</h4>
+	        <p class="mb-0">Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+	      </div>
+	
+	      <div class="p-4">
+	        <h4 class="font-italic">Archives</h4>
+	        <ol class="list-unstyled mb-0">
+	          <li><a href="#">March 2014</a></li>
+	          <li><a href="#">February 2014</a></li>
+	          <li><a href="#">January 2014</a></li>
+	          <li><a href="#">December 2013</a></li>
+	          <li><a href="#">November 2013</a></li>
+	          <li><a href="#">October 2013</a></li>
+	          <li><a href="#">September 2013</a></li>
+	          <li><a href="#">August 2013</a></li>
+	          <li><a href="#">July 2013</a></li>
+	          <li><a href="#">June 2013</a></li>
+	          <li><a href="#">May 2013</a></li>
+	          <li><a href="#">April 2013</a></li>
+	        </ol>
+	      </div>
+	
+	      <div class="p-4">
+	        <h4 class="font-italic">Elsewhere</h4>
+	        <ol class="list-unstyled">
+	          <li><a href="#">GitHub</a></li>
+	          <li><a href="#">Twitter</a></li>
+	          <li><a href="#">Facebook</a></li>
+	        </ol>
+	      </div>
+	    </aside><!-- /.blog-sidebar -->
 	</div>
 	<br/>
+	
+	
 {% endblock %}
+

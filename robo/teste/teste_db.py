@@ -254,7 +254,22 @@ def categorias_por_site(site):
     print(cats_counter)
     print(cats_counter.keys())
     print(cats_counter.values())
-    
+
+# def get_relevancia(site):
+#     # estrutura tupla = (id, site, relevancia, relevancia_inicial)
+#     tupla = relevancia_site_table.select(site)
+#     relevancia = tupla[2]
+#     return relevancia
+
+def get_relevancia(link):
+    site = relevancia_site_table.select_site_in_link(link)[0]
+    # estrutura tupla = (id, site, relevancia, relevancia_inicial)
+    tupla = relevancia_site_table.select(site[0])
+    relevancia = tupla[2]
+    return relevancia
+
+# link = 'https://noticias.uol.com.br/ultimas-noticias/agencia-estado/2019/04/01/desgaste-do-governo-nao-interessa-a-ninguem-diz-governador-da-bahia.htm'
+# get_relevancia(link)
 
 def get_wordcloud(categoria):
 #     categoria = 'osmar terra'
@@ -287,11 +302,10 @@ def get_wordcloud(categoria):
 #     plt.axis("off")
 #     plt.show()
 
-
-
-# site = 'oestadoacre'
-# estrutura tupla = (id, site, relevancia)
+# site = 'buzzfeed.com'
+# # estrutura tupla = (id, site, relevancia, relevancia_inicial)
 # tupla = relevancia_site_table.select(site)
+# print(tupla[2])
 
 
 # def plot_bar_timeseries(valores, dates):

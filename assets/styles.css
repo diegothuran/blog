@@ -29,7 +29,6 @@ nav li{
 }
 
 .blog-post-meta {
-    margin-bottom: 1.25rem;
     color: #999;
 }
 
@@ -135,4 +134,27 @@ input[type=checkbox]:checked + .toggle:after{
 
 #filtrar-categoria{
 	margin-left: 55px;
+}
+
+.st-total {
+    color: #555;
+    display: inline-block;
+    font-weight: 500;
+    line-height: 12px;
+    margin-right: 0;
+    max-width: 80px;
+    padding: 4px 8px;
+    text-align: center;
+}
+
+.st-total > span {
+    font-size: 16px;
+    line-height: 17px;
+    display: block;
+    padding: 0;
+}
+
+.st-total > span.st-shares {
+    font-size: 9px;
+    line-height: 9px;
 }

@@ -1,3 +1,4 @@
+import requests
 from django.shortcuts import render, redirect
 from . import models
 from django.http import HttpResponse
@@ -7,6 +8,7 @@ from rest_framework import generics
 from . import serializers
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from robo.teste import teste_db
 
 
 # Create your views here.
@@ -28,7 +30,47 @@ def article_list(request):
 
 def article_detail(request, slug):
     article = models.Article.objects.get(slug=slug)
-    return render(request, 'articles/article_detail.html', {'article': article})
+    
+#     article_list = models.Article.objects.all().order_by('-date')
+    try:
+        next_article = article.get_next_by_date()
+    except:
+        next_article = ''
+    
+    try:
+        previous_article = article.get_previous_by_date()
+    except:
+        previous_article = ''
+    
+#     relevancia = 3.2
+    
+    try:
+        relevancia = teste_db.get_relevancia(article.link)
+    except:
+        relevancia = "--"
+
+            
+    URL = 'https://api.sharedcount.com/v1.0/'
+    api_key = '8a2cccc01f801d984aa5995bc3d3594bed656a51'
+    
+    # https://api.sharedcount.com/v1.0/?apikey=8a2cccc01f801d984aa5995bc3d3594bed656a51&url=https%3A%2F%2Fwww.globo.com%2F  
+      
+    url_midia = article.link
+      
+    payload = {'apikey': api_key, 'url': url_midia}
+    r = requests.get(URL, params=payload)
+    temp = r.json()
+#     print(r)
+#     print(r.url)
+#       
+#     print(temp)
+    nb_shares = temp['Facebook']['total_count']
+#     next_article, previous_article = None, None
+#     print(article.get_next_by_date())
+#     previous_article = article.get_previous_by_date()
+    return render(request, 'articles/article_detail.html', 
+                  {'article': article, 'next': next_article, 'previous':previous_article, 'relevancia': relevancia,
+                   'nb_shares': nb_shares})
 
 
 # @login_required(login_url="/usuarios/login/")
