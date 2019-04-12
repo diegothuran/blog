@@ -262,7 +262,42 @@ function myCanvas4(labels_category_sites, data_category_sites){
     });
 }
 
-function myCanvas5(word_cloud){
+
+
+function myCanvas5(labels_region, data_region){
+	articles_list.style.display = "none";
+	chartContainer.style.display = "block";
+	
+	document.getElementById("chartContainer").innerHTML = '&nbsp;';
+	document.getElementById("chartContainer").innerHTML = '<canvas id="myCanvas" style="height: 370px; width: 100%;"></canvas>';
+	
+	var randomColors = [];
+	for (var i in labels_region) {
+		randomColors.push(getRandomColor());
+	}
+
+	new Chart(document.getElementById("myCanvas"), {
+	    type: 'pie',
+	    data: {
+	      labels: labels_region,
+	      datasets: [{
+	        backgroundColor: randomColors,
+	        data: data_region
+	      }]
+	    },
+	    options: {
+	      title: {
+	        display: true,
+	        text: 'Quantidade de noticias relacionadas a categoria selecionada segmentada por região.',
+	        fontSize: 16
+	      }
+	    }
+	});
+}
+
+
+
+function myCanvas_wordcloud(word_cloud){
 	articles_list.style.display = "none";
 	chartContainer.style.display = "block";
 	

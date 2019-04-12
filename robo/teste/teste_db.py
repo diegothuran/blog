@@ -17,6 +17,12 @@ from robo.pages.util import load_pages
 import wordcloud
 import nltk
 
+INDEX_REGIOES = { 'Norte' : 0,
+                    'Nordeste' : 0,
+                    'Centro-Oeste' : 0,
+                    'Sudeste' : 0,
+                    'Sul' : 0}
+
 INDEX_CATEGORIES = {
 #     'categoria': '',
                     'bolsonaro' : 0,
@@ -138,7 +144,7 @@ def get_fontes_informacao_categoria(categorias):
           
     return list(ordenado.keys()), list(ordenado.values())
 
-get_fontes_informacao_categoria(['osmar terra'])
+# get_fontes_informacao_categoria(['osmar terra'])
 
 def get_categoria_timeline(categorias, dias_anteriores):
     date_now = datetime.datetime.now()   
@@ -225,6 +231,46 @@ def get_timeline(dias_anteriores):
     print(soma)
 
 
+def get_numero_noticias_por_regiao(categorias):                
+    # cats = todas as categorias das noticias que tem que a(s) categoria(s) do parametro
+    cats = relevancia_site_table.select_categories(categorias)
+    related_cats = INDEX_REGIOES.copy()
+    for row in cats:
+        categories_per_row = row[0]
+        try:
+            if(',' in categories_per_row):
+                categories = categories_per_row.split(', ')
+                norte, nordeste, centro, sudeste, sul = True, True, True, True, True
+                for category in categories:
+                    if(category in ['ac', 'ap', 'am', 'pa', 'ro', 'rr', 'to']):
+                        if(norte):
+                            related_cats['Norte'] += 1
+                            norte = False
+                    if(category in ['al', 'ba', 'ce', 'ma', 'pb', 'pe', 'pi', 'rn', 'se']):
+                        if(nordeste):
+                            related_cats['Nordeste'] += 1
+                            nordeste = False
+                    if(category in ['df', 'go', 'mt', 'ms']):
+                        if(centro):
+                            related_cats['Centro-Oeste'] += 1
+                            centro = False
+                    if(category in ['es', 'mg', 'rj', 'sp']):
+                        if(sudeste):
+                            related_cats['Sudeste'] += 1
+                            sudeste = False
+                    if(category in ['pr', 'rs', 'sc']):
+                        if(sul):
+                            related_cats['Sul'] += 1
+                            sul = False
+                            
+            else: # only one category in the table
+                related_cats[categories_per_row] += 1
+        except:
+            pass
+    
+    return list(related_cats.keys()), list(related_cats.values())
+
+# get_numero_noticias_por_regiao(['ba'])
 
 def categorias_por_site(site):
     categorias = relevancia_site_table.get_categories_per_site(site)

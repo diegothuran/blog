@@ -264,12 +264,14 @@ def category_detail(request, slug):
     labels_category_timeline, data_category_timeline = teste_db.get_categoria_timeline(categorias, dias_anteriores)
     labels_category_relation, data_category_relation = teste_db.get_relacionamento_categorias(categorias)
     labels_category_sites, data_category_sites = teste_db.get_fontes_informacao_categoria(categorias)
+    labels_region, data_region = teste_db.get_numero_noticias_por_regiao(categorias)
     
     return render(request, 'categories/category_detail.html', 
                   {'categories': requested_categories, 'word_cloud': word_cloud, 
                    'labels_category_timeline': labels_category_timeline, 'data_category_timeline': data_category_timeline, 
                    'labels_category_relation': labels_category_relation, 'data_category_relation': data_category_relation,
                    'labels_category_sites': labels_category_sites, 'data_category_sites': data_category_sites,
+                   'labels_region': labels_region, 'data_region': data_region,
                    'articles': articles, 'titulo': titulo})
     
 # def category_list(request):
