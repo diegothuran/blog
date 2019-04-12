@@ -9,12 +9,10 @@ import datetime
 from dateutil import parser
 # import postagem.Util as Util
 from robo.Model.Relevancia_Site import Relevancia_Site 
-import numpy as np
-import pandas as pd
+from operator import itemgetter    
 
-import matplotlib.pyplot as plt
+from collections import OrderedDict
 
-from robo.Util import util
 from robo.pages.util import load_pages
 import wordcloud
 import nltk
@@ -99,8 +97,10 @@ def get_relacionamento_categorias(categorias):
                 related_cats[categories_per_row] += 1
         except:
             pass
-#     print(related_cats)
     
+    # ordenando
+    related_cats = OrderedDict(sorted(related_cats.items(), key = itemgetter(1), reverse = True)) 
+
     for key, value in related_cats.items():
         valor = ((value/nb_noticias) * 100)
         str_valor = "%.2f" % valor
@@ -109,10 +109,7 @@ def get_relacionamento_categorias(categorias):
     # removendo do dict a categoria passada nos parametros
     for cat in categorias:
         related_cats.pop(cat)
-#     print(related_cats)
-#     print(related_cats.keys())
-#     print(related_cats.values())
-    
+
     return list(related_cats.keys()), list(related_cats.values())
 
 # get_relacionamento_categorias(['osmar terra', 'rs', 'ms'])
@@ -132,24 +129,16 @@ def get_fontes_informacao_categoria(categorias):
         except:
             pass
     
-    # Se for colocar no formato de porcentagem
-#     # print(type(todos_sites))
-#     # print(todos_sites.keys())
-#     # print(todos_sites.values())
-#     for key, value in todos_sites.items():
-#         valor = ((value/nb_noticias) * 100)
-#         str_valor = "%.2f" % valor
-#     #     todos_sites[key] = valor
-#         todos_sites[key] = str_valor
-    
     # tirando o rss_multiplos para nao aparecer no grafico
     todos_sites.pop('rss_multiplos')
-#     print(todos_sites)
-#     print(todos_sites.keys())
-#     print(todos_sites.values())
-    
-    return list(todos_sites.keys()), list(todos_sites.values())
+    # tirando sites que tem valor 0
+    todos_sites = {x:y for x,y in todos_sites.items() if y!=0}
+    # ordenando
+    ordenado = OrderedDict(sorted(todos_sites.items(), key = itemgetter(1), reverse = True)) 
+          
+    return list(ordenado.keys()), list(ordenado.values())
 
+get_fontes_informacao_categoria(['osmar terra'])
 
 def get_categoria_timeline(categorias, dias_anteriores):
     date_now = datetime.datetime.now()   

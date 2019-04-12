@@ -261,9 +261,9 @@ def category_detail(request, slug):
     categorias, titulo = util.categoria_to_sigla(requested_categories)
     
     dias_anteriores = 30
+    labels_category_timeline, data_category_timeline = teste_db.get_categoria_timeline(categorias, dias_anteriores)
     labels_category_relation, data_category_relation = teste_db.get_relacionamento_categorias(categorias)
     labels_category_sites, data_category_sites = teste_db.get_fontes_informacao_categoria(categorias)
-    labels_category_timeline, data_category_timeline = teste_db.get_categoria_timeline(categorias, dias_anteriores)
     
     return render(request, 'categories/category_detail.html', 
                   {'categories': requested_categories, 'word_cloud': word_cloud, 

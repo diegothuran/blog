@@ -30,8 +30,8 @@ def article_list(request):
 
 def article_detail(request, slug):
     article = models.Article.objects.get(slug=slug)
-    
-#     article_list = models.Article.objects.all().order_by('-date')
+    article_list = models.Article.objects.all().order_by('-date')
+    most_recent = article_list[:5]
     try:
         next_article = article.get_next_by_date()
     except:
@@ -70,7 +70,7 @@ def article_detail(request, slug):
 #     previous_article = article.get_previous_by_date()
     return render(request, 'articles/article_detail.html', 
                   {'article': article, 'next': next_article, 'previous':previous_article, 'relevancia': relevancia,
-                   'nb_shares': nb_shares})
+                   'nb_shares': nb_shares, 'most_recent': most_recent})
 
 
 # @login_required(login_url="/usuarios/login/")
