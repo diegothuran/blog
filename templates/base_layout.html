@@ -18,8 +18,9 @@
   		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
   		<script src="https://pulipulichen.github.io/blogger/posts/2016/11/r-text-mining/wordcloud2.js"></script>
   		
+  		
   		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
-  
+  		
   		<!--   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
 	
   		
@@ -27,8 +28,6 @@
   		{% endblock %}
   	</head>
   	<body>
-  		
-  		
   		
   		<header>
 			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -95,12 +94,15 @@
 	  		</div>
   		</div>
   		-->
+  	
   	{% block content %}
   	{% endblock %}
+  	<br/>
   	</body>
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	
 	<script src="{% static 'scripts_api.js' %}"></script>
+	<script src="{% static 'paginacao.js' %}"></script>
 	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </html>

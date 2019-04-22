@@ -5,62 +5,35 @@
 	<div class="container">
 		<br/>
 		<h2 class="pb-2 mb-4 font-italic border-bottom">Últimas notícias</h2>
-			{% for article in articles %}
-				<div class="row"> 	
-					<div class="col-md-8">
-						<div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-							<div class="col p-4 d-flex flex-column position-static">
-								<h3><a href="{% url 'articles:detail' slug=article.slug %}">{{article.title}}</a> </h3>
-								<!--  <p> {{article.snippet}} </p> -->
-								<p> {% autoescape off %}{{article.snippet}}{% endautoescape %}  </p>
-	
-								<!--  <p class="author"> added by {{ article.author.username }} - {{article.date}} </p> -->
-								<p class="blog-post-meta"> Postado por: {{ article.author.username }} - {{article.date}} </p>
-								<div class="u-floatLeft">
-									<a href="{% url 'articles:detail' slug=article.slug %}" class="readMoreLink primaryColor metaFont"> Leia mais ></a>
+			<div id="jar">
+				{% for article in articles %}
+					<div class="row content"> 	
+						<div class="col-md-8">
+							<div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+								<div class="col p-4 d-flex flex-column position-static">
+									<h3><a href="{% url 'articles:detail' slug=article.slug %}">{{article.title}}</a> </h3>
+									<!--  <p> {{article.snippet}} </p> -->
+									<p> {% autoescape off %}{{article.snippet}}{% endautoescape %}  </p>
+		
+									<!--  <p class="author"> added by {{ article.author.username }} - {{article.date}} </p> -->
+									<p class="blog-post-meta"> Postado por: {{ article.author.username }} - {{article.date}} </p>
+									<div class="u-floatLeft">
+										<a href="{% url 'articles:detail' slug=article.slug %}" class="readMoreLink primaryColor metaFont"> Leia mais ></a>
+									</div>
 								</div>
+												
+								{% if article.thumb %}
+									<div>
+										<img class="img-fluid" width="250" height="250" src="{{ article.thumb }}"/>
+									</div>
+								{% endif %}
 							</div>
-											
-							{% if article.thumb %}
-								<div>
-									<img class="img-fluid" width="250" height="250" src="{{ article.thumb }}"/>
-								</div>
-							{% endif %}
 						</div>
 					</div>
-				</div>
-			{% endfor %}
-			
-			{% if articles.has_other_pages %}
-			  <ul class="pagination">
-			    {% if articles.has_previous %}
-			      <li class="page-item">
-			      	<a class="page-link" href="?page={{ articles.previous_page_number }}">&laquo;</a>
-			      </li>
-			    {% else %}
-			      <li class="page-link disabled"><span>&laquo;</span></li>
-			    {% endif %}
-			    
-			    {% for i in articles.paginator.page_range %}
-			      {% if articles.number == i %}
-			        <li class="page-item active">
-			        	<span class="page-link">{{ i }} <span class="sr-only">(current)</span></span>
-			        </li>
-			      {% elif i > articles.number|add:'-3' and i < articles.number|add:'3' %}
-			        <li class="page-item">
-			        	<a class="page-link" href="?page={{ i }}">{{ i }}</a>
-			        </li>
-			      {% endif %}
-			    {% endfor %}
-			    
-			    {% if articles.has_next %}
-			      <li class="page-item">
-			      	<a class="page-link" href="?page={{ articles.next_page_number }}">&raquo;</a>
-			      </li>
-			    {% else %}
-			      <li class="page-link disabled"><span>&raquo;</span></li>
-			    {% endif %}
-			  </ul>
-			{% endif %}
+				{% endfor %}
+				
+			</div>
+			<div class="pagination"></div>
 		</div>
+		
 {% endblock %}
