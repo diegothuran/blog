@@ -32,14 +32,14 @@
 						-->
 					</ul>
 				</div>
-					
+			
 			</nav>
 		
 			<div class="col-md-8 blog-main">
 				<div class="text-center">
 					<h2 class="pb-2 mb-4 font-italic border-bottom">{{ titulo }}</h2>
 				</div>
-				<div id="articles_list" > 	
+				<div id="articlesList" > 	
 					<div id="jar">
 					{% for article in articles %}
 							<div class="col-md-12 content">
@@ -70,6 +70,188 @@
 				</div>
 				
 				<div id="chartContainer"></div>
+				
+				<div id="postsRegion" class="container mt-3" style="display: none;">
+				<br>
+				  <!-- Nav tabs -->
+				  <ul class="nav nav-tabs">
+				    <li class="nav-item">
+				      <a class="nav-link active" data-toggle="tab" href="#norte">Norte</a>
+				    </li>
+				    <li class="nav-item">
+				      <a class="nav-link" data-toggle="tab" href="#nordeste">Nordeste</a>
+				    </li>
+				    <li class="nav-item">
+				      <a class="nav-link" data-toggle="tab" href="#centro-oeste">Centro-Oeste</a>
+				    </li>
+				    <li class="nav-item">
+				      <a class="nav-link" data-toggle="tab" href="#sudeste">Sudeste</a>
+				    </li>
+				    <li class="nav-item">
+				      <a class="nav-link" data-toggle="tab" href="#sul">Sul</a>
+				    </li>
+				  </ul>
+				  
+				  <!-- Tab panes -->
+				  <div class="tab-content">
+				    <!-- Norte -->
+				    <div id="norte" class="container tab-pane active"><br>
+				    {% if norte %}
+				      {% for article in norte %}
+						<div class="row content"> 	
+							<div class="col-md-8">
+								<div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+									<div class="col p-4 d-flex flex-column position-static">
+										<h3><a href="{% url 'articles:detail' slug=article.slug %}">{{article.title}}</a> </h3>
+										<p> {% autoescape off %}{{article.snippet}}{% endautoescape %}  </p>			
+										<p class="blog-post-meta"> Postado por: {{ article.author.username }} - {{article.date}} </p>
+										<div class="u-floatLeft">
+											<a href="{% url 'articles:detail' slug=article.slug %}" class="readMoreLink primaryColor metaFont"> Leia mais ></a>
+										</div>
+									</div>
+													
+									{% if article.thumb %}
+										<div>
+											<img class="img-fluid" width="250" height="250" src="{{ article.thumb }}"/>
+										</div>
+									{% endif %}
+								</div>
+							</div>
+						</div>
+						{% endfor %}
+					
+					{% else %}
+					  <p> Nenhuma norticia relacionada a esta região.</p>
+					{% endif %}
+				    </div>
+				    
+				    <!-- Nordeste -->
+				    <div id="nordeste" class="container tab-pane fade"><br>
+				    {% if nordeste %}
+				      {% for article in nordeste %}
+						<div class="row content"> 	
+							<div class="col-md-8">
+								<div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+									<div class="col p-4 d-flex flex-column position-static">
+										<h3><a href="{% url 'articles:detail' slug=article.slug %}">{{article.title}}</a> </h3>
+										<p> {% autoescape off %}{{article.snippet}}{% endautoescape %}  </p>			
+										<p class="blog-post-meta"> Postado por: {{ article.author.username }} - {{article.date}} </p>
+										<div class="u-floatLeft">
+											<a href="{% url 'articles:detail' slug=article.slug %}" class="readMoreLink primaryColor metaFont"> Leia mais ></a>
+										</div>
+									</div>
+													
+									{% if article.thumb %}
+										<div>
+											<img class="img-fluid" width="250" height="250" src="{{ article.thumb }}"/>
+										</div>
+									{% endif %}
+								</div>
+							</div>
+						</div>
+						{% endfor %}
+						
+						{% else %}
+						  <p> Nenhuma norticia relacionada a esta região.</p>
+						{% endif %}
+				    </div>
+				    
+				    <!-- Centro-Oeste -->
+				    <div id="centro-oeste" class="container tab-pane fade"><br>
+				    {% if centro_oeste %}
+				      {% for article in centro_oeste %}
+						<div class="row content"> 	
+							<div class="col-md-8">
+								<div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+									<div class="col p-4 d-flex flex-column position-static">
+										<h3><a href="{% url 'articles:detail' slug=article.slug %}">{{article.title}}</a> </h3>
+										<p> {% autoescape off %}{{article.snippet}}{% endautoescape %}  </p>			
+										<p class="blog-post-meta"> Postado por: {{ article.author.username }} - {{article.date}} </p>
+										<div class="u-floatLeft">
+											<a href="{% url 'articles:detail' slug=article.slug %}" class="readMoreLink primaryColor metaFont"> Leia mais ></a>
+										</div>
+									</div>
+													
+									{% if article.thumb %}
+										<div>
+											<img class="img-fluid" width="250" height="250" src="{{ article.thumb }}"/>
+										</div>
+									{% endif %}
+								</div>
+							</div>
+						</div>
+						{% endfor %}
+						
+						{% else %}
+						  <p> Nenhuma norticia relacionada a esta região.</p>
+						{% endif %}
+				    </div>
+				    
+				    <!-- Sudeste -->
+				    <div id="sudeste" class="container tab-pane fade"><br>
+				    {% if sudeste %}
+				      {% for article in sudeste %}
+						<div class="row content"> 	
+							<div class="col-md-8">
+								<div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+									<div class="col p-4 d-flex flex-column position-static">
+										<h3><a href="{% url 'articles:detail' slug=article.slug %}">{{article.title}}</a> </h3>
+										<p> {% autoescape off %}{{article.snippet}}{% endautoescape %}  </p>			
+										<p class="blog-post-meta"> Postado por: {{ article.author.username }} - {{article.date}} </p>
+										<div class="u-floatLeft">
+											<a href="{% url 'articles:detail' slug=article.slug %}" class="readMoreLink primaryColor metaFont"> Leia mais ></a>
+										</div>
+									</div>
+													
+									{% if article.thumb %}
+										<div>
+											<img class="img-fluid" width="250" height="250" src="{{ article.thumb }}"/>
+										</div>
+									{% endif %}
+								</div>
+							</div>
+						</div>
+						{% endfor %}
+						
+						{% else %}
+						  <p> Nenhuma norticia relacionada a esta região.</p>
+						{% endif %}
+				    </div>
+				    
+				    <!-- Sul -->
+				    <div id="sul" class="container tab-pane fade"><br>
+				    {% if sul %}
+				    {% for article in sul %}
+						<div class="row content"> 	
+							<div class="col-md-8">
+								<div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+									<div class="col p-4 d-flex flex-column position-static">
+										<h3><a href="{% url 'articles:detail' slug=article.slug %}">{{article.title}}</a> </h3>
+										<p> {% autoescape off %}{{article.snippet}}{% endautoescape %}  </p>			
+										<p class="blog-post-meta"> Postado por: {{ article.author.username }} - {{article.date}} </p>
+										<div class="u-floatLeft">
+											<a href="{% url 'articles:detail' slug=article.slug %}" class="readMoreLink primaryColor metaFont"> Leia mais ></a>
+										</div>
+									</div>
+													
+									{% if article.thumb %}
+										<div>
+											<img class="img-fluid" width="250" height="250" src="{{ article.thumb }}"/>
+										</div>
+									{% endif %}
+								</div>
+							</div>
+						</div>
+						{% endfor %}
+						
+						{% else %}
+						  <p> Nenhuma norticia relacionada a esta região.</p>
+						{% endif %}
+				    </div>
+				    
+				    
+				  </div>
+				</div>
 				<!--  
 				<div id="teste_site"><h1>Relevâncias: </h1></div>
 	
@@ -94,8 +276,8 @@
 				<canvas id="word_cloud" class="word_cloud" width="600" height="600"></canvas>
 				
 				-->
+				<br>
 			</div>
 		</div>
 	</div>
-	<br/>
 {% endblock %}

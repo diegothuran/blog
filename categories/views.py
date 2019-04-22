@@ -12,6 +12,7 @@ from . import forms
 from django.template.context import RequestContext
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.db.models import Q
 
 # from category.models import Category
 # categorias = Category.objects.all()
@@ -238,6 +239,17 @@ def category_detail(request, slug):
         requested_categories.append(category)
         article_list = article_list.filter(categories=category.id).order_by('-date')
     
+    
+    
+    norte = article_list.filter(Q(categories=2) | Q(categories=4) | Q(categories=5) | Q(categories=15) | 
+                                Q(categories=23) | Q(categories=24) | Q(categories=28)).distinct()
+    nordeste = article_list.filter(Q(categories=3) | Q(categories=6) | Q(categories=7) | Q(categories=11) | 
+                                Q(categories=16) | Q(categories=18) | Q(categories=19) | Q(categories=21) | 
+                                Q(categories=27)).distinct()
+    centro_oeste = article_list.filter(Q(categories=8) | Q(categories=10) | Q(categories=12) | Q(categories=13)).distinct()
+    sudeste = article_list.filter(Q(categories=9) | Q(categories=14) | Q(categories=20) | Q(categories=26)).distinct()
+    sul = article_list.filter(Q(categories=17) | Q(categories=22) | Q(categories=25)).distinct()
+    
 #     #pagination
 #     page = request.GET.get('page', 1)
 # 
@@ -272,7 +284,8 @@ def category_detail(request, slug):
                    'labels_category_relation': labels_category_relation, 'data_category_relation': data_category_relation,
                    'labels_category_sites': labels_category_sites, 'data_category_sites': data_category_sites,
                    'labels_region': labels_region, 'data_region': data_region,
-                   'articles': article_list, 'titulo': titulo})
+                   'articles': article_list, 'titulo': titulo,
+                   'norte': norte, 'nordeste': nordeste, 'centro_oeste': centro_oeste, 'sudeste': sudeste, 'sul': sul})
     
 # def category_list(request):
 #     if(request.method == "POST"):

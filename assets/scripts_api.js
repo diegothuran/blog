@@ -11,12 +11,14 @@ $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip(); 
 });
 
-var articles_list = document.getElementById("articles_list");
+var articlesList = document.getElementById("articlesList");
 var chartContainer = document.getElementById("chartContainer");
+var postsRegion = document.getElementById("postsRegion");
 
 function posts(){
-	articles_list.style.display = "block";
+	articlesList.style.display = "block";
 	chartContainer.style.display = "none";
+	postsRegion.style.display = "none";
 }
 
 ////Get the container element
@@ -41,8 +43,9 @@ function posts(){
 //}
 
 function myCanvas2(labels_category_timeline, data_category_timeline){
-	articles_list.style.display = "none";
+	articlesList.style.display = "none";
 	chartContainer.style.display = "block";
+	postsRegion.style.display = "none";
 	
 	document.getElementById("chartContainer").innerHTML = '&nbsp;';
 	document.getElementById("chartContainer").innerHTML = '<canvas id="myCanvas" width="600" height="600"></canvas>';
@@ -109,8 +112,9 @@ function myCanvas2(labels_category_timeline, data_category_timeline){
 }
 
 function myCanvas3(labels_category_relation, data_category_relation){
-	articles_list.style.display = "none";
+	articlesList.style.display = "none";
 	chartContainer.style.display = "block";
+	postsRegion.style.display = "none";
 	
 	document.getElementById("chartContainer").innerHTML = '&nbsp;';
 	document.getElementById("chartContainer").innerHTML = '<canvas id="myCanvas" width="600" height="600"></canvas>';
@@ -187,8 +191,9 @@ function myCanvas3(labels_category_relation, data_category_relation){
 
 
 function myCanvas4(labels_category_sites, data_category_sites){
-	articles_list.style.display = "none";
+	articlesList.style.display = "none";
 	chartContainer.style.display = "block";
+	postsRegion.style.display = "none";
 	
 	document.getElementById("chartContainer").innerHTML = '&nbsp;';
 	document.getElementById("chartContainer").innerHTML = '<canvas id="myCanvas" width="500" height="2000"></canvas>';
@@ -265,8 +270,9 @@ function myCanvas4(labels_category_sites, data_category_sites){
 
 
 function myCanvas5(labels_region, data_region){
-	articles_list.style.display = "none";
+	articlesList.style.display = "none";
 	chartContainer.style.display = "block";
+	postsRegion.style.display = "block";
 	
 	document.getElementById("chartContainer").innerHTML = '&nbsp;';
 	document.getElementById("chartContainer").innerHTML = '<canvas id="myCanvas" style="height: 370px; width: 100%;"></canvas>';
@@ -298,8 +304,9 @@ function myCanvas5(labels_region, data_region){
 
 
 function myCanvas_wordcloud(word_cloud){
-	articles_list.style.display = "none";
+	articlesList.style.display = "none";
 	chartContainer.style.display = "block";
+	postsRegion.style.display = "none";
 	
 	document.getElementById("chartContainer").innerHTML = '&nbsp;';
 	document.getElementById("chartContainer").innerHTML = '<canvas id="myCanvas" width="600" height="600"></canvas>';

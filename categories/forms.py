@@ -8,4 +8,7 @@ class MultipleChoiceForm(forms.Form):
     categorias = forms.MultipleChoiceField(label='', choices=CHOICES, required=False, 
                         widget=forms.CheckboxSelectMultiple({'class' : 'toggle'}))
 #     picked.widget.attrs.update({'class': 'special'})
+
+#     start_date=forms.DateField(widget = forms.SelectDateWidget())
+#     end_date=forms.DateField(widget = forms.SelectDateWidget())
     
