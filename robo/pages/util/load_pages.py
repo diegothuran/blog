@@ -1,7 +1,7 @@
-# coding: utf-8
+# coding: utf-8sys.path.insert(0, '../../src')
 
 import sys
-sys.path.insert(0, '../../src')
+sys.path.insert(0, '../../../../blog')
 
 ' import pages by state '
 from robo.pages.acre import agazetadoacre, jornalatribuna, jornalopiniao, jornalopiniao_economia, jornalopiniao_policia, jornalopiniao_politica, oaltoacre,\

@@ -1,5 +1,5 @@
 import sys
-sys.path.insert(0, '../../src')
+sys.path.insert(0, '../../../blog')
 
 from bs4 import BeautifulSoup
 import requests

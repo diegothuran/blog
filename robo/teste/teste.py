@@ -1,7 +1,7 @@
 #!/usr/local/bin/python
 # -*- coding: utf-8 -*-
 import sys
-sys.path.insert(0, '../../src')
+sys.path.insert(0, '../../../blog')
 from Model.News import News
 from Database import connection, relevancia_site_table
 import datetime

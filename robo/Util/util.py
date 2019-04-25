@@ -14,7 +14,7 @@ import string
 
 from slugify import slugify
 
-sys.path.insert(0, '../../src')
+sys.path.insert(0, '../../../blog')
 
 
 def remove_punctuation(input_text):

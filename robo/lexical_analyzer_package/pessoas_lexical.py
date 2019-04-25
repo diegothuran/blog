@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import sys
-sys.path.insert(0, '../../src')
+sys.path.insert(0, '../../../blog')
 
 from robo.lexical_analyzer_package import base_lexical_analyzer
 

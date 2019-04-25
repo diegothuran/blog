@@ -1,7 +1,7 @@
 # coding: utf-8
 
 import sys
-sys.path.insert(0, '../../src')
+sys.path.insert(0, '../../../blog')
 
 import pandas as pd
 import urllib
@@ -39,16 +39,16 @@ def news_from_link(ref_link):
         news = News(row['abstract'], row['noticia'], row['date'], row['links'], row['titulos'], row['image'])
         try:
             print(row['titulos'])
-#             news_in_db = pessoas_table.check_news(news)
-#             print('news_in_db: ' + str(news_in_db))
-#             if (not news_in_db):
-            row = pd.DataFrame(row)
-            df, categories = pessoas_lexical.lexical_corpus_and_title(row)
-            print(categories)
-            # DB categories
-            if (categories != [set()]):
-                news.set_categories(categories)
-#                 pessoas_table.save_news(news)
-                pessoas_post.post_news(df)
+            news_in_db = pessoas_table.check_news(news)
+            print('news_in_db: ' + str(news_in_db))
+            if (not news_in_db):
+                row = pd.DataFrame(row)
+                df, categories = pessoas_lexical.lexical_corpus_and_title(row)
+                print(categories)
+                # DB categories
+                if (categories != [set()]):
+                    news.set_categories(categories)
+    #                 pessoas_table.save_news(news)
+                    pessoas_post.post_news(df)
         except:
             print('Empty News')

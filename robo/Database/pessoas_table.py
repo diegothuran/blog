@@ -1,7 +1,7 @@
 #!/usr/local/bin/python
 # -*- coding: utf-8 -*-
 import sys
-sys.path.insert(0, '../../src')
+sys.path.insert(0, '../../../blog')
 
 from robo.Model import News
 from robo.Database import connection
