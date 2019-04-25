@@ -1,4 +1,5 @@
-# coding: utf-8sys.path.insert(0, '../../src')
+#!/usr/local/bin/python
+# -*- coding: utf-8 -*-
 
 import sys
 sys.path.insert(0, '../../../../blog')

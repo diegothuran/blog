@@ -137,13 +137,18 @@ def post_news(df):
         url = 'http://127.0.0.1:8000/rest/'
         slug = util.slugify_title(title)
         link = row['links']
+        if(row['image'] == '0'):
+            img = ''
+        else:
+            img = row['image']
+        
         payload = {
                 "title": title,
                 "slug": slug,
                 "body": content,
                 "abstract": "",
                 "date": date,
-                "thumb": row['image'],
+                "thumb": img,
                 "link": link,
                 "author": str(1),
                 "categories": categories
