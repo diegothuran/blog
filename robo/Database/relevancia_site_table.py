@@ -202,9 +202,9 @@ def select_categories(categories):
     
     cursor.execute(query, request_site)
     rows = cursor.fetchall()
-#     print(len(rows))
-    for row in rows:
-        print(row)
+# #     print(len(rows))
+#     for row in rows:
+#         print(row)
     
     cursor.close()
     cnx.close()
@@ -255,8 +255,8 @@ def select_news_source_categories(categories):
     
     cursor.execute(query, request_site)
     rows = cursor.fetchall()
-    for row in rows:
-        print(row)
+#     for row in rows:
+#         print(row)
     
     cursor.close()
     cnx.close()
@@ -349,8 +349,8 @@ def get_interval_category(categories, data_inicial, data_final):
         query = ("SELECT public_date FROM pessoas WHERE " + query_condition + "AND public_date BETWEEN %s AND %s")
         request_site = formated_strings + (data_inicial,) + (data_final,)
         
-    print(query)
-    print(request_site)
+#     print(query)
+#     print(request_site)
     
 #     query = ("SELECT public_date FROM pessoas "
 #              "WHERE categories LIKE %s AND public_date BETWEEN %s AND %s")
@@ -365,8 +365,8 @@ def get_interval_category(categories, data_inicial, data_final):
     cursor.execute(query, request_site)
     rows = cursor.fetchall()
 
-    for i in rows:
-        print(i)
+#     for i in rows:
+#         print(i)
     
 #     for (first_name, last_name, hire_date) in cursor:
 #         print("{}, {} was hired on {:%d %b %Y}".format(last_name, first_name, hire_date))
