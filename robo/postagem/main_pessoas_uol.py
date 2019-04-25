@@ -1,7 +1,7 @@
 # coding: utf-8
 
 import sys
-sys.path.insert(0, '../../src')
+sys.path.insert(0, '../../../blog')
 
 from robo.postagem import util_pessoas
 from robo.pages.util import load_pages
