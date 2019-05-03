@@ -36,5 +36,6 @@ app_name = 'categories'
 urlpatterns = [
 #     path('', views.article_list, name='list'),
     path('filter/', views.category_filter, name='filter'), 
+    path('create/', views.category_create, name='create'), 
     re_path('(?P<slug>[\w-]+)/$', views.category_detail, name='detail'),
 ]

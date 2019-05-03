@@ -1,0 +1,28 @@
+ {% extends 'base_layout.html' %}
+
+<meta charset="UTF-8">
+{% block content %}
+	<div class="container">
+		<br/>
+		<div class="d-flex justify-content-center">
+			<div class="text-center">
+				<h2 class="pb-2 mb-4 font-italic border-bottom">Perfil</h2>
+			    <p>Usuário: {{ user }}</p>
+			    <p>Nome: {{ user.first_name }}</p>
+			    <p>Sobrenome: {{ user.last_name }}</p>
+			    <p>Email: {{ user.email }}</p>
+			    
+			    {% if user.userprofile.categories %}
+			    	<p>Categorias:
+			    	{% for category in user.userprofile.categories.all %}
+			    		<a class='' href="{% url 'categories:detail' slug=category.slug %}">
+							<span class="badge badge-pill badge-secondary" style="font-size: 16px; margin-block-end: 1em;"> {{ category.title }} </span>
+						</a>
+			    	{% endfor %}
+			    	</p>
+			    {% endif %}
+			    <br/>
+			</div>
+		</div>
+	</div>
+{% endblock %}
