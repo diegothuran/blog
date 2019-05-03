@@ -53,9 +53,9 @@ class UserForm(forms.ModelForm):
             'email'
         )
  
-# class ProfileForm(forms.ModelForm):
-#     class Meta:
-#         model = UserProfile
-#         fields = ('categories', )
+class ProfileForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ('categorias', )
         
 

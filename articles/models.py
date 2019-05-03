@@ -27,8 +27,7 @@ class Article(models.Model):
     thumb = models.TextField(blank=True)
     author = models.ForeignKey(User, default=None, on_delete=models.PROTECT)
     link = models.CharField(max_length=250, blank=True)
-    
-    # Gambiarra: usar o parent de categories nao como pai, mas como filho para facilitar as operacoes
+
     categories = models.ManyToManyField('category.Category', help_text='Categorize this item.')
     # add more fields later
     

@@ -9,7 +9,7 @@ from django.db.models.signals import post_save
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    categories = models.ManyToManyField('category.Category')
+    categorias = models.ManyToManyField('category.Category')
 
     def __str__(self):
         return self.user.username
