@@ -1,7 +1,6 @@
 from django import forms
 from category.models import Category
 
-
 class MultipleChoiceForm(forms.Form):
 #     CHOICES = [[x.id, x.title] for x in Category.objects.all()]
     CHOICES = [[cat.slug, cat.title] for cat in Category.objects.all()]
@@ -11,4 +10,14 @@ class MultipleChoiceForm(forms.Form):
 
 #     start_date=forms.DateField(widget = forms.SelectDateWidget())
 #     end_date=forms.DateField(widget = forms.SelectDateWidget())
-    
+
+
+class CreateCategory(forms.ModelForm):
+    class Meta:
+        model = Category
+#         fields = ('title', 'slug', 'body', 'thumb')
+        fields = ('title', 'slug')
+        widgets = {'slug': forms.HiddenInput()}
+        help_texts = {
+            'title': None,
+        }

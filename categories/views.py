@@ -13,6 +13,9 @@ from django.template.context import RequestContext
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
+from django.contrib.auth.decorators import login_required
+
+import articles
 
 # from category.models import Category
 # categorias = Category.objects.all()
@@ -326,3 +329,18 @@ def category_filter(request):
     return render(request, 'categories/category_filter.html', {'form': form})
 #     return render_to_response('categories/category_filter.html', {'form':form },
 #         context_instance=RequestContext(request))
+
+@login_required(login_url="/accounts/login/")
+def category_create(request):
+    if(request.method == "POST"):
+        form = forms.CreateCategory(request.POST)
+        if(form.is_valid()):
+            #save article to db
+            instance = form.save(commit=False)
+            instance.author = request.user
+            instance.save()
+            return redirect('categories:filter')
+    else:
+        form = forms.CreateCategory()
+    return render(request, 'categories/category_create.html', {'form': form})
+

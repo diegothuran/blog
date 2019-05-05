@@ -12,10 +12,11 @@ while(True):
     for page in load_pages.PAGES:
         try:
             urls = page.get_urls()
+            name_site = page.NAME
             news_from_globo = False
             for url in urls:
                 print('\n' + url)
-                util_pessoas.news_from_link(url)
+                util_pessoas.news_from_link(url, name_site)
 
         except Exception as e:
             print(e)

@@ -9,6 +9,10 @@ class News(object):
         self.link = link
         self.media = media
         self.categories = None
+        self.name_site = None
 
     def set_categories(self, categories):
         self.categories = categories
+        
+    def set_name_site(self, name_site):
+        self.name_site = name_site

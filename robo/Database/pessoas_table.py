@@ -19,13 +19,13 @@ def save_news(news = News):
 #         now = datetime.datetime(2009, 5, 5)
 #         str_now = now.date().isoformat()
         str_now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        
+        name_site = news.name_site[0]
         cats = util.join_categories(news.categories[0])
         add_news = ("INSERT INTO pessoas "
-                    "(id, abstract, noticia, public_date, image, titulo, link, cheated_at, categories) "
-                        "VALUES (NULL, %s, %s, %s, %s, %s, %s, %s, %s)", (news.abstract[0], news.news[0],
+                    "(id, abstract, noticia, public_date, image, titulo, link, cheated_at, categories, site) "
+                        "VALUES (NULL, %s, %s, %s, %s, %s, %s, %s, %s, %s)", (news.abstract[0], news.news[0],
                                                                                    news.date[0], news.media[0],
-                                                                                news.title[0], news.link[0], str_now, cats))
+                                                                                news.title[0], news.link[0], str_now, cats, name_site))
 
         cursor.execute(*add_news)
     except Exception as e:

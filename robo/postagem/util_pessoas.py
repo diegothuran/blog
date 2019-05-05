@@ -18,7 +18,7 @@ from robo.lexical_analyzer_package import pessoas_lexical
 from robo.postagem import pessoas_post 
 
 
-def news_from_link(ref_link):
+def news_from_link(ref_link, name_site):
     row = {'titulos': [], 'links': [], 'noticia': [], 'image': [], 'abstract': [], 'date': []}
     article = NewsPlease.from_url(ref_link)
     if (article is not None):
@@ -48,7 +48,8 @@ def news_from_link(ref_link):
                 # DB categories
                 if (categories != [set()]):
                     news.set_categories(categories)
-    #                 pessoas_table.save_news(news)
+                    news.set_name_site([name_site])
+                    pessoas_table.save_news(news)
                     pessoas_post.post_news(df)
         except:
             print('Empty News')

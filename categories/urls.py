@@ -31,10 +31,9 @@ app_name = 'categories'
 # artigo = articles[4]
 # nomes = [category.title for category in artigo.categories.all()]
 
-# Gambiarra: usar o parent de categories nao como pai, mas como filho para facilitar as operacoes
-
 urlpatterns = [
 #     path('', views.article_list, name='list'),
-    path('filter/', views.category_filter, name='filter'), 
+    path('filtrar/', views.category_filter, name='filter'), 
+    path('criar/', views.category_create, name='create'), 
     re_path('(?P<slug>[\w-]+)/$', views.category_detail, name='detail'),
 ]

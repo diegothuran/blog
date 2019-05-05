@@ -35,23 +35,37 @@
 			    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 			      <span class="navbar-toggler-icon"></span>
 			    </button>
+			    
 			    <div class="collapse navbar-collapse" id="navbarCollapse">
-			      <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
-			      <li>
-	  					<a href="{% url 'categories:filter'%}" class="nav-link">Filtrar categorias</a>
-	  				</li>
+			    	<ul class="navbar-nav mr-auto">
+			      		<li>
+		  					<a href="{% url 'categories:filter'%}" class="nav-link navbar-left">Filtrar categorias</a>
+		  				</li>
+	  					{% if user.is_authenticated %}
+	  						<li class="nav-item">
+			  					<a class="nav-link" href="{% url 'categories:create'%}">Adicionar categoria</a>
+			  				</li>
+		  					<li class="nav-item">
+			  					<a class="nav-link" href="{% url 'accounts:view_profile'%}">Perfil</a>
+			  				</li>
+			  				<li class="nav-item">
+			  					<a class="nav-link" href="{% url 'accounts:edit_profile'%}">Editar Perfil</a>
+			  				</li>
+	  					{% endif %}
+	  			  	</ul>
+	  			 </div>
+	  			 
+	  			 
+			   
+			    <div class="navbar-collapse collapse order-3 dual-collapse2" id="navbarCollapse">
+			        <ul class="navbar-nav ml-auto">
 			      	{% if user.is_authenticated %}
-	  				<!--  
-	  				<li>
-	  					<a href="{% url 'articles:create'%}" class="nav-link">Create new article</a>
-	  				</li>
-	  				-->
-	  				<li>
-		  				<form action="{% url 'accounts:logout'%}" method="post">
-		  				{% csrf_token %}
-		  				<button class="btn btn-outline-primary my-2 my-sm-0" type="submit"> Logout </button>
-	  					</form>
-	  				</li>
+		  				<li class="nav-item">
+			  				<form action="{% url 'accounts:logout'%}" method="post">
+			  				{% csrf_token %}
+			  				<button class="btn btn-outline-primary my-2 my-sm-0" type="submit"> Logout </button>
+		  					</form>
+		  				</li>
 	  				{% else %}
 		  				<li class="nav-item">
 		  					<a class="nav-link" href="{% url 'accounts:login'%}">Login</a>
@@ -62,6 +76,7 @@
 	  				{% endif %}
 	  				</ul>
 			    </div>
+			    
 		  	</nav>
 		</header>
   		
@@ -103,7 +118,8 @@
 	
 	  <!-- Copyright -->
 	  <!-- <div class="p-3 bg-light text-black text-center"> 2019 © NeuralCafe -->
-	  <div class="p-3 bg-secondary text-white text-center"> 2019 © NeuralCafe 
+	  <!-- <div class="p-3 bg-secondary text-white text-center"> 2019 © NeuralCafe -->
+	  <div class="p-3 bg-dark text-white text-center"> 2019 © NeuralCafe  
 	    <!-- <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a> -->
 	  </div>
 	  <!-- Copyright -->
