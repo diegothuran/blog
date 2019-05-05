@@ -2,288 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60299b98-9ab6-4eda-bb2b-7528039bf531" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/robo/Database/new_database.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/Database/new_database.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/Database/pessoas_table.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/Database/pessoas_table.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/Database/relevancia_site_table.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/Database/relevancia_site_table.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/Util/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/Util/util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/lexical_analyzer_package/pessoas_lexical.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/lexical_analyzer_package/pessoas_lexical.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/acre/agazetadoacre.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/acre/agazetadoacre.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/acre/jornalatribuna.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/acre/jornalatribuna.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/acre/jornalopiniao.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/acre/jornalopiniao.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/acre/jornalopiniao_economia.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/acre/jornalopiniao_economia.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/acre/jornalopiniao_policia.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/acre/jornalopiniao_policia.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/acre/jornalopiniao_politica.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/acre/jornalopiniao_politica.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/acre/oaltoacre.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/acre/oaltoacre.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/acre/oestadoacre.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/acre/oestadoacre.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/acre/oriobranco_geral.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/acre/oriobranco_geral.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/acre/oriobranco_policial.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/acre/oriobranco_policial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/acre/oriobranco_politica.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/acre/oriobranco_politica.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/acre/pagina20.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/acre/pagina20.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/acre/pagina20_economia.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/acre/pagina20_economia.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/acre/pagina20_policia.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/acre/pagina20_policia.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/acre/pagina20_politica.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/acre/pagina20_politica.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/agenciabrasil_ebc.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/agenciabrasil_ebc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/alagoas/anoticia.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/alagoas/anoticia.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/alagoas/cadaminuto.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/alagoas/cadaminuto.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/alagoas/correiodopovo.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/alagoas/correiodopovo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/alagoas/gazetadealagoas.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/alagoas/gazetadealagoas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/alagoas/gazetaweb.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/alagoas/gazetaweb.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/alagoas/novoextra.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/alagoas/novoextra.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/alagoas/primeiraedicao.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/alagoas/primeiraedicao.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/alagoas/tribunahoje.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/alagoas/tribunahoje.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/alagoas/tribunauniao.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/alagoas/tribunauniao.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/amapa/aquiamapa.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/amapa/aquiamapa.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/amapa/diariodoamapa.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/amapa/diariodoamapa.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/amazonas/acritica_am.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/amazonas/acritica_am.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/amazonas/ojornaldailha.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/amazonas/ojornaldailha.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/amazonas/osolimoes.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/amazonas/osolimoes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/bahia/aregiao.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/bahia/aregiao.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/bahia/atarde.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/bahia/atarde.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/bahia/correiodooeste.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/bahia/correiodooeste.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/bahia/folharegionalbahia.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/bahia/folharegionalbahia.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/bahia/folhasertaneja.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/bahia/folhasertaneja.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/bahia/istoenoticia.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/bahia/istoenoticia.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/bahia/jornalalerta.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/bahia/jornalalerta.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/bahia/jornalanossavoz.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/bahia/jornalanossavoz.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/bahia/jornalfolhadoestado.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/bahia/jornalfolhadoestado.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/bahia/jornalimpacto.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/bahia/jornalimpacto.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/bahia/jornalnovafronteira.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/bahia/jornalnovafronteira.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/bahia/novoeste.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/bahia/novoeste.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/bahia/oecojornal.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/bahia/oecojornal.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/bahia/rss_diariobahia.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/bahia/rss_diariobahia.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/bahia/tribunafeirense.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/bahia/tribunafeirense.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/bastidoresdopoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/bastidoresdopoder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/bbc.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/bbc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/cartacapital.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/cartacapital.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/ceara/anoticiadoceara.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/ceara/anoticiadoceara.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/ceara/oestadoce.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/ceara/oestadoce.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/ceara/opovo.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/ceara/opovo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/ceara/tribunadoceara.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/ceara/tribunadoceara.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/correio24horas.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/correio24horas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/default.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/default.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/diariocatarinense.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/diariocatarinense.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/diariodocentrodomundo.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/diariodocentrodomundo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/diariodocentrodomundo_mundo.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/diariodocentrodomundo_mundo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/diariodonordeste.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/diariodonordeste.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/dinheirorural.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/dinheirorural.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/distrito_federal/camara.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/distrito_federal/camara.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/distrito_federal/correiobraziliense.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/distrito_federal/correiobraziliense.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/distrito_federal/folhacentrooeste.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/distrito_federal/folhacentrooeste.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/distrito_federal/jornaldebrasilia.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/distrito_federal/jornaldebrasilia.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/distrito_federal/jornalregional.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/distrito_federal/jornalregional.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/distrito_federal/rss_estacaonews.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/distrito_federal/rss_estacaonews.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/distrito_federal/rss_senado.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/distrito_federal/rss_senado.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/elpais.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/elpais.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/espirito_santo/aquinoticias.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/espirito_santo/aquinoticias.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/espirito_santo/correiodoestadoonline.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/espirito_santo/correiodoestadoonline.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/espirito_santo/estadocapixaba.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/espirito_santo/estadocapixaba.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/espirito_santo/gazetaonline.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/espirito_santo/gazetaonline.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/espirito_santo/jornalcorreiocapixaba.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/espirito_santo/jornalcorreiocapixaba.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/espirito_santo/noticiaagora.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/espirito_santo/noticiaagora.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/espirito_santo/rss_folhaonline.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/espirito_santo/rss_folhaonline.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/espirito_santo/tribunaonline.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/espirito_santo/tribunaonline.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/exame.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/exame.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/abert.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/abert.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/abi.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/abi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/administradores.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/administradores.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/adrenaline.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/adrenaline.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/agenciabrasil.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/agenciabrasil.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/ancine.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/ancine.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/apublica.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/apublica.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/avozeavezdajuventude.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/avozeavezdajuventude.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/b9.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/b9.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/balaiodokotscho.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/balaiodokotscho.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/blastingnews.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/blastingnews.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/blogdafloresta.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/blogdafloresta.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/blogdoataide.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/blogdoataide.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/blogdoluciosorge.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/blogdoluciosorge.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/blogdomaringoni.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/blogdomaringoni.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/blogdomello.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/blogdomello.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/blogdomiro.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/blogdomiro.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/blogdoneylopes.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/blogdoneylopes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/blogdopaulinho.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/blogdopaulinho.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/blogdopaulonunes.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/blogdopaulonunes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/blogdoprimo.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/blogdoprimo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/blogdoriella.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/blogdoriella.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/blogdorovai.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/blogdorovai.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/blogdoskarlack.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/blogdoskarlack.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/blogmarcosfrahm.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/blogmarcosfrahm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/brasildefato.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/brasildefato.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/buzzfeed_news_br.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/buzzfeed_news_br.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/camara.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/camara.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/carta_maior.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/carta_maior.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/cartamaior.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/cartamaior.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/ceert.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/ceert.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/ceticismopolitico.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/ceticismopolitico.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/cinegnose.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/cinegnose.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/comunicadores.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/comunicadores.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/congressoemfoco.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/congressoemfoco.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/convergenciadigital.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/convergenciadigital.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/correiodobrasil.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/correiodobrasil.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/diariodocentrodomundo.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/diariodocentrodomundo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/diplomatique.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/diplomatique.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/domingoscosta.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/domingoscosta.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/eb.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/eb.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/ebc.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/ebc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/elielbezerra.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/elielbezerra.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/esporteemidia.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/esporteemidia.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/estadao.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/estadao.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/extra_globo.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/extra_globo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/fabiocampana.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/fabiocampana.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/falandoverdades.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/falandoverdades.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/folha_piaui.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/folha_piaui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/folha_sp.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/folha_sp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/gospelprime.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/gospelprime.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/grandesnomesdapropaganda.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/grandesnomesdapropaganda.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/huffpostbrasil.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/huffpostbrasil.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/imprensaviva.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/imprensaviva.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/istoe.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/istoe.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/jaderbarbalho.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/jaderbarbalho.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/jornaisvirtuais.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/jornaisvirtuais.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/jornaldocomercio.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/jornaldocomercio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/jornallivre.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/jornallivre.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/jota.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/jota.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/justificando.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/justificando.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/lulacerda.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/lulacerda.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/marcossilverio.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/marcossilverio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/migalhas.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/migalhas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/moneytimes.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/moneytimes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/mundodomarketing.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/mundodomarketing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/natelinha.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/natelinha.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/nocaute.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/nocaute.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/noticiasdatv.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/noticiasdatv.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/oab.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/oab.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/observatoriodatelevisao.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/observatoriodatelevisao.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/ocafezinho.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/ocafezinho.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/ocombatente.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/ocombatente.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/operamundi.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/operamundi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/osamigosdopresidentelula.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/osamigosdopresidentelula.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/osdivergentes.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/osdivergentes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/otvfoco.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/otvfoco.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/outraspalavras.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/outraspalavras.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/papelpop.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/papelpop.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/polibiobraga.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/polibiobraga.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/politicanarede.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/politicanarede.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/poncheverde.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/poncheverde.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/portaldapropaganda.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/portaldapropaganda.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/ptnacamara.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/ptnacamara.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/revistaforum.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/revistaforum.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/revistapress.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/revistapress.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/rss_multiplos.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/rss_multiplos.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/rufandobombo.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/rufandobombo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/saibamais.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/saibamais.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/sputniknews.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/sputniknews.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/telepadi.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/telepadi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/telesintese.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/telesintese.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/tijolaco.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/tijolaco.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/torcedores.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/torcedores.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/tribunadainternet.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/tribunadainternet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/tribunadajustiça.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/tribunadajustiça.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/valor.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/valor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/veja.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/veja.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/vermelho.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/vermelho.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gabriel/viomundo.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gabriel/viomundo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gauchazh.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gauchazh.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/gazetadopovo.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/gazetadopovo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/globo_eleicoes.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/globo_eleicoes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/goias/diariodeaparecida.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/goias/diariodeaparecida.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/goias/diariodoestadogo.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/goias/diariodoestadogo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/goias/jornalaguaslindas.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/goias/jornalaguaslindas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/goias/jornalestadodegoias.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/goias/jornalestadodegoias.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/goias/jornalopcao.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/goias/jornalopcao.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/goias/oanapolis.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/goias/oanapolis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/goias/ohoje.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/goias/ohoje.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/goias/opopular.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/goias/opopular.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/goias/rss_jornalopcao.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/goias/rss_jornalopcao.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/goias/tribunadoplanalto.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/goias/tribunadoplanalto.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/infomoney.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/infomoney.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/istoedinheiro.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/istoedinheiro.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/jornalestadodeminas.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/jornalestadodeminas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/jovempan.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/jovempan.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/justificando.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/justificando.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/justificando_artigos.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/justificando_artigos.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/maranhao/atosefatos.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/maranhao/atosefatos.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/maranhao/oestadoma.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/maranhao/oestadoma.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/maranhao/oquartopoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/maranhao/oquartopoder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/marceloauler.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/marceloauler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/mato_grosso/circuitomt.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/mato_grosso/circuitomt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/mato_grosso/copopular.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/mato_grosso/copopular.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/mato_grosso/folhadoestado.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/mato_grosso/folhadoestado.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/mato_grosso/gazetadigital.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/mato_grosso/gazetadigital.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/mato_grosso_do_sul/acritica.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/mato_grosso_do_sul/acritica.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/mato_grosso_do_sul/atribunanews.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/mato_grosso_do_sul/atribunanews.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/mato_grosso_do_sul/correiodoestado.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/mato_grosso_do_sul/correiodoestado.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/mato_grosso_do_sul/jd1noticias.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/mato_grosso_do_sul/jd1noticias.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/mato_grosso_do_sul/midiamax.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/mato_grosso_do_sul/midiamax.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/minas_gerais/em.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/minas_gerais/em.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/minas_gerais/folhamg.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/minas_gerais/folhamg.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/minas_gerais/hojeemdia.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/minas_gerais/hojeemdia.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/ne10.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/ne10.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/oantagonista.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/oantagonista.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/paraiba/correiodaparaiba.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/paraiba/correiodaparaiba.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/paraiba/jornaldaparaiba.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/paraiba/jornaldaparaiba.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/parana/bemparana.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/parana/bemparana.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/parana/diarioinduscom.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/parana/diarioinduscom.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/parana/gazetadopovo.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/parana/gazetadopovo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/parana/impactopr.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/parana/impactopr.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/parana/jornaldoonibusdecuritiba.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/parana/jornaldoonibusdecuritiba.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/parana/tribunapr.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/parana/tribunapr.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/pernambuco/correiodepernambuco.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/pernambuco/correiodepernambuco.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/pernambuco/diariodepernambuco.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/pernambuco/diariodepernambuco.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/pernambuco/folhape.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/pernambuco/folhape.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/pernambuco/jconline.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/pernambuco/jconline.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/r7.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/r7.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/rio_de_janeiro/correiodobrasil.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/rio_de_janeiro/correiodobrasil.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/rio_de_janeiro/destakjornal.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/rio_de_janeiro/destakjornal.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/rio_de_janeiro/jb.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/rio_de_janeiro/jb.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/rio_de_janeiro/monitordigital.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/rio_de_janeiro/monitordigital.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/rio_de_janeiro/odia.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/rio_de_janeiro/odia.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/rio_de_janeiro/oglobo.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/rio_de_janeiro/oglobo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/rio_grande_do_norte/agorarn.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/rio_grande_do_norte/agorarn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/rio_grande_do_norte/tribunadenoticias.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/rio_grande_do_norte/tribunadenoticias.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/rio_grande_do_norte/tribunadonorte.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/rio_grande_do_norte/tribunadonorte.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/rio_grande_do_sul/correiodopovo.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/rio_grande_do_sul/correiodopovo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/rio_grande_do_sul/osul.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/rio_grande_do_sul/osul.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/rondonia/correiodenoticia.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/rondonia/correiodenoticia.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/rondonia/diariodaamazonia.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/rondonia/diariodaamazonia.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/roraima/folhabv.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/roraima/folhabv.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/roraima/jornalroraimahoje.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/roraima/jornalroraimahoje.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/rss_globo.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/rss_globo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/santa_catarina/anoticia_clicrbs.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/santa_catarina/anoticia_clicrbs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/santa_catarina/ndonline.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/santa_catarina/ndonline.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/santa_catarina/nsctotal.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/santa_catarina/nsctotal.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/santa_catarina/nsctotal_santa.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/santa_catarina/nsctotal_santa.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/sao_paulo/brasildefato.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/sao_paulo/brasildefato.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/sao_paulo/dci.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/sao_paulo/dci.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/sao_paulo/diariodenoticias.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/sao_paulo/diariodenoticias.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/sao_paulo/estadao.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/sao_paulo/estadao.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/sao_paulo/fsp.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/sao_paulo/fsp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/sao_paulo/gazetasp.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/sao_paulo/gazetasp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/sao_paulo/horadopovo.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/sao_paulo/horadopovo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/sao_paulo/jornalestacao.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/sao_paulo/jornalestacao.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/sao_paulo/meioemensagem.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/sao_paulo/meioemensagem.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/sao_paulo/metronews.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/sao_paulo/metronews.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/sao_paulo/valor.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/sao_paulo/valor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/sergipe/cinform.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/sergipe/cinform.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/sergipe/jornaldesergipe.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/sergipe/jornaldesergipe.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/sergipe/jornaldodiase.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/sergipe/jornaldodiase.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/terra_noticias.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/terra_noticias.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/tnh1.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/tnh1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/tocantins/agora_to.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/tocantins/agora_to.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/tocantins/conexaoto.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/tocantins/conexaoto.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/tocantins/jornaldotocantins.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/tocantins/jornaldotocantins.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/tocantins/ogirassol.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/tocantins/ogirassol.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/tocantins/portalstylo.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/tocantins/portalstylo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/tribunadosertao.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/tribunadosertao.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/uol.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/uol.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/util/constantes.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/util/constantes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/util/indice_relevancia.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/util/indice_relevancia.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robo/pages/util/load_pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/util/load_pages.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/pages/veja_ultimas.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/pages/veja_ultimas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/postagem/util_pessoas.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/postagem/util_pessoas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/teste/teste.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/teste/teste.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/teste/teste_chave_relevancia_site.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/teste/teste_chave_relevancia_site.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo/teste/teste_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/robo/teste/teste_db.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -329,12 +50,12 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/robo/postagem/util_pessoas.py">
+        <entry file="file://$PROJECT_DIR$/blog/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
-              <caret line="49" column="51" lean-forward="true" selection-start-line="49" selection-start-column="51" selection-end-line="49" selection-end-column="51" />
+            <state relative-caret-position="240">
+              <caret line="90" column="16" lean-forward="true" selection-start-line="90" selection-start-column="16" selection-end-line="90" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -364,9 +85,10 @@
         <option value="$PROJECT_DIR$/robo/postagem/main_pessoas_uol.py" />
         <option value="$PROJECT_DIR$/robo/pages/agenciabrasil_ebc.py" />
         <option value="$PROJECT_DIR$/robo/pages/util/constantes.py" />
-        <option value="$PROJECT_DIR$/robo/pages/util/load_pages.py" />
         <option value="$PROJECT_DIR$/robo/pages/util/indice_relevancia.py" />
         <option value="$PROJECT_DIR$/robo/postagem/util_pessoas.py" />
+        <option value="$PROJECT_DIR$/robo/pages/util/load_pages.py" />
+        <option value="$PROJECT_DIR$/blog/settings.py" />
       </list>
     </option>
   </component>
@@ -383,10 +105,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="229" />
-    <option name="y" value="-17" />
-    <option name="width" value="1040" />
-    <option name="height" value="784" />
+    <option name="y" value="-1" />
+    <option name="width" value="1269" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -403,13 +124,7 @@
             <path>
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="robo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="robo" type="462c0819:PsiDirectoryNode" />
-              <item name="postagem" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -420,6 +135,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="sqlite" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="true" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -508,7 +224,11 @@
       <workItem from="1554202883577" duration="3709000" />
       <workItem from="1554668835376" duration="1681000" />
       <workItem from="1554722379599" duration="119000" />
-      <workItem from="1556197020126" duration="4670000" />
+      <workItem from="1556197020126" duration="6866000" />
+      <workItem from="1556224560244" duration="36000" />
+      <workItem from="1556276051124" duration="520000" />
+      <workItem from="1556279752367" duration="95000" />
+      <workItem from="1557065984305" duration="1606000" />
     </task>
     <task id="LOCAL-00001" summary="requirements update">
       <created>1554673441955</created>
@@ -528,16 +248,15 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12270000" />
+    <option name="totallyTimeSpent" value="16723000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-1" width="1920" height="1040" extended-state="6" />
+    <frame x="0" y="-1" width="2560" height="1040" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26040554" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13484487" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Database Console" weight="0.32969433" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32969433" />
@@ -549,8 +268,9 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3286026" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3286026" />
       <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="bottom" id="Database Console" order="13" weight="0.32969433" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -679,32 +399,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/robo/postagem/pessoas_post.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1236">
-          <caret line="85" column="4" selection-start-line="85" selection-start-column="4" selection-end-line="85" selection-end-column="4" />
-          <folding>
-            <element signature="e#49#64#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/robo/Database/new_database.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-864" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/robo/pages/util/load_pages.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/robo/postagem/pessoas_post.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="46" selection-start-column="46" selection-end-column="46" />
+        <state relative-caret-position="192">
+          <caret line="142" column="14" selection-start-line="142" selection-start-column="14" selection-end-line="142" selection-end-column="14" />
+          <folding>
+            <element signature="e#49#64#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/robo/postagem/util_pessoas.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="49" column="51" lean-forward="true" selection-start-line="49" selection-start-column="51" selection-end-line="49" selection-end-column="51" />
+        <state relative-caret-position="517">
+          <caret line="51" column="36" selection-start-line="51" selection-start-column="36" selection-end-line="51" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="90" column="16" lean-forward="true" selection-start-line="90" selection-start-column="16" selection-end-line="90" selection-end-column="16" />
         </state>
       </provider>
     </entry>
