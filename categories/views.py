@@ -1,17 +1,15 @@
 #!/usr/local/bin/python
 # -*- coding: utf-8 -*-
 
-from django.shortcuts import render, render_to_response, redirect, reverse
+from django.shortcuts import render, redirect, reverse
 from category.models import Category
 
-from robo.teste import teste_db
+from robo.analytics import analises
 from robo.Util import util
 from articles.models import Article
 
 from . import forms
-from django.template.context import RequestContext
 
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 
@@ -276,10 +274,10 @@ def category_detail(request, slug):
     categorias, titulo = util.categoria_to_sigla(requested_categories)
     
     dias_anteriores = 30
-    labels_category_timeline, data_category_timeline = teste_db.get_categoria_timeline(categorias, dias_anteriores)
-    labels_category_relation, data_category_relation = teste_db.get_relacionamento_categorias(categorias)
-    labels_category_sites, data_category_sites = teste_db.get_fontes_informacao_categoria(categorias)
-    labels_region, data_region = teste_db.get_numero_noticias_por_regiao(categorias)
+    labels_category_timeline, data_category_timeline = analises.get_categoria_timeline(categorias, dias_anteriores)
+    labels_category_relation, data_category_relation = analises.get_relacionamento_categorias(categorias)
+    labels_category_sites, data_category_sites = analises.get_fontes_informacao_categoria(categorias)
+    labels_region, data_region = analises.get_numero_noticias_por_regiao(categorias)
     
     return render(request, 'categories/category_detail.html', 
                   {'categories': requested_categories, 'word_cloud': word_cloud, 

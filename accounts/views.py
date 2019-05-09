@@ -11,7 +11,7 @@ from django.urls import reverse
 from accounts.models import UserProfile
 from accounts.forms import RegistrationForm, UserForm, ProfileForm
 
-from robo.teste import teste_db
+from robo.analytics import analises
 from robo.Util import util
 from category.models import Category
 
@@ -81,7 +81,7 @@ def view_profile(request):
     categorias_usuario = [cat for cat in user.userprofile.categorias.all()]
 
     categorias, titulo = util.categoria_to_sigla(categorias_usuario)
-    labels_category_relation, data_category_relation = teste_db.get_relacionamento_categorias(categorias)    
+    labels_category_relation, data_category_relation = analises.get_relacionamento_categorias(categorias)    
     
     mais_relacionadas = util.sigla_to_categoria(labels_category_relation)[:5]
     all_categorias = Category.objects.all()

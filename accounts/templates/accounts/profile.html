@@ -21,7 +21,7 @@
 			    	{% endfor %}
 			    	</p>
 			    	
-			    	<p>Categorias que você pode estar interessado:
+			    	<p>Categorias em que você pode estar interessado:
 			    	{% for category in categorias_relacionadas %}
 			    		<a class='' href="{% url 'categories:detail' slug=category.slug %}">
 							<span class="badge badge-pill badge-primary" style="font-size: 16px; margin-block-end: 1em;"> {{ category.title }} </span>

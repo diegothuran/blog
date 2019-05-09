@@ -1,14 +1,13 @@
 import requests
 from django.shortcuts import render, redirect
 from . import models
-from django.http import HttpResponse
+
 from django.contrib.auth.decorators import login_required
 from . import forms
 from rest_framework import generics
 from . import serializers
 
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from robo.teste import teste_db
+from robo.analytics import analises
 
 
 # Create your views here.
@@ -45,7 +44,7 @@ def article_detail(request, slug):
 #     relevancia = 3.2
     
     try:
-        relevancia = teste_db.get_relevancia(article.link)
+        relevancia = analises.get_relevancia(article.link)
     except:
         relevancia = "--"
 

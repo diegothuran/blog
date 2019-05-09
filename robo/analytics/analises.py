@@ -3,12 +3,8 @@
 import sys
 sys.path.insert(0, '../../../blog')
 
-from robo.Model import News
-from robo.Database import connection, relevancia_site_table
+from robo.Database import relevancia_site_table, pessoas_table
 import datetime
-from dateutil import parser
-# import postagem.Util as Util
-from robo.Model.Relevancia_Site import Relevancia_Site 
 from operator import itemgetter    
 
 from collections import OrderedDict
@@ -24,7 +20,6 @@ INDEX_REGIOES = { 'Norte' : 0,
                     'Sul' : 0}
 
 INDEX_CATEGORIES = {
-#     'categoria': '',
                     'bolsonaro' : 0,
                     'onyx lorenzoni' : 0, 
                     'paulo guedes' : 0, 
@@ -89,7 +84,7 @@ INDEX_CATEGORIES = {
 
 def get_relacionamento_categorias(categorias):
     # cats = todas as categorias das noticias que tem que a(s) categoria(s) do parametro
-    cats = relevancia_site_table.select_categories(categorias)
+    cats = pessoas_table.select_categories(categorias)
     nb_noticias = len(cats)
     related_cats = INDEX_CATEGORIES.copy()
     for row in cats:
@@ -126,7 +121,7 @@ def get_fontes_informacao_categoria(categorias):
     for page in load_pages.PAGES:
         sites[page.NAME] = 0
 
-    fontes_informacao = relevancia_site_table.select_news_source_categories(categorias)
+    fontes_informacao = pessoas_table.select_news_source_categories(categorias)
     todos_sites = sites.copy()
     for fonte in fontes_informacao:
         try:
@@ -161,7 +156,7 @@ def get_categoria_timeline(categorias, dias_anteriores):
         temp += 1
     datas.reverse()
     # consulta ao banco
-    datas_categoria = relevancia_site_table.get_interval_category(categorias, datas[0], datas[-1])
+    datas_categoria = pessoas_table.get_interval_category(categorias, datas[0], datas[-1])
     # criando o dict
     dict_datas = { i : 0 for i in datas}
     # preenchendo o dict 
@@ -201,7 +196,7 @@ def get_timeline(dias_anteriores):
         temp += 1
     datas.reverse()
     # consulta ao banco
-    datas_categoria = relevancia_site_table.get_interval(datas[0], datas[-1])
+    datas_categoria = pessoas_table.get_interval(datas[0], datas[-1])
     # criando o dict
     dict_datas = { i : 0 for i in datas}
     # preenchendo o dict 
@@ -233,7 +228,7 @@ def get_timeline(dias_anteriores):
 
 def get_numero_noticias_por_regiao(categorias):                
     # cats = todas as categorias das noticias que tem que a(s) categoria(s) do parametro
-    cats = relevancia_site_table.select_categories(categorias)
+    cats = pessoas_table.select_categories(categorias)
     related_cats = INDEX_REGIOES.copy()
     for row in cats:
         categories_per_row = row[0]
@@ -273,7 +268,7 @@ def get_numero_noticias_por_regiao(categorias):
 # get_numero_noticias_por_regiao(['ba'])
 
 def categorias_por_site(site):
-    categorias = relevancia_site_table.get_categories_per_site(site)
+    categorias = pessoas_table.get_categories_per_site(site)
     cats_counter = INDEX_CATEGORIES.copy()
     for row in categorias:
         categories_per_row = row[0]
@@ -290,25 +285,18 @@ def categorias_por_site(site):
     print(cats_counter.keys())
     print(cats_counter.values())
 
-# def get_relevancia(site):
-#     # estrutura tupla = (id, site, relevancia, relevancia_inicial)
-#     tupla = relevancia_site_table.select(site)
-#     relevancia = tupla[2]
-#     return relevancia
 
 def get_relevancia(link):
-    site = relevancia_site_table.select_site_in_link(link)[0]
+    site = pessoas_table.select_site_in_link(link)[0]
     # estrutura tupla = (id, site, relevancia, relevancia_inicial)
     tupla = relevancia_site_table.select(site[0])
     relevancia = tupla[2]
     return relevancia
 
-# link = 'https://noticias.uol.com.br/ultimas-noticias/agencia-estado/2019/04/01/desgaste-do-governo-nao-interessa-a-ninguem-diz-governador-da-bahia.htm'
-# get_relevancia(link)
 
 def get_wordcloud(categoria):
 #     categoria = 'osmar terra'
-    noticias = relevancia_site_table.select_text_categories(categoria)
+    noticias = pessoas_table.select_text_categories(categoria)
     news = [noticia[0] for noticia in noticias]
     # Create and generate a word cloud image:
     temp = ''
@@ -331,137 +319,11 @@ def get_wordcloud(categoria):
         valor = value * 100
         print('{"word":"' + str(key) + '","freq":' + str(valor) + '},')
     print(']')
-    
-#     # Display the generated image:
-#     plt.imshow(wc, interpolation='bilinear')
-#     plt.axis("off")
-#     plt.show()
 
-# site = 'buzzfeed.com'
-# # estrutura tupla = (id, site, relevancia, relevancia_inicial)
-# tupla = relevancia_site_table.select(site)
-# print(tupla[2])
-
-
-# def plot_bar_timeseries(valores, dates):
-#     # this is for plotting purpose
-# #     index = np.arange(len(valores))
-#     index = []
-#     for date in dates:
-# #         str_date = date.strftime("%Y-%m-%d")
-#         str_date = date.strftime("%d-%m-%Y")
-#         index.append(str_date)
-#     plt.bar(index, valores)
-#     plt.xlabel('Data', fontweight='bold')
-#     plt.ylabel('Número de notícias', fontweight='bold')
-#     plt.xticks(rotation=30)
-#     plt.title('Timeline das notícias')
-# #     plt.xlabel('Genre', fontsize=5)
-# #     plt.ylabel('No of Movies', fontsize=5)
-# #     plt.xticks(index, valores, fontsize=5, rotation=30)
-# #     plt.title('Market Share for Each Genre 1995-2017')
-#     plt.show()
-#       
-# # dates = [datetime.date(2018, 11, 1), datetime.date(2018, 11, 2), datetime.date(2018, 11, 3), datetime.date(2018, 11, 4)]
-#            
-# dates = [datetime.date(2018, 11, 1), datetime.date(2018, 11, 2), datetime.date(2018, 11, 3), datetime.date(2018, 11, 4), 
-#          datetime.date(2018, 11, 5), datetime.date(2018, 11, 6), datetime.date(2018, 11, 7), datetime.date(2018, 11, 8),
-#          datetime.date(2018, 11, 9), datetime.date(2018, 11, 10), datetime.date(2018, 11, 11), datetime.date(2018, 11, 12), datetime.date(2018, 11, 13)]
-#   
-# valores = []
-# for date in dates:
-#     valores.append(relevancia_site_table.select_form_date(date))
-#   
-# print(valores)
-# plot_bar_timeseries(valores, dates)
- 
-# data_inicial = datetime.date(2018, 11, 1) 
-# data_final = datetime.date(2018, 11, 4)
-# relevancia_site_table.get_interval(data_inicial, data_final)
-
-# site = 'www.valor.com.br'
-# # relevancia_site_table.select_site_in_link(site)
-# relevancia_site_table.update_site(site)
 
 ''' AQUI '''
 # for page in load_pages.PAGES:
 #     site = page.NAME
 #     print(site)
 #     relevancia_site_table.update_site(site)
- 
-# relevancia_site_table.select_site(site)
-# 
-# # categories_db = relevancia_site_table.select_site_pd(site)
-# # n_news = float(len(categories_db)) 
-# # print(categories_db)
-# 
-# 
-# # THEME_CATEGORIES = ['bolsonaro', 'onyx lorenzoni', 'paulo guedes']
-# 
-# THEME_CATEGORIES = ['bolsonaro', 'onyx lorenzoni', 'paulo guedes', 'augusto heleno', 'marcos pontes', 'sérgio moro', 'sérgio moro', 'hamilton mourão',
-#                      'joaquim levy', 'mansueto almeida', 'fernando azevedo e silva', 'ernesto araújo', 'roberto campos neto', 'tereza cristina',
-#                      'andré luiz de almeida mendonça', 'carlos von doellinger', 'érika marena', 'luiz mandetta', 'maurício valeixo', 'pedro guimarães', 
-#                      'ricardo vélez rodríguez', 'roberto castello branco', 'rubem novaes', 'wagner rosário', 
-#                      'bento costa lima leite de albuquerque junior', 'marcelo álvaro antônio', 'osmar terra', 'gustavo henrique rigodanzo canuto', 
-#                      'tarcísio gomes de freitas', 'carlos alberto dos santos cruz', 'gustavo bebianno']
-# 
-# 
 
-# 
-# retorno = []
-# for theme in THEME_CATEGORIES:
-#     row = INDEX_CATEGORIES.copy()
-# #     row['categoria'] = theme
-#     for categories_per_row in categories_db:
-#         if(theme in categories_per_row):
-#             if(',' in categories_per_row):
-#                 categories = categories_per_row.split(', ')
-#                 for category in categories:
-#                     row[category] += 1
-#             else: # only one category in the table
-#                 row[categories_per_row] += 1
-#     retorno.append(row)
-# 
-# print('retorno')
-# print(len(retorno))
-# df = pd.DataFrame(retorno, index=THEME_CATEGORIES)
-# # print(df.loc['bolsonaro'])
-# for i in range(len(df)):
-#     print(i)
-# #     print(df.iloc[i].name)
-#     print(df.iloc[i].values)
-#     valores = df.iloc[i].values
-# #     soma = np.sum(valores)
-# #     print(soma)
-#     percentagem = None
-#     percentagem =  valores/n_news
-#     print(percentagem)
-# print(df)
-# 
-# # a = list(retorno[0].values())
-# # b = a[1:]
-# 
-# # print(np.cov(b))
-# 
-# # print('\n COOR MATRIX')
-# # # df['A'].corr(df['B'])
-# # # coor_matrix = df.corr()
-# # coor_matrix = df.corr()
-# # 
-# # print(coor_matrix['bolsonaro'])
-# # print(len(coor_matrix['bolsonaro']))
-
-''' --- Codigos para o js relacionado a categorias --- '''
-# categoria = 'osmar terra'
-# dias_anteriores = 30
-# get_categoria_timeline(categoria, dias_anteriores)
-# get_relacionamento_categorias(categoria)
-# get_fontes_informacao_categoria(categoria)
-# get_wordcloud(categoria)
-
-''' timeline geral '''
-# get_timeline(dias_anteriores)
-
-# ''' --- Codigos para o js relacionado a sites --- '''
-# site = 'terra.com.br'
-# categorias_por_site(site)
