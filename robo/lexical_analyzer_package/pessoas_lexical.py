@@ -24,12 +24,19 @@ WORDS = ['bolsonaro', 'onyx lorenzoni', 'paulo guedes', 'augusto heleno', 'marco
          'tarcísio gomes de freitas', 'carlos alberto dos santos cruz', 'gustavo bebianno']
 
 
-THEME_CATEGORIES = ['bolsonaro', 'onyx lorenzoni', 'paulo guedes', 'augusto heleno', 'marcos pontes', 'sérgio moro', 'sérgio moro', 'hamilton mourão',
-                     'joaquim levy', 'mansueto almeida', 'fernando azevedo e silva', 'ernesto araújo', 'roberto campos neto', 'tereza cristina',
-                     'andré luiz de almeida mendonça', 'carlos von doellinger', 'érika marena', 'luiz mandetta', 'maurício valeixo', 'pedro guimarães', 
-                     'ricardo vélez rodríguez', 'roberto castello branco', 'rubem novaes', 'wagner rosário', 
-                     'bento costa lima leite de albuquerque junior', 'marcelo álvaro antônio', 'osmar terra', 'gustavo henrique rigodanzo canuto', 
-                     'tarcísio gomes de freitas', 'carlos alberto dos santos cruz', 'gustavo bebianno']
+# THEME_CATEGORIES = ['bolsonaro', 'onyx lorenzoni', 'paulo guedes', 'augusto heleno', 'marcos pontes', 'sérgio moro', 'sérgio moro', 'hamilton mourão',
+#                      'joaquim levy', 'mansueto almeida', 'fernando azevedo e silva', 'ernesto araújo', 'roberto campos neto', 'tereza cristina',
+#                      'andré luiz de almeida mendonça', 'carlos von doellinger', 'érika marena', 'luiz mandetta', 'maurício valeixo', 'pedro guimarães', 
+#                      'ricardo vélez rodríguez', 'roberto castello branco', 'rubem novaes', 'wagner rosário', 
+#                      'bento costa lima leite de albuquerque junior', 'marcelo álvaro antônio', 'osmar terra', 'gustavo henrique rigodanzo canuto', 
+#                      'tarcísio gomes de freitas', 'carlos alberto dos santos cruz', 'gustavo bebianno']
+
+THEME_CATEGORIES = ['bolsonaro', 'onyx-lorenzoni', 'paulo-guedes', 'augusto-heleno', 'marcos-pontes', 'sergio-moro', 'sergio-moro', 'hamilton-mourao',
+                     'joaquim-levy', 'mansueto-almeida', 'fernando-azevedo-e-silva', 'ernesto-araujo', 'roberto-campos-neto', 'tereza-cristina',
+                     'andre-luiz-de-almeida-mendonca', 'carlos-von-doellinger', 'erika-marena', 'luiz-mandetta', 'mauricio-valeixo', 'pedro-guimaraes', 
+                     'ricardo-velez-rodriguez', 'roberto-castello-branco', 'rubem-novaes', 'wagner-rosario', 
+                     'bento-costa-lima-leite-de-albuquerque-junior', 'marcelo-alvaro-antonio', 'osmar-terra', 'gustavo-henrique-rigodanzo-canuto', 
+                     'tarcisio-gomes-de-freitas', 'carlos-alberto-dos-santos-cruz', 'gustavo-bebianno']
 
 def lexical(df):
     df, categories = base_lexical_analyzer.get_categories_corpus(df, WORDS, THEME_CATEGORIES)

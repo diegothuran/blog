@@ -19,19 +19,35 @@ CAPITAIS = ['rio branco', 'maceió', 'macapá', 'manaus', 'brasília',  'goiâni
             'cuiabá', 'campo grande', 'belo horizonte', 'belém', 'joão pessoa', 'curitiba', 'recife', 'teresina', 'rio de janeiro',
             'porto alegre', 'porto velho', 'boa vista', 'florianópolis', 'são paulo', 'aracaju']
 
-CAPITAIS_CASE_SENSITIVE = ['Natal', 'Salvador', 'Fortaleza', 'Vitória', 'Palmas']
+CAPITAIS_CASE_SENSITIVE = ['Natal', 'Salvador', 'Fortaleza', 'Vitória', 'Palmas'] 
 
 SIGLAS_ESTADOS = ['AC', 'AL', 'AP', 'AM', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MT', 'MS', 'MG', 'PA','PB', 'PR', 
-                  'PE', 'PI', 'RJ', 'RN', 'RS', 'RO', 'RR', 'SC', 'SP', 'SE','TO']
+                  'PE', 'PI', 'RJ', 'RN', 'RS', 'RO', 'RR', 'SC', 'SP', 'SE','TO'] 
 
-SIGLAS_ESTADOS_SEM_PA_AC = ['AL', 'AP', 'AM', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MT', 'MS', 'MG', 'PB', 'PR', 
-                  'PE', 'PI', 'RJ', 'RN', 'RS', 'RO', 'RR', 'SC', 'SP', 'SE','TO']
+SLUG_ESTADOS = ['acre', 'alagoas', 'amapa', 'amazonas', 'bahia', 'ceara', 'distrito-federal', 'espirito-santo', 'goias', 
+                'maranhao', 'mato-grosso', 'mato-grosso-do-sul', 'minas-gerais', 'para','paraiba', 'parana', 
+                'pernambuco', 'piaui', 'rio-de-janeiro', 'rio-grande-do-norte', 'rio-grande-do-sul', 'rondonia', 
+                'roraima', 'santa-catarina', 'sao-paulo', 'sergipe','tocantins']
 
+# SIGLAS_ESTADOS_SEM_PA_AC = ['AL', 'AP', 'AM', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MT', 'MS', 'MG', 'PB', 'PR', 
+#                   'PE', 'PI', 'RJ', 'RN', 'RS', 'RO', 'RR', 'SC', 'SP', 'SE','TO']
 
-SIGLAS_ESTADOS_SEM_CASE_SENSITIVE = ['AC', 'AL', 'AP', 'AM', 'DF', 'GO', 'MA', 'MT', 'MS', 'MG', 'PA','PB', 'PR', 
-                  'PE', 'PI', 'RJ', 'RS', 'RO', 'RR', 'SC', 'SP', 'SE']  
+SIGLAS_ESTADOS_SEM_PA_AC = ['alagoas', 'amapa', 'amazonas', 'bahia', 'ceara', 'distrito-federal', 'espirito-santo', 'goias', 'maranhao', 
+                            'mato-grosso', 'mato-grosso-do-sul', 'minas-gerais', 'paraiba', 'parana', 
+                            'pernambuco', 'piaui', 'rio-de-janeiro', 'rio-grande-do-norte', 'rio-grande-do-sul', 'rondonia', 
+                            'roraima', 'santa-catarina', 'sao-paulo', 'sergipe','tocantins']
 
-SIGLAS_ESTADOS_CASE_SENSITIVE = ['RN', 'BA', 'CE', 'ES' , 'TO'] 
+# SIGLAS_ESTADOS_SEM_CASE_SENSITIVE = ['AC', 'AL', 'AP', 'AM', 'DF', 'GO', 'MA', 'MT', 'MS', 'MG', 'PA','PB', 'PR', 
+#                   'PE', 'PI', 'RJ', 'RS', 'RO', 'RR', 'SC', 'SP', 'SE']
+
+SIGLAS_ESTADOS_SEM_CASE_SENSITIVE = ['acre', 'alagoas', 'amapa', 'amazonas', 'distrito-federal', 'goias', 'maranhao', 
+                                     'mato-grosso', 'mato-grosso-do-sul', 'minas-gerais', 'para', 'paraiba', 'parana', 
+                                     'pernambuco', 'piaui', 'rio-de-janeiro', 'rio-grande-do-sul', 'rondonia', 'roraima', 'santa-catarina', 
+                                     'sao-paulo', 'sergipe']
+
+# SIGLAS_ESTADOS_CASE_SENSITIVE = ['RN', 'BA', 'CE', 'ES' , 'TO']
+
+SIGLAS_ESTADOS_CASE_SENSITIVE = ['rio-grande-do-norte', 'bahia', 'ceara', 'espirito-santo' , 'tocantins']  
 
 
 def remove_punctuation(input_text):
@@ -64,7 +80,9 @@ def get_estados_categories(input_text):
     words = text.split()
     for word in words:
         if word in SIGLAS_ESTADOS:
-            estados_categories.append(word.lower())
+#             estados_categories.append(word.lower())
+            idx = SIGLAS_ESTADOS.index(word)
+            estados_categories.append(SLUG_ESTADOS[idx])
         
     for idx_capitais in range(len(CAPITAIS_CASE_SENSITIVE)):
         if CAPITAIS_CASE_SENSITIVE[idx_capitais] in text:
@@ -72,11 +90,11 @@ def get_estados_categories(input_text):
 
     # Pará, caso a parte, para evitar o erro de verbo no futuro 'parará'
     if ESTADO_PARA in text:
-        estados_categories.append('pa')
+        estados_categories.append('para')
     
     # Acre, caso a parte, para evitar o erro de verbo acreditar    
     if ESTADO_ACRE in text:
-        estados_categories.append('ac')
+        estados_categories.append('acre')
 
     ' LOWER_CASE VERIFICATION: text to lower case '
     text = text.lower()

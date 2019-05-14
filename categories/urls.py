@@ -35,5 +35,6 @@ urlpatterns = [
 #     path('', views.article_list, name='list'),
     path('filtrar/', views.category_filter, name='filter'), 
     path('criar/', views.category_create, name='create'), 
+    path('listar/', views.CategoryList.as_view(), name='list'),
     re_path('(?P<slug>[\w-]+)/$', views.category_detail, name='detail'),
 ]

@@ -14,6 +14,8 @@ from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 
 import articles
+from rest_framework import generics
+from . import serializers
 
 # from category.models import Category
 # categorias = Category.objects.all()
@@ -342,3 +344,7 @@ def category_create(request):
         form = forms.CreateCategory()
     return render(request, 'categories/category_create.html', {'form': form})
 
+class CategoryList(generics.ListCreateAPIView):
+    queryset = Category.objects.all()
+    serializer_class = serializers.CategorySerializer 
+    

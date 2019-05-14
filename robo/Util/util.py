@@ -63,6 +63,27 @@ def get_categories_idx(categories_names, index_categories):
             categories_idx.append(index_categories[category])
     return categories_idx  
 
+def get_categories_idx_rest(categories_names, categorias):
+    """
+    Get the wordpress categories index from the list of strings
+    
+    Parameters
+    ----------
+    categories_names: list of strings containing the name of the categories
+    
+    Return:
+    ------
+        categories_idx: list of integers containing the index of the categories
+    """
+    list_categories = list(categories_names)
+    categories_idx = []
+    for category in list_categories:
+        for rest_category in categorias:
+            if(category == rest_category['slug']):
+                categories_idx.append(rest_category['id'])
+                break
+    return categories_idx  
+
 def get_categories_all_noticias(df):
     """
     Get the list of categories (list of categories (str)) for all 'noticias' 
