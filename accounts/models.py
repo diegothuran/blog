@@ -1,3 +1,5 @@
+# coding: utf-8
+
 from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
@@ -9,7 +11,10 @@ from django.db.models.signals import post_save
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    categorias = models.ManyToManyField('category.Category')
+#     categorias = models.ManyToManyField('category.Category')
+    categorias = models.ManyToManyField('category.Category', help_text='Mantenha pressionado o "Control", ou "Command" no Mac, para selecionar mais de uma opção.')
+    
+    
 
     def __str__(self):
         return self.user.username
