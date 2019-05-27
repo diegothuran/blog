@@ -9,6 +9,8 @@ from . import serializers
 
 from robo.analytics import analises
 
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
 
 # Create your views here.
 def article_list(request):
@@ -16,15 +18,16 @@ def article_list(request):
 #     user_list = User.objects.all()
     article_list = models.Article.objects.all().order_by('-date')
     
-#     page = request.GET.get('page', 1)
-#     paginator = Paginator(article_list, 10)
-#     try:
-#         articles = paginator.page(page)
-#     except PageNotAnInteger:
-#         articles = paginator.page(1)
-#     except EmptyPage:
-#         articles = paginator.page(paginator.num_pages)
-    return render(request, 'articles/article_list.html', {'articles': article_list})
+    page = request.GET.get('page', 1)
+    paginator = Paginator(article_list, 10)
+    try:
+        articles = paginator.page(page)
+    except PageNotAnInteger:
+        articles = paginator.page(1)
+    except EmptyPage:
+        articles = paginator.page(paginator.num_pages)
+#     return render(request, 'articles/article_list.html', {'articles': article_list})
+    return render(request, 'articles/article_list.html', {'articles':articles})
 
 
 def article_detail(request, slug):
