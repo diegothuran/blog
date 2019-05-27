@@ -8,6 +8,8 @@ from rest_framework import generics
 from . import serializers
 
 from robo.analytics import analises
+from slugify import slugify
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 # Create your views here.
@@ -16,15 +18,16 @@ def article_list(request):
 #     user_list = User.objects.all()
     article_list = models.Article.objects.all().order_by('-date')
     
-#     page = request.GET.get('page', 1)
-#     paginator = Paginator(article_list, 10)
-#     try:
-#         articles = paginator.page(page)
-#     except PageNotAnInteger:
-#         articles = paginator.page(1)
-#     except EmptyPage:
-#         articles = paginator.page(paginator.num_pages)
-    return render(request, 'articles/article_list.html', {'articles': article_list})
+    page = request.GET.get('page', 1)
+    paginator = Paginator(article_list, 10)
+    try:
+        articles = paginator.page(page)
+    except PageNotAnInteger:
+        articles = paginator.page(1)
+    except EmptyPage:
+        articles = paginator.page(paginator.num_pages)
+#     return render(request, 'articles/article_list.html', {'articles': article_list})
+    return render(request, 'articles/article_list.html', {'articles':articles})
 
 
 def article_detail(request, slug):
@@ -92,3 +95,8 @@ class ArticleList(generics.ListCreateAPIView):
     queryset = models.Article.objects.all()
     serializer_class = serializers.ArticleSerializer
 
+def slug_correction(request):
+    articles = models.Article.objects.all()
+    for article in articles:
+        article.slug = slugify(article.title)
+        article.save()
