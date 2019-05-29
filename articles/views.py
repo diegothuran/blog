@@ -8,6 +8,8 @@ from rest_framework import generics
 from . import serializers
 
 from robo.analytics import analises
+from slugify import slugify
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
@@ -95,3 +97,8 @@ class ArticleList(generics.ListCreateAPIView):
     queryset = models.Article.objects.all()
     serializer_class = serializers.ArticleSerializer
 
+def slug_correction(request):
+    articles = models.Article.objects.all()
+    for article in articles:
+        article.slug = slugify(article.title)
+        article.save()
