@@ -22,6 +22,7 @@ urlpatterns = [
     path('', views.article_list, name='list'),
     path('create/', views.article_create, name='create'),
     path('slug_update/', views.slug_correction, name='slugcorrection'),
+    path('categories_update/', views.update_categories, name='updatecategories'),
     re_path('(?P<slug>[\w-]+)/$', views.article_detail, name='detail'),
 
 ]

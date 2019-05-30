@@ -11,15 +11,15 @@ import numpy as np
 url = 'http://127.0.0.1:8000/rest/'
  
 payload = {
-        "title": "postagem via api2",
-        "slug": "postagem-via-api2",
-        "body": "Primeiro post via API2.",
+        "title": "postagem via api",
+        "slug": "postagem-via-api",
+        "body": "Primeiro post via API.",
         "abstract": "",
-        "date": "2019-03-12T00:57:00Z",
+        "date": "2019-05-29T20:57:00Z",
         "thumb": "",
-        "link": "",
+        "link": "https://www.uol.com.br/",
         "author": str(1),
-        "categories": [1]
+        "categories": [2,3,4]
     }
 
 response = requests.request("POST", url, data=payload)

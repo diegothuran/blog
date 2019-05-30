@@ -13,6 +13,7 @@ from numpy import nan
 import string 
 
 from slugify import slugify
+import json
 
 sys.path.insert(0, '../../../blog')
 
@@ -63,7 +64,7 @@ def get_categories_idx(categories_names, index_categories):
             categories_idx.append(index_categories[category])
     return categories_idx  
 
-def get_categories_idx_rest(categories_names, categorias):
+def django_get_categories_idx(categories_names, all_categories):
     """
     Get the wordpress categories index from the list of strings
     
@@ -78,11 +79,33 @@ def get_categories_idx_rest(categories_names, categorias):
     list_categories = list(categories_names)
     categories_idx = []
     for category in list_categories:
-        for rest_category in categorias:
-            if(category == rest_category['slug']):
-                categories_idx.append(rest_category['id'])
+        for django_category in all_categories:
+            if(category == django_category.slug):
+                categories_idx.append(django_category.id)
                 break
     return categories_idx  
+
+# def get_categories_idx_rest(categories_names, categorias):
+#     """
+#     Get the wordpress categories index from the list of strings
+#     
+#     Parameters
+#     ----------
+#     categories_names: list of strings containing the name of the categories
+#     
+#     Return:
+#     ------
+#         categories_idx: list of integers containing the index of the categories
+#     """
+#     list_categories = list(categories_names)
+#     categories_idx = []
+#     for category in list_categories:
+#         for rest_category in categorias:
+#             print(rest_category.slug)
+#             if(category == rest_category['slug']):
+#                 categories_idx.append(rest_category['id'])
+#                 break
+#     return categories_idx  
 
 def get_categories_all_noticias(df):
     """
@@ -332,6 +355,11 @@ def slugify_title(title):
     slug = slugify(title)
     return slug
 
+def get_json_categories():
+    categorias = requests.request("GET", 'http://127.0.0.1:8000/categorias/listar/')
+    json_categories = json.loads(categorias.content)
+    return json_categories
+
 # def categoria_to_sigla(requested_categories):
 #     categorias = [ 'Acre', 'Alagoas', 'Amapá', 'Amazonas', 'Bahia', 'Ceará', 'Distrito Federal', 'Espírito Santo', 
 #                   'Goiás', 'Maranhão', 'Mato Grosso', 'Mato Grosso do Sul', 'Minas Gerais', 'Pará', 'Paraíba', 'Paraná', 
@@ -349,72 +377,72 @@ def slugify_title(title):
 # # categoria_to_sigla('Acre')
 
 
-def categoria_to_sigla(requested_categories):
-    '''
-    chamado no categories.views 
-    '''
-    categorias = [ 'Acre', 'Alagoas', 'Amapá', 'Amazonas', 'Bahia', 'Ceará', 'Distrito Federal', 'Espírito Santo', 
-                  'Goiás', 'Maranhão', 'Mato Grosso', 'Mato Grosso do Sul', 'Minas Gerais', 'Pará', 'Paraíba', 'Paraná', 
-                  'Pernambuco', 'Piauí', 'Rio de Janeiro', 'Rio Grande do Norte', 'Rio Grande do Sul', 'Rondônia', 'Roraima', 
-                  'Santa Catarina', 'São Paulo', 'Sergipe', 'Tocantins',
-                  'Bolsonaro', 'Onyx Lorenzoni',  'Paulo Guedes',  'Augusto Heleno',  'Marcos Pontes',  'Sérgio Moro', 
-                  'Hamilton Mourão', 'Joaquim Levy', 'Mansueto almeida', 'Fernando Azevedo e Silva', 'Ernesto Araújo',  
-                  'Roberto Campos Neto', 'Tereza Cristina', 'André Luiz de Almeida Mendonça', 'Carlos Von Doellinger', 
-                  'Érika Marena', 'Luiz Mandetta', 'Maurício Valeixo', 'Pedro Guimarães', 'Ricardo Vélez Rodríguez', 
-                  'Roberto Castello Branco', 'Rubem Novaes', 'Wagner Rosário', 'Bento Costa Lima Leite de Albuquerque Junior', 
-                  'Marcelo Álvaro Antônio', 'Osmar Terra', 'Gustavo Henrique Rigodanzo Canuto', 'Tarcísio Gomes de Freitas', 
-                  'Carlos Alberto dos Santos Cruz', 'Gustavo Bebianno']
-    
-    siglas = ['ac', 'al', 'ap', 'am', 'ba', 'ce', 'df', 'es', 'go', 'ma', 'mt', 'ms', 'mg', 'pa','pb', 'pr', 
-                  'pe', 'pi', 'rj', 'rn', 'rs', 'ro', 'rr', 'sc', 'sp', 'se','to',
-                  'bolsonaro', 'onyx lorenzoni',  'paulo guedes',  'augusto heleno',  'marcos pontes',  'sérgio moro', 
-                  'hamilton mourão', 'joaquim levy', 'mansueto almeida', 'fernando azevedo e silva', 'ernesto araújo',  
-                  'roberto campos neto', 'tereza cristina', 'andré luiz de almeida mendonça', 'carlos von doellinger', 
-                  'érika marena', 'luiz mandetta', 'maurício valeixo', 'pedro guimarães', 'ricardo vélez rodríguez', 
-                  'roberto castello branco', 'rubem novaes', 'wagner rosário', 'bento costa lima leite de albuquerque junior', 
-                  'marcelo álvaro antônio', 'osmar terra', 'gustavo henrique rigodanzo canuto', 'tarcísio gomes de freitas', 
-                  'carlos alberto dos santos cruz', 'gustavo bebianno']
-    
-    retorno = []
-    for i in range(len(requested_categories)):
-        idx = categorias.index(requested_categories[i].title)
-        retorno.append(siglas[idx])
-        if(i==0):
-            titulo = requested_categories[i].title
-        else:
-            novo_nome = ' e ' + requested_categories[i].title
-            titulo += novo_nome
-    return retorno, titulo
-
-def sigla_to_categoria(siglas_categorias):
-    '''
-    chamado no categories.views 
-    '''
-    categorias = [ 'Acre', 'Alagoas', 'Amapá', 'Amazonas', 'Bahia', 'Ceará', 'Distrito Federal', 'Espírito Santo', 
-                  'Goiás', 'Maranhão', 'Mato Grosso', 'Mato Grosso do Sul', 'Minas Gerais', 'Pará', 'Paraíba', 'Paraná', 
-                  'Pernambuco', 'Piauí', 'Rio de Janeiro', 'Rio Grande do Norte', 'Rio Grande do Sul', 'Rondônia', 'Roraima', 
-                  'Santa Catarina', 'São Paulo', 'Sergipe', 'Tocantins',
-                  'Bolsonaro', 'Onyx Lorenzoni',  'Paulo Guedes',  'Augusto Heleno',  'Marcos Pontes',  'Sérgio Moro', 
-                  'Hamilton Mourão', 'Joaquim Levy', 'Mansueto almeida', 'Fernando Azevedo e Silva', 'Ernesto Araújo',  
-                  'Roberto Campos Neto', 'Tereza Cristina', 'André Luiz de Almeida Mendonça', 'Carlos Von Doellinger', 
-                  'Érika Marena', 'Luiz Mandetta', 'Maurício Valeixo', 'Pedro Guimarães', 'Ricardo Vélez Rodríguez', 
-                  'Roberto Castello Branco', 'Rubem Novaes', 'Wagner Rosário', 'Bento Costa Lima Leite de Albuquerque Junior', 
-                  'Marcelo Álvaro Antônio', 'Osmar Terra', 'Gustavo Henrique Rigodanzo Canuto', 'Tarcísio Gomes de Freitas', 
-                  'Carlos Alberto dos Santos Cruz', 'Gustavo Bebianno']
-    
-    siglas = ['ac', 'al', 'ap', 'am', 'ba', 'ce', 'df', 'es', 'go', 'ma', 'mt', 'ms', 'mg', 'pa','pb', 'pr', 
-                  'pe', 'pi', 'rj', 'rn', 'rs', 'ro', 'rr', 'sc', 'sp', 'se','to',
-                  'bolsonaro', 'onyx lorenzoni',  'paulo guedes',  'augusto heleno',  'marcos pontes',  'sérgio moro', 
-                  'hamilton mourão', 'joaquim levy', 'mansueto almeida', 'fernando azevedo e silva', 'ernesto araújo',  
-                  'roberto campos neto', 'tereza cristina', 'andré luiz de almeida mendonça', 'carlos von doellinger', 
-                  'érika marena', 'luiz mandetta', 'maurício valeixo', 'pedro guimarães', 'ricardo vélez rodríguez', 
-                  'roberto castello branco', 'rubem novaes', 'wagner rosário', 'bento costa lima leite de albuquerque junior', 
-                  'marcelo álvaro antônio', 'osmar terra', 'gustavo henrique rigodanzo canuto', 'tarcísio gomes de freitas', 
-                  'carlos alberto dos santos cruz', 'gustavo bebianno']
-    
-    retorno = []
-    for i in range(len(siglas_categorias)):
-        idx = siglas.index(siglas_categorias[i])
-        retorno.append(categorias[idx])
-    return retorno
+# def categoria_to_sigla(requested_categories):
+#     '''
+#     chamado no categories.views 
+#     '''
+#     categorias = [ 'Acre', 'Alagoas', 'Amapá', 'Amazonas', 'Bahia', 'Ceará', 'Distrito Federal', 'Espírito Santo', 
+#                   'Goiás', 'Maranhão', 'Mato Grosso', 'Mato Grosso do Sul', 'Minas Gerais', 'Pará', 'Paraíba', 'Paraná', 
+#                   'Pernambuco', 'Piauí', 'Rio de Janeiro', 'Rio Grande do Norte', 'Rio Grande do Sul', 'Rondônia', 'Roraima', 
+#                   'Santa Catarina', 'São Paulo', 'Sergipe', 'Tocantins',
+#                   'Bolsonaro', 'Onyx Lorenzoni',  'Paulo Guedes',  'Augusto Heleno',  'Marcos Pontes',  'Sérgio Moro', 
+#                   'Hamilton Mourão', 'Joaquim Levy', 'Mansueto almeida', 'Fernando Azevedo e Silva', 'Ernesto Araújo',  
+#                   'Roberto Campos Neto', 'Tereza Cristina', 'André Luiz de Almeida Mendonça', 'Carlos Von Doellinger', 
+#                   'Érika Marena', 'Luiz Mandetta', 'Maurício Valeixo', 'Pedro Guimarães', 'Ricardo Vélez Rodríguez', 
+#                   'Roberto Castello Branco', 'Rubem Novaes', 'Wagner Rosário', 'Bento Costa Lima Leite de Albuquerque Junior', 
+#                   'Marcelo Álvaro Antônio', 'Osmar Terra', 'Gustavo Henrique Rigodanzo Canuto', 'Tarcísio Gomes de Freitas', 
+#                   'Carlos Alberto dos Santos Cruz', 'Gustavo Bebianno']
+#     
+#     siglas = ['ac', 'al', 'ap', 'am', 'ba', 'ce', 'df', 'es', 'go', 'ma', 'mt', 'ms', 'mg', 'pa','pb', 'pr', 
+#                   'pe', 'pi', 'rj', 'rn', 'rs', 'ro', 'rr', 'sc', 'sp', 'se','to',
+#                   'bolsonaro', 'onyx lorenzoni',  'paulo guedes',  'augusto heleno',  'marcos pontes',  'sérgio moro', 
+#                   'hamilton mourão', 'joaquim levy', 'mansueto almeida', 'fernando azevedo e silva', 'ernesto araújo',  
+#                   'roberto campos neto', 'tereza cristina', 'andré luiz de almeida mendonça', 'carlos von doellinger', 
+#                   'érika marena', 'luiz mandetta', 'maurício valeixo', 'pedro guimarães', 'ricardo vélez rodríguez', 
+#                   'roberto castello branco', 'rubem novaes', 'wagner rosário', 'bento costa lima leite de albuquerque junior', 
+#                   'marcelo álvaro antônio', 'osmar terra', 'gustavo henrique rigodanzo canuto', 'tarcísio gomes de freitas', 
+#                   'carlos alberto dos santos cruz', 'gustavo bebianno']
+#     
+#     retorno = []
+#     for i in range(len(requested_categories)):
+#         idx = categorias.index(requested_categories[i].title)
+#         retorno.append(siglas[idx])
+#         if(i==0):
+#             titulo = requested_categories[i].title
+#         else:
+#             novo_nome = ' e ' + requested_categories[i].title
+#             titulo += novo_nome
+#     return retorno, titulo
+# 
+# def sigla_to_categoria(siglas_categorias):
+#     '''
+#     chamado no categories.views 
+#     '''
+#     categorias = [ 'Acre', 'Alagoas', 'Amapá', 'Amazonas', 'Bahia', 'Ceará', 'Distrito Federal', 'Espírito Santo', 
+#                   'Goiás', 'Maranhão', 'Mato Grosso', 'Mato Grosso do Sul', 'Minas Gerais', 'Pará', 'Paraíba', 'Paraná', 
+#                   'Pernambuco', 'Piauí', 'Rio de Janeiro', 'Rio Grande do Norte', 'Rio Grande do Sul', 'Rondônia', 'Roraima', 
+#                   'Santa Catarina', 'São Paulo', 'Sergipe', 'Tocantins',
+#                   'Bolsonaro', 'Onyx Lorenzoni',  'Paulo Guedes',  'Augusto Heleno',  'Marcos Pontes',  'Sérgio Moro', 
+#                   'Hamilton Mourão', 'Joaquim Levy', 'Mansueto almeida', 'Fernando Azevedo e Silva', 'Ernesto Araújo',  
+#                   'Roberto Campos Neto', 'Tereza Cristina', 'André Luiz de Almeida Mendonça', 'Carlos Von Doellinger', 
+#                   'Érika Marena', 'Luiz Mandetta', 'Maurício Valeixo', 'Pedro Guimarães', 'Ricardo Vélez Rodríguez', 
+#                   'Roberto Castello Branco', 'Rubem Novaes', 'Wagner Rosário', 'Bento Costa Lima Leite de Albuquerque Junior', 
+#                   'Marcelo Álvaro Antônio', 'Osmar Terra', 'Gustavo Henrique Rigodanzo Canuto', 'Tarcísio Gomes de Freitas', 
+#                   'Carlos Alberto dos Santos Cruz', 'Gustavo Bebianno']
+#     
+#     siglas = ['ac', 'al', 'ap', 'am', 'ba', 'ce', 'df', 'es', 'go', 'ma', 'mt', 'ms', 'mg', 'pa','pb', 'pr', 
+#                   'pe', 'pi', 'rj', 'rn', 'rs', 'ro', 'rr', 'sc', 'sp', 'se','to',
+#                   'bolsonaro', 'onyx lorenzoni',  'paulo guedes',  'augusto heleno',  'marcos pontes',  'sérgio moro', 
+#                   'hamilton mourão', 'joaquim levy', 'mansueto almeida', 'fernando azevedo e silva', 'ernesto araújo',  
+#                   'roberto campos neto', 'tereza cristina', 'andré luiz de almeida mendonça', 'carlos von doellinger', 
+#                   'érika marena', 'luiz mandetta', 'maurício valeixo', 'pedro guimarães', 'ricardo vélez rodríguez', 
+#                   'roberto castello branco', 'rubem novaes', 'wagner rosário', 'bento costa lima leite de albuquerque junior', 
+#                   'marcelo álvaro antônio', 'osmar terra', 'gustavo henrique rigodanzo canuto', 'tarcísio gomes de freitas', 
+#                   'carlos alberto dos santos cruz', 'gustavo bebianno']
+#     
+#     retorno = []
+#     for i in range(len(siglas_categorias)):
+#         idx = siglas.index(siglas_categorias[i])
+#         retorno.append(categorias[idx])
+#     return retorno
     
