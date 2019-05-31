@@ -20,7 +20,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf.urls.static import static
 from django.conf import settings
 from articles import views as article_views
-
+from api import views as api_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('artigos/', include('articles.urls')),
@@ -28,6 +28,7 @@ urlpatterns = [
     path('categorias/', include('categories.urls')),
     path('about/', views.about),
     path('rest/', article_views.ArticleList.as_view(), name='rest'),
+    path('api/v1/', include('api.urls')),
     path('', article_views.article_list, name='home'),
 ]
 

@@ -15,7 +15,7 @@ from django.contrib.auth.decorators import login_required
 
 import articles
 from rest_framework import generics
-from . import serializers
+from api import serializers
 
 # from category.models import Category
 # categorias = Category.objects.all()
