@@ -20,6 +20,7 @@ cycler==0.10.0
 Django==2.1.7
 django-category==2.0.1
 django-filter==2.1.0
+django-jet==1.0.8
 django-object-tools==2.0.0
 djangorestframework==3.9.2
 docutils==0.14

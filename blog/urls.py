@@ -22,6 +22,7 @@ from django.conf import settings
 from articles import views as article_views
 from api import views as api_views
 urlpatterns = [
+    path('jet/', include('jet.urls', 'jet')),  # Django JET URLS
     path('admin/', admin.site.urls),
     path('artigos/', include('articles.urls')),
     path('usuarios/', include('accounts.urls')),
