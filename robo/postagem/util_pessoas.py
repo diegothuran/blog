@@ -1,9 +1,10 @@
 # coding: utf-8
 
-import sys
+import sys, os
 sys.path.insert(0, '../../../blog')
 
 import django
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "blog.settings")
 django.setup()
 
 import pandas as pd
