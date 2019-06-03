@@ -5,7 +5,7 @@ from . import models
 from django.contrib.auth.decorators import login_required
 from . import forms
 from rest_framework import generics
-from . import serializers
+from api import serializers
 
 from robo.analytics import analises
 from slugify import slugify

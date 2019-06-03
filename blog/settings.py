@@ -31,6 +31,8 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'jet',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,7 +44,10 @@ INSTALLED_APPS = [
     'categories',
     'django.contrib.sites',
     'category',
-    'rest_framework'
+    'rest_framework',
+    'django_filters',
+    'drf_yasg',
+
 ]
 
 MIDDLEWARE = [
@@ -81,29 +86,33 @@ TEMPLATES = [
 #     ]
 # }
 
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',)
+}
+
 WSGI_APPLICATION = 'blog.wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ingridma_neural',
-        'USER': 'ingridma_neural',
-        'PASSWORD': 'neural123',
-        'HOST': '162.241.2.79',
-        'PORT': '',
-    }
-}
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'ingridma_neural',
+#         'USER': 'ingridma_neural',
+#         'PASSWORD': 'neural123',
+#         'HOST': '162.241.2.79',
+#         'PORT': '',
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 
 # Password validation

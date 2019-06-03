@@ -3,6 +3,7 @@
 import sys, os
 sys.path.insert(0, '../../../blog')
 
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "blog.settings")
 import django
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "blog.settings")
 django.setup()
