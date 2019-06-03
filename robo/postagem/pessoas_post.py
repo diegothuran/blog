@@ -33,7 +33,6 @@ def post_news(info):
             "title": info['title'][0],
             "slug": info['slug'][0],
             "body": content,
-            "abstract": "",
             "date": str_date,
             "thumb": img,
             "link": info['link'][0],
