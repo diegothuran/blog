@@ -252,6 +252,9 @@ def category_detail(request, slug):
     centro_oeste = article_list.filter(Q(categories=8) | Q(categories=10) | Q(categories=12) | Q(categories=13)).distinct()
     sudeste = article_list.filter(Q(categories=9) | Q(categories=14) | Q(categories=20) | Q(categories=26)).distinct()
     sul = article_list.filter(Q(categories=17) | Q(categories=22) | Q(categories=25)).distinct()
+    labels_region = ['Norte', 'Nordeste', 'Centro-Oeste', 'Sudeste', 'Sul'] 
+    data_region = [len(norte), len(nordeste), len(centro_oeste), len(sudeste), len(sul)]
+    
     
 #     #pagination
 #     page = request.GET.get('page', 1)
@@ -273,19 +276,31 @@ def category_detail(request, slug):
 #     labels_category_sites = ['agazetadoacre.com', 'jornalatribuna.com.br', 'jornalopiniao.net', 'oaltoacre.com', 'oestadoacre.com', 'oriobranco.net', 'pagina20.net', 'anoticia.online', 'cadaminuto.com.br', 'correiodopovo.com.br', 'gazetaweb.globo.com/gazetadealagoas', 'gazetaweb.globo.com/portal', 'novoextra.com.br', 'primeiraedicao.com.br', 'tribunahoje.com', 'tribunauniao.com.br', 'aquiamapa.com.br', 'diariodoamapa.com.br', 'acritica.com', 'ojornaldailha.com', 'osolimoes.com.br', 'aregiao.com.br', 'atarde.uol.com.br', 'correiodooeste.com.br', 'folharegionalbahia.com.br', 'folhasertaneja.com.br', 'istoenoticia.com', 'jornalalerta.com.br', 'sertaohoje.com.br', 'jornalfolhadoestado.com', 'jornalimpacto.com.br', 'jornalnovafronteira.com.br', 'novoeste.com', 'oecojornal.com.br', 'diariobahia.com.br', 'tribunafeirense.com.br', 'anoticiadoceara.com.br', 'oestadoce.com.br', 'opovo.com.br', 'tribunadoceara.uol.com.br', 'camara.leg.br', 'folhacentrooeste.blog.br', 'jornaldebrasilia.com.br', 'jornalregional.com.br', 'estacaonews.blog.br', 'senado.leg.br', 'aquinoticias.com', 'correiodoestadoonline.com.br', 'estadocapixaba.com', 'gazetaonline.com.br', 'jornalcorreiocapixaba.com.br', 'noticiaagora.com.br', 'folhaonline.es', 'tribunaonline.com.br', 'diariodeaparecida.com.br', 'diariodoestadogo.com.br', 'jornalaguaslindas.com.br', 'jornalopcao.com.br', 'jornalestadodegoias.com.br', 'oanapolis.com.br', 'ohoje.com.br', 'opopular.com.br', 'tribunadoplanalto.com.br', 'atosefatos.jor.br', 'imirante.com', 'oquartopoder.com', 'circuitomt.com.br', 'copopular.com.br', 'folhadoestado.com.br', 'gazetadigital.com.br', 'acritica.net', 'atribunanews.com.br', 'correiodoestado.com.br', 'jd1noticias.com', 'midiamax.com.br', 'em.com.br', 'folhamg.com', 'hojeemdia.com.br', 'correiodaparaiba.com.br', 'jornaldaparaiba.com.br', 'bemparana.com.br', 'diarioinduscom.com', 'impactopr.com.br', 'jornaldoonibusdecuritiba.com.br', 'tribunapr.com.br', 'correiodepernambuco.com.br', 'diariodepernambuco.com.br', 'folhape.com.br', 'jconline.ne10.uol.com.br', 'destakjornal.com.br', 'jb.com.br', 'monitordigital.com.br', 'odia.ig.com.br', 'oglobo.globo.com', 'agorarn.com.br', 'tribunadenoticias.com.br', 'tribunadonorte.com.br', 'osul.com.br', 'correiodenoticia.com.br', 'diariodaamazonia.com.br', 'folhabv.com.br', 'jornalroraimahoje.com.br', 'anoticia.clicrbs.com.br', 'ndonline.com.br', 'nsctotal.com.br', 'brasildefato.com.br', 'dci.com.br', 'diariodenoticias.com.br', 'estadao.com.br', 'folha.uol.com.br', 'gazetasp.com.br', 'horadopovo.org.br', 'jornalestacao.com.br', 'meioemensagem.com.br', 'metronews.com.br', 'www.valor.com.br', 'cinform.com.br', 'jornaldesergipe.com.br', 'jornaldodiase.com.br', 'agora-to.com.br', 'conexaoto.com.br', 'jornaldotocantins.com.br', 'ogirassol.com.br', 'portalstylo.com.br', 'agenciabrasil.ebc.com.br', 'bastidoresdopoder.com.br', 'bbc.com', 'cartacapital.com.br', 'correio24horas.com.br', 'dc.clicrbs.com.br', 'diariodocentrodomundo.com.br', 'diariodonordeste.verdesmares.com.br', 'dinheirorural.com.br', 'brasil.elpais.com', 'exame.abril.com.br', 'gauchazh.clicrbs.com.br', 'gazetadopovo.com.br', 'g1.globo.com', 'infomoney.com.br', 'istoedinheiro.com.br', 'jovempan.uol.com.br', 'justificando.com', 'marceloauler.com.br', 'ne10.uol.com.br', 'oantagonista.com', 'r7.com', 'terra.com.br', 'tnh1.com.br', 'tribunadosertao.com.br', 'veja.abril.com.br', 'noticias.uol.com.br', 'abert.org.br', 'abi.org.br', 'administradores.com.br', 'adrenaline.uol.com.br', 'ancine.gov.br', 'apublica.org', 'avozeavezdajuventude.blogspot.com', 'b9.com.br', 'balaiodokotscho.com.br', 'br.blastingnews.com', 'blogdafloresta.com.br', 'blogdoataide.com.br', 'blogdoluciosorge.com.br', 'revistaforum.com.br', 'blogdomello.blogspot.com', 'altamiroborges.blogspot.com', 'blogdoneylopes.com.br', 'blogdopaulinho.com.br', 'blogdopaulonunes.com', 'blogdoprimo.com.br', 'blogdoriella.com.br', 'blogdoskarlack.com', 'blogmarcosfrahm.com', 'buzzfeed.com', 'cartamaior.com.br', 'ceticismopolitico.org', 'cinegnose.blogspot.com', 'comunicadores.info', 'congressoemfoco.uol.com.br', 'convergenciadigital.com.br', 'correiodobrasil.com.br', 'diplomatique.org.br', 'domingoscosta.com.br', 'www.eb.mil.br', 'ebc.com.br', 'elielbezerra.blogspot.com', 'esporteemidia.com', 'extra.globo.com', 'fabiocampana.com.br', 'falandoverdades.com.br', 'piaui.folha.uol.com.br', 'noticias.gospelprime.com.br', 'grandesnomesdapropaganda.com.br', 'huffpostbrasil.com', 'imprensaviva.com', 'istoe.com.br', 'jaderbarbalho.com', 'jornaisvirtuais.com.br', 'jornaldocomercio.com', 'jornalivre.com', 'jota.info', 'lulacerda.ig.com.br', 'marcossilverio.blogspot.com', 'migalhas.com.br', 'moneytimes.com.br', 'mundodomarketing.com.br', 'natelinha.uol.com.br', 'nocaute.blog.br', 'noticiasdatv.uol.com.br', 'oab.org.br', 'observatoriodatelevisao.bol.uol.com.br', 'ocafezinho.com', 'ocombatente.com', 'operamundi.uol.com.br', 'osamigosdopresidentelula.blogspot.com', 'osdivergentes.com.br', 'outraspalavras.net', 'papelpop.com', 'politicanarede.com', 'poncheverde.blogspot.com', 'portaldapropaganda.com.br', 'ptnacamara.org.br', 'revistapress.com.br', 'rufandobombo.com.br', 'saibamais.jor.br', 'br.sputniknews.com', 'telepadi.folha.uol.com.br', 'telesintese.com.br', 'tijolaco.com.br', 'torcedores.com', 'tribunadainternet.com.br', 'tribunadajustica.com.br', 'vermelho.org.br', 'viomundo.com.br']
 #     data_category_sites = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2, 0, 3, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 8, 1, 0, 0, 0, 3, 0, 0, 1, 2, 0, 2, 8, 4, 0, 0, 6, 0, 0, 0, 2, 0, 0, 1, 1, 2, 0, 3, 0, 0, 0, 0, 0, 0, 0, 3, 0, 1, 5, 0, 3, 0, 0, 5, 0, 0, 0, 0, 0, 2, 2, 0, 9, 10, 3, 3, 5, 0, 0, 5, 14, 1, 2, 9, 1, 0, 1, 0, 2, 1, 0, 8, 31, 1, 0, 1, 0, 0, 9, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 1, 0, 2, 1, 0, 10, 0, 0, 0, 0, 6, 6, 7, 12, 9, 0, 0, 6, 6, 6, 31, 2, 0, 0, 14, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 5, 0, 0, 1, 0, 1, 1, 5, 0, 4, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 11, 0, 0, 1, 7, 1, 0, 1, 0, 3, 0, 3, 0, 1, 3, 0, 0, 0, 0, 1, 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 2, 0, 0, 1, 4, 0, 2, 0, 0, 0, 0, 1, 0]
     
-    categorias, titulo = util.categoria_to_sigla(requested_categories)
+#     categorias, titulo = util.categoria_to_sigla(requested_categories)
+    
+#     print(' --- CATEGORIAS ---')
+#     print(categorias)
+    
+    print(' --- TITULO ---')
+    titles = [cat.title for cat in requested_categories]
+    for i in range(len(titles)):
+        if(i==0):
+            titulo = requested_categories[i].title
+        else:
+            novo_nome = ' e ' + requested_categories[i].title
+            titulo += novo_nome
     
     dias_anteriores = 30
-    labels_category_timeline, data_category_timeline = analises.get_categoria_timeline(categorias, dias_anteriores)
-    labels_category_relation, data_category_relation = analises.get_relacionamento_categorias(categorias)
-    labels_category_sites, data_category_sites = analises.get_fontes_informacao_categoria(categorias)
-    labels_region, data_region = analises.get_numero_noticias_por_regiao(categorias)
+#     labels_category_timeline, data_category_timeline = analises.get_categoria_timeline(categorias, dias_anteriores)
+#     labels_category_relation, data_category_relation = analises.get_relacionamento_categorias(categorias)
+#     labels_category_sites, data_category_sites = analises.get_fontes_informacao_categoria(categorias)
+#     labels_region, data_region = analises.get_numero_noticias_por_regiao(categorias)
     
     return render(request, 'categories/category_detail.html', 
                   {'categories': requested_categories, 'word_cloud': word_cloud, 
-                   'labels_category_timeline': labels_category_timeline, 'data_category_timeline': data_category_timeline, 
-                   'labels_category_relation': labels_category_relation, 'data_category_relation': data_category_relation,
-                   'labels_category_sites': labels_category_sites, 'data_category_sites': data_category_sites,
+                   'labels_category_timeline': "", 'data_category_timeline': "", 
+                   'labels_category_relation': "", 'data_category_relation': "",
+                   'labels_category_sites': "", 'data_category_sites': "",
                    'labels_region': labels_region, 'data_region': data_region,
                    'articles': article_list, 'titulo': titulo,
                    'norte': norte, 'nordeste': nordeste, 'centro_oeste': centro_oeste, 'sudeste': sudeste, 'sul': sul})

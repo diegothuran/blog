@@ -5,55 +5,18 @@ sys.path.insert(0, '../../../blog')
 
 from robo.Model import News
 from robo.Database import connection
-import datetime
 from dateutil import parser
-from robo.Util import util
 
-
-def save_news(news = News):
-    cnx = connection.connection()
-
-    try:
-        cursor = cnx.cursor()
-#         timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-#         now = datetime.datetime(2009, 5, 5)
-#         str_now = now.date().isoformat()
-        str_now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        name_site = news.name_site[0]
-        cats = util.join_categories(news.categories[0])
-        add_news = ("INSERT INTO pessoas "
-                    "(id, abstract, noticia, public_date, image, titulo, link, cheated_at, categories, site) "
-                        "VALUES (NULL, %s, %s, %s, %s, %s, %s, %s, %s, %s)", (news.abstract[0], news.news[0],
-                                                                                   news.date[0], news.media[0],
-                                                                                news.title[0], news.link[0], str_now, cats, name_site))
-
-        cursor.execute(*add_news)
-    except Exception as e:
-        print(e)
-
-    cnx.close()
-
-
-def select_news(news = News):
-    cnx = connection.connection()
-    try:
-        cursor = cnx.cursor()
-        news.date[0] = parser.parse(news.date[0])
-        query = ("SELECT * FROM pessoas WHERE abstract= %s and titulo = %s", (news.abstract[0],
-                                                                            news.title[0]))
-        result = cursor.execute(*query)
-        cnx.close()
-
-        return result
-    except Exception as e:
-        print(e)
 
 def check_news(news = News):
     cnx = connection.connection()
     cursor = cnx.cursor()
 
-    sql = "SELECT * FROM pessoas WHERE titulo = %s"
+    sql = "SELECT * FROM articles_article WHERE title = %s"
     titulo = (news.title[0], )    
+#     a = 'postagem via api'
+#     titulo = (a, )
+    print(titulo)
     cursor.execute(sql, titulo)
  
     rows = cursor.fetchall()
@@ -82,20 +45,6 @@ def select_form_date(request_date):
     cnx.close()
     return len(rows)
     
-# def select_info_in_link(site):
-#     cnx = connection.connection()
-#     cursor = cnx.cursor()    
-#     
-#     query = ("SELECT * FROM pessoas WHERE link LIKE %s")
-#     formated_string = '%' + site + '%'
-#     request_site = (formated_string, )    
-#         
-#     cursor.execute(query, request_site)
-#     rows = cursor.fetchall()
-# 
-#     cursor.close()
-#     cnx.close()
-#     return rows
 
 def select_site_in_link(link):
     cnx = connection.connection()

@@ -46,3 +46,6 @@ def lexical_corpus_and_title(df):
     df, categories = base_lexical_analyzer.get_categories_corpus_and_title(df, WORDS, THEME_CATEGORIES)
     return df, categories
 
+def django_lexical_corpus_and_title(title, body):
+    categories = base_lexical_analyzer.django_get_categories_corpus_and_title(title, body, WORDS, THEME_CATEGORIES)
+    return categories

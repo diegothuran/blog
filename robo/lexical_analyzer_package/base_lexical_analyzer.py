@@ -218,6 +218,36 @@ def get_categories_corpus_and_title(df, words, theme_categories, words_case_sens
     df = df.assign(categorias = set_cats)
     return df, set_cats
 
+def django_get_categories_corpus_and_title(title, body, words, theme_categories, words_case_sensitive=None, theme_categories_case_sensitive=None):
+    """
+    categories from corpus and title: input_text is from both 'noticia' and 'titulo' 
+    
+    Parameters
+    ----------
+    input_text: deve estar no formato original, a transformacao para lower vai ser feita durante o metodo
+    theme_categories: categorias relacionadas ao tema principal do analisador lexico
+    
+    Return
+    ------
+    set_cats: set of categories
+    """
+    cats = []
+    
+    noticia = body
+    cats_noticia = get_categories(noticia, words, theme_categories, words_case_sensitive, theme_categories_case_sensitive)
+
+    title = title
+    cats_title = get_categories(title, words, theme_categories, words_case_sensitive, theme_categories_case_sensitive)
+
+    cats_concat = cats_noticia[0] + cats_title[0]
+    cats.append(cats_concat)
+
+    # Removing replicated items
+    set_cats = [set(cat) for cat in cats]
+    
+#     df = df.assign(categorias = set_cats)
+#     return df, set_cats
+    return set_cats
 
 # --- Tree Structure ---
 def check_string(word, lower_text):

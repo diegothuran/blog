@@ -10,7 +10,10 @@ from . import serializers
 from robo.analytics import analises
 from slugify import slugify
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from robo.lexical_analyzer_package import pessoas_lexical
 
+from robo.Util import util
+from category.models import Category
 
 # Create your views here.
 def article_list(request):
@@ -100,3 +103,15 @@ def slug_correction(request):
     for article in articles:
         article.slug = slugify(article.title)
         article.save()
+
+def update_categories(request):
+    articles = models.Article.objects.all()[1050:]
+    for article in articles:
+        print(article.id)
+        
+        categories = pessoas_lexical.django_lexical_corpus_and_title(article.title, article.body)
+        all_categorias = Category.objects.all()
+        categories = util.django_get_categories_idx(categories[0], all_categorias)
+                
+        for cat_idx in categories:
+            article.categories.add(cat_idx)
