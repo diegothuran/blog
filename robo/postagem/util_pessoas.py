@@ -49,9 +49,10 @@ def news_from_link(ref_link, name_site):
             if(not Article.objects.filter(slug = info['slug'][0]).exists()):
                 print('news_in_db: False')
                 categories = pessoas_lexical.django_lexical_corpus_and_title(article.title, article.text)
-                all_categorias = Category.objects.all()
-                info['categories'] = util.django_get_categories_idx(categories[0], all_categorias)
-                pessoas_post.post_news(info)
+                if (categories != [set()]):
+                    all_categorias = Category.objects.all()
+                    info['categories'] = util.django_get_categories_idx(categories[0], all_categorias)
+                    pessoas_post.post_news(info)
             else:
                 print('news_in_db: True')
         except:
