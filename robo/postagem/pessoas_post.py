@@ -9,7 +9,7 @@ import numpy as np
 
 from robo.Util import util
 
-URL = 'http://127.0.0.1:8000/rest/'
+URL = 'http://127.0.0.1:8000/api/v1/article/'
 
 def post_news(info):
     date_now = datetime.datetime.now()

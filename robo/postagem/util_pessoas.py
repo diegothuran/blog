@@ -1,8 +1,9 @@
 # coding: utf-8
 
-import sys
+import sys, os
 sys.path.insert(0, '../../../blog')
 
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "blog.settings")
 import django
 django.setup()
 
