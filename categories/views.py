@@ -25,6 +25,13 @@ from collections import OrderedDict
 from operator import itemgetter    
 import numpy as np
 
+from robo.lexical_analyzer_package import pessoas_lexical
+from background_task import background
+
+import subprocess
+import os
+
+import django.db
 
 # from category.models import Category
 # categorias = Category.objects.all()
@@ -308,8 +315,28 @@ def articles_per_region(articles):
     
     return norte, nordeste, centro_oeste, sudeste, sul
 
+from functools import wraps
+
+def close_db_connection(ExceptionToCheck=Exception, raise_exception=False, notify=False):
+    """Close the database connection when we're finished, django will have to get a new one..."""
+    def deco_wrap(f):
+        @wraps(f)
+        def f_wrap(*args, **kwargs):
+            try:
+                return f(*args, **kwargs)
+            except Exception as e:
+                raise e
+            finally:
+                from django.db import connection; 
+                connection.close();
+
+        return f_wrap
+    return deco_wrap
+
 # Create your views here.
+@close_db_connection()
 def category_detail(request, slug):
+#     django.db.connections.close_all()
     requested_categories = []
     slugs = slug.split('-and-')
     article_list = Article.objects.all()
@@ -332,7 +359,6 @@ def category_detail(request, slug):
     
     labels_category_relation, data_category_relation= get_relacionamento_categorias(articles=article_list, requested_categories=slugs)
     timeline_labels, timeline_data = get_categoria_timeline(articles=article_list, dias_anteriores=30)
-    
     
     print(' --- TITULO ---')
     titles = [cat.title for cat in requested_categories]
@@ -395,15 +421,36 @@ def category_filter(request):
 #     return render_to_response('categories/category_filter.html', {'form':form },
 #         context_instance=RequestContext(request))
 
+@close_db_connection()
+@background(schedule=10)
+def update_new_category_task(id_category):
+    category = Category.objects.get(id=id_category)
+    for i in range(1, 1000):
+        article_list = Article.objects.all().order_by('-date')[(i-1)*100:i*100]
+        if(len(article_list) == 0):
+            break
+        for article in article_list:   
+            categories = pessoas_lexical.django_new_category_lexical_corpus_and_title(article.title, article.body, category)
+            if (categories != [set()]):
+                all_categorias = Category.objects.all()
+                index_categories = util.django_get_categories_idx(categories[0], all_categorias)
+                
+                for cat_idx in index_categories:
+                    article.categories.add(cat_idx)
+                
 @login_required(login_url="/accounts/login/")
 def category_create(request):
     if(request.method == "POST"):
         form = forms.CreateCategory(request.POST)
         if(form.is_valid()):
+#            process = subprocess.Popen(['python3', 'manage.py','process_tasks'])
+            process = subprocess.Popen(['python', 'manage.py','process_tasks'])
             #save article to db
             instance = form.save(commit=False)
             instance.author = request.user
             instance.save()
+            
+            update_new_category_task(instance.id)
             return redirect('categories:filter')
     else:
         form = forms.CreateCategory()
@@ -412,4 +459,3 @@ def category_create(request):
 class CategoryList(generics.ListCreateAPIView):
     queryset = Category.objects.all()
     serializer_class = serializers.CategorySerializer 
-    

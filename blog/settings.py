@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django_filters',
     'drf_yasg',
 
+    'background_task',
 ]
 
 MIDDLEWARE = [
@@ -163,3 +164,5 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 SITE_ID = 1
+
+BACKGROUND_TASK_RUN_ASYNC = True

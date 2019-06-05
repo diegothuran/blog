@@ -46,6 +46,24 @@ def lexical_corpus_and_title(df):
     df, categories = base_lexical_analyzer.get_categories_corpus_and_title(df, WORDS, THEME_CATEGORIES)
     return df, categories
 
-def django_lexical_corpus_and_title(title, body):
-    categories = base_lexical_analyzer.django_get_categories_corpus_and_title(title, body, WORDS, THEME_CATEGORIES)
+# def django_lexical_corpus_and_title(title, body):
+#     categories = base_lexical_analyzer.django_get_categories_corpus_and_title(title, body, WORDS, THEME_CATEGORIES)
+#     return categories
+
+def django_lexical_corpus_and_title(title, body, all_categories):
+    # id dos estados: a verificacao dos estados vai ser feito mais na frente por causa deo case sensitive
+    idx_estados = [2,4,5,15,23,24,28,3,6,7,11,16,18,19,21,27,8,10,12,13,9,14,20,26,17,22,25]
+    cat_titles, cat_slugs = [], []
+    for cat in all_categories:
+        if(cat.id not in idx_estados):
+            cat_titles.append(cat.title.lower())
+            cat_slugs.append(cat.slug)
+    categories = base_lexical_analyzer.django_get_categories_corpus_and_title(title, body, cat_titles, cat_slugs)
+    return categories
+
+def django_new_category_lexical_corpus_and_title(title, body, category):
+    cat_title, cat_slug = [category.title.lower()], [category.slug]
+#     categories = base_lexical_analyzer.django_get_categories_corpus_and_title(title, body, cat_title, cat_slug)
+    categories = base_lexical_analyzer.django_new_category_corpus_and_title(title, body, cat_title, cat_slug)
+    
     return categories

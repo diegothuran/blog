@@ -15,8 +15,11 @@ from robo.lexical_analyzer_package import pessoas_lexical
 from robo.Util import util
 from category.models import Category
 
+import django.db
+
 # Create your views here.
 def article_list(request):
+    #django.db.close_old_connections()
 #     articles = models.Article.objects.all().order_by('-date')
 #     user_list = User.objects.all()
     article_list = models.Article.objects.all().order_by('-date')
@@ -49,11 +52,11 @@ def article_detail(request, slug):
     
 #     relevancia = 3.2
     
-    try:
-        relevancia = analises.get_relevancia(article.link)
-    except:
-        relevancia = "--"
-
+#     try:
+#         relevancia = analises.get_relevancia(article.link)
+#     except:
+#         relevancia = "--"
+    relevancia = "--"
             
     URL = 'https://api.sharedcount.com/v1.0/'
     api_key = '8a2cccc01f801d984aa5995bc3d3594bed656a51'

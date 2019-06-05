@@ -390,4 +390,26 @@ def get_categories_corpus_and_title_tree_structure(df, words_tree_structure, the
 # def lexical_corpus_and_title(df, theme_categories):
 #     df, categories = get_categories_corpus_and_title(df, theme_categories)
 #     return df, categories
+
+def django_get_categories(input_text, words, theme_categories, words_case_sensitive=None, theme_categories_case_sensitive=None):
+    cats = [get_theme_categories(input_text, words, theme_categories, words_case_sensitive, theme_categories_case_sensitive)]
+    return cats
+
+def django_new_category_corpus_and_title(title, body, cat_title, cat_slug, words_case_sensitive=None, theme_categories_case_sensitive=None):
+    cats = []
     
+    noticia = body
+    cats_noticia = django_get_categories(noticia, cat_title, cat_slug, words_case_sensitive, theme_categories_case_sensitive)
+
+    title = title
+    cats_title = django_get_categories(title, cat_title, cat_slug, words_case_sensitive, theme_categories_case_sensitive)
+
+    cats_concat = cats_noticia[0] + cats_title[0]
+    cats.append(cats_concat)
+
+    # Removing replicated items
+    set_cats = [set(cat) for cat in cats]
+    
+#     df = df.assign(categorias = set_cats)
+#     return df, set_cats
+    return set_cats
