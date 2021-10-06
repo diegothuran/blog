@@ -74,7 +74,7 @@ requests-file==1.4.3
 rsa==3.4.2
 ruamel.yaml==0.15.96
 s3transfer==0.2.0
-Scrapy==1.6.0
+Scrapy==1.8.1
 service-identity==18.1.0
 singledispatch==3.4.0.3
 six==1.12.0
