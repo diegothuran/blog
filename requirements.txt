@@ -42,7 +42,7 @@ Jinja2==2.10.1
 jmespath==0.9.4
 kiwisolver==1.0.1
 langdetect==1.0.7
-lxml==4.3.3
+lxml==4.9.1
 MarkupSafe==1.1.1
 matplotlib==3.0.3
 mysql-connector-python==8.0.13
